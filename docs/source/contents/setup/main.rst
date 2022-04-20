@@ -163,7 +163,7 @@ Tスピンの屋根にあたる部分にマージンエリアが設定されて�
 オプションで「必ず埋める場所」「マージンエリア」「フリーエリア」の色を指定してください。
 
 * ``-f`` or ``--fill`` → 探索時に必ず埋める必要がある場所
-* ``-m`` or ``--margin`` → 探索時に置いても置かなくても良い場所（マージンエリア。``exclude`` 設定時には穴を許容しない）
+* ``-m`` or ``--margin`` → 探索時に置いても置かなくても良い場所（マージンエリア。``--exclude`` 設定時には穴を許容しない）
 * ``-F`` or ``--free`` → マージンエリア かつ 常に穴を許容するエリア
 
 フィールドファイルから入力するとき
@@ -402,7 +402,7 @@ v115のテト譜データにのみ対応。
 
 * softdrop: ソフトドロップ＋回転入れ（制限なし）
 * harddrop: ハードドロップのみ
-* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します。
+* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します
 * t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ
 
 ``-e``, ``--exclude`` [default: none]

@@ -63,4 +63,5 @@ html_static_path = ['_static']
 
 # -- Translations ------------------------------------------------------------
 locale_dirs = ['locale']
-gettext_compact = False
+gettext_compact = True
+gettext_additional_targets = ['literal-block']

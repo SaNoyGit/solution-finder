@@ -96,7 +96,7 @@ v115のテト譜データにのみ対応。
 
 * softdrop: ソフトドロップ＋回転入れ（制限なし）
 * harddrop: ハードドロップのみ
-* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します。
+* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します
 * t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ
 
 ``-th``, ``--threads`` [default: -1]
@@ -104,7 +104,7 @@ v115のテト譜データにのみ対応。
 
 探索時に使用するスレッド数を指定します。
 
-`1` を指定したとき、シングルスレッドでの探索となります。
+``1`` を指定したとき、シングルスレッドでの探索となります。
 
 もし、0以下を指定した場合は、自動的に「実行環境のコア数」を設定します。
 

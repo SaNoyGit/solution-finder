@@ -1,0 +1,42 @@
+(remove this when PR)
+-Do I use "you" as a general you?
+
+ある地形: "a specified field" instead of "given field"
+参照: prefer "see" over "refer"
+補助UI: I'm going to replace "assistance" with "auxiliary"
+実行: keeping "run" for program, changing to "execute" for command (https://english.stackexchange.com/questions/431990/run-execute-or-issue-a-command)
+コマンドライン: "command prompt" instead of "command-line" 
+指定: "specified", "assign", starting to lean on "set" later on
+テト譜: "tetris fumen", shortened to "fumen"
+設定: "declared"
+組み方: "setups", lit. "way of construction" but the order of construction (different methods of gluing) don't matter, only different setups will make a difference.
+ミノ順: cmp. パターン, "sequence"
+サンプル: "Example"
+接着フラグ: "Lock" (from Harddrop fumen site)
+パターン: "pattern" (group), "sequence" (individual)
+また: "Moreover", "also"
+組み方: "setup", but any general placements also work so it may be a misnomer
+ください: Not reaaly sure if I should include, the tone doesn't carry over well
+なし: "none" instead of "null", based on --fill in setup
+カラーテーマ: Color "scheme" opposed to "theme"
+
+ブロック -> mino =/= ミノ -> (tetro)mino
+I'm switching a few `<number>` into ``<number>`` since that looks to be more readable. I'm not sure if this is breaking consistency
+Thanks John Baek for clearing up the ツモ・ミノ thing
+
+Declaration of terminology:
+pattern: A string that generates at least one sequence using the formatting rules of solution-finder. ``*!`` and ``TIOJ`` are both examples of a pattern. For convenience, a union of patterns is also a pattern, meaning ``TI[OL]!`` and ``[TI]!OL`` are considered as *a* pattern when used together.
+sequence: A string of tetrominos that represent the order of appearance of the tetrominos. A group of sequences can make up a pattern/patterns.
+tetromino(or piece): blocks in the game that contains 4 minos(square blocks) in an arrangement of T/I/O/J/L/S/Z.
+solution: The shape of the field with the placed pieces included <example> that leads to a Perfect Clear. A single solution may have multiple solve orders <JSZ JZS PCO solve example>
+solve order (or solve pattern): The order in which pieces are placed. Solve orientation is also implied to be included in the solve order.
+build order (or placement order): similar to solve order, but without the requirement of having to solve the field at the end (Perfect Clear).
+setup: Any arrangment of pieces in a field. This can both include conventional setups (TKI, DT cannon) or a solution (OTS 7th minimal solution)
+PC: shorthand for Perfect Clear, can be used as both noun and verb. Can also be used to denote the current type of PC, i.e. 1st PC (equivalent to 開幕パフェ1巡目).
+SFinder: shorthand for solution-finder
+cover: When it is possible to arrange pieces to follow a setup with a given sequence, the setup is buildable for the sequence, which is equivalent to saying the setup covers the sequence.
+orientation: Rotation state of the piece. In the documentation, the orientations are Spawn, Right, Reverse, Left in clockwise order.
+field: A general term that may be used to refer to the result of any shape created by minos in the playfield.
+fail sequences: sequences that are unable to perform a solve order/solution/solve a field.
+
+about sets and minimals: https://discord.com/channels/569728778985537585/569730842319126541/1002746109032136794

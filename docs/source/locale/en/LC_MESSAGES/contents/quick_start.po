@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solution-finder \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-30 19:39+0900\n"
+"POT-Creation-Date: 2022-07-25 20:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: ../../contents/quick_start.rst:3
 msgid "クイックスタート"
@@ -69,12 +69,30 @@ msgstr ""
 msgid "そのあと、以下のコマンドを入力してください。 ::"
 msgstr ""
 
+#: ../../contents/quick_start.rst:29
+msgid ""
+"# パフェ成功確率を知りたいとき\n"
+"java -jar sfinder.jar percent\n"
+"\n"
+"# 全操作を列挙したいとき\n"
+"java -jar sfinder.jar path\n"
+"\n"
+"# JRE同梱版の場合\n"
+".¥jre¥bin¥java.exe -jar sfinder.jar percent"
+msgstr ""
+
 #: ../../contents/quick_start.rst:38
 msgid "このとき、各コマンドでオプションを指定することができます。"
 msgstr ""
 
 #: ../../contents/quick_start.rst:40 ../../contents/quick_start.rst:72
 msgid "例) ::"
+msgstr ""
+
+#: ../../contents/quick_start.rst:42
+msgid ""
+"# ホールドを使用しないパフェ成功確率を知りたいとき\n"
+"java -jar sfinder.jar percent --hold avoid"
 msgstr ""
 
 #: ../../contents/quick_start.rst:45 ../../contents/quick_start.rst:79
@@ -97,6 +115,10 @@ msgstr ""
 msgid "pathの例) ::"
 msgstr ""
 
+#: ../../contents/quick_start.rst:57
+msgid "echo|sfinder.bat path --format link"
+msgstr ""
+
 #: ../../contents/quick_start.rst:59
 msgid "``--format link`` のように、この部分にオプションを加えることで各種設定を変更できます。"
 msgstr ""
@@ -117,5 +139,13 @@ msgstr ""
 
 #: ../../contents/quick_start.rst:70
 msgid "各コマンドを実行するとき、オプションを指定することができます。"
+msgstr ""
+
+#: ../../contents/quick_start.rst:74
+msgid ""
+"cd  {jarファイルのあるディレクトリパス}\n"
+"\n"
+"# ホールドを使用しないパフェ成功確率を知りたいとき\n"
+"java -jar sfinder.jar percent --hold avoid"
 msgstr ""
 

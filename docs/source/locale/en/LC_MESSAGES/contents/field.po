@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solution-finder \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-30 19:39+0900\n"
+"POT-Creation-Date: 2022-07-25 20:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: ../../contents/field.rst:3
 msgid "フィールドの指定"
@@ -70,8 +70,22 @@ msgstr ""
 msgid "例) パフェテンプレを探索する場合 (Windows) ::"
 msgstr ""
 
+#: ../../contents/field.rst:36
+msgid ""
+"sfinder.bat percent --tetfu "
+"v115@9gwhi0DeR4whg0RpCeR4wwwhglRpBeBtxwwhilCeBt?wwJeAgWBAUAAAA --patterns"
+" *p4"
+msgstr ""
+
 #: ../../contents/field.rst:38
 msgid "例) パフェテンプレを探索する場合 (Mac) ::"
+msgstr ""
+
+#: ../../contents/field.rst:40
+msgid ""
+"java -jar sinder.jar percent --tetfu "
+"v115@9gwhi0DeR4whg0RpCeR4wwwhglRpBeBtxwwhilCeBt?wwJeAgWBAUAAAA --patterns"
+" *p4"
 msgstr ""
 
 #: ../../contents/field.rst:44
@@ -98,6 +112,13 @@ msgstr ""
 msgid "サンプル ::"
 msgstr ""
 
+#: ../../contents/field.rst:56
+msgid ""
+"v115@vhGXKJNJJ0/IWSJTIJCDJJHJ\n"
+"v115@vhG0MJ9NJXDJyOJTEJm/IpFJ\n"
+"v115@vhG0MJ9NJXDJxOJzEJOEJ6FJ"
+msgstr ""
+
 #: ../../contents/field.rst:62 ../../contents/field.rst:128
 msgid "テキストファイルのエンコーディングは、UTF-8(BOMなし)にしてください。"
 msgstr ""
@@ -122,8 +143,18 @@ msgstr ""
 msgid "percent, path, setupコマンド ::"
 msgstr ""
 
+#: ../../contents/field.rst:77
+msgid ""
+"1行目: パーフェクトまでに削除するライン数\n"
+"2行目から: フィールドの形"
+msgstr ""
+
 #: ../../contents/field.rst:80
 msgid "percent, path, setupコマンド以外 ::"
+msgstr ""
+
+#: ../../contents/field.rst:82
+msgid "1行目から: フィールドの形"
 msgstr ""
 
 #: ../../contents/field.rst:84
@@ -148,6 +179,15 @@ msgstr ""
 msgid "例) 左側4列が埋まっていて、右側6列が空いているフィールド (4ラインパーフェクト) ::"
 msgstr ""
 
+#: ../../contents/field.rst:97
+msgid ""
+"4\n"
+"XXXX______\n"
+"XXXX______\n"
+"XXXX______\n"
+"XXXX______"
+msgstr ""
+
 #: ../../contents/field.rst:104
 msgid "``#`` をつけることでフィールドファイル内にコメントを残すことができます。"
 msgstr ""
@@ -156,7 +196,28 @@ msgstr ""
 msgid "例) ::"
 msgstr ""
 
+#: ../../contents/field.rst:108
+msgid ""
+"# パフェテンプレ (コメントは無視されます)\n"
+"4\n"
+"ZZ____LLLI\n"
+"TZZ___LOOI\n"
+"TTSS__JOOI\n"
+"TSS___JJJI"
+msgstr ""
+
 #: ../../contents/field.rst:116
 msgid "また、 ライン数・地形の代わりに、テト譜データを記載することもできます"
+msgstr ""
+
+#: ../../contents/field.rst:120
+msgid ""
+"# パフェテンプレ\n"
+"v115@9gwhi0DeR4whg0RpCeR4wwwhglRpBeBtxwwhilCeBt?wwJeAgWUA0no2AtTMeDUPNXEuN98AQPUGB"
+"\n"
+"\n"
+"# グレースシステム (コメントアウトしているため以下は無視されます)\n"
+"# "
+"v115@9gQ4zhAtDeR4RpBtDeglQ4RpAtg0Deili0NeAgWYA0?no2AtTMeDUPNXEuN98AQe88AjPUGB"
 msgstr ""
 

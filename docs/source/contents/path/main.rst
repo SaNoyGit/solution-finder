@@ -71,7 +71,7 @@ short    long                   default
 ``-L``   ``--max-layer``        2
 ``-so``   ``--specified-only``   yes
 ``-r``   ``--reserved``         false
-``-d``   ``--drop``             soft
+``-d``   ``--drop``             softdrop
 ``-th``  ``--threads``          -1
 ``-cb``  ``--cached-bit``       0
 ``-o``   ``--output-base``      output/path.txt
@@ -102,9 +102,9 @@ v115のテト譜データにのみ対応。
 ``-P``, ``--page`` [default: 1]
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-テト譜からロードするページを指定する。
+テト譜でロードするページを指定する。
 
-読み込むページを変更したい場合は ``--page 31`` のように指定する。
+ページを変更したい場合は ``--page 31`` のように指定する。
 
 
 ``-p``, ``--patterns`` [default: なし]
@@ -192,7 +192,7 @@ noの場合、解自体から抽出したパターンをもとに、重複をチ
 この機能を有効にする場合は ``true`` を指定してください。
 
 
-``-d``, ``--drop`` [default: soft]
+``-d``, ``--drop`` [default: softdrop]
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ミノの操作に制限を加える。
@@ -201,16 +201,16 @@ noの場合、解自体から抽出したパターンをもとに、重複をチ
 
 * softdrop: ソフトドロップ＋回転入れ（制限なし）
 * harddrop: ハードドロップのみ
-* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します。
+* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します
 * t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ
 
 * any-tspin (any, tspin0): Tミノは必ずT-Spin(Mini含むすべてのT-Spin)をする。その他のミノはハードドロップ
-* tss (tspin1): Tミノは必ずT-Spin Single,Double,Tripe(Miniは含まない)をする。その他のミノはハードドロップ
-* tsd (tspin2): Tミノは必ずT-Spin Double,Tripe(Miniは含まない)をする。その他のミノはハードドロップ
-* tst (tspin3): Tミノは必ずT-Spin Tripe(Miniは含まない)をする。その他のミノはハードドロップ
+* tss (tspin1): Tミノは必ずT-Spin Single,Double,Triple(Miniは含まない)をする。その他のミノはハードドロップ
+* tsd (tspin2): Tミノは必ずT-Spin Double,Triple(Miniは含まない)をする。その他のミノはハードドロップ
+* tst (tspin3): Tミノは必ずT-Spin Triple(Miniは含まない)をする。その他のミノはハードドロップ
 
 ※ T-Spin系のdropでは、「T-Spinできないケース」や「ライン消去が発生しないT-Spinになるケース」ではミノを置きません。
-また、Tミノを使わないケースでは `harddrop` と同じになる点にご注意ください (solutionが省略されるわけではありません)。
+また、Tミノを使わないケースでは ``harddrop`` と同じになる点にご注意ください (solutionが省略されるわけではありません)。
 
 
 ``-th``, ``--threads`` [default: -1]
@@ -218,7 +218,7 @@ noの場合、解自体から抽出したパターンをもとに、重複をチ
 
 探索時に使用するスレッド数を指定します。
 
-`1` を指定したとき、シングルスレッドでの探索となります。
+``1`` を指定したとき、シングルスレッドでの探索となります。
 
 もし、0以下を指定した場合は、自動的に「実行環境のコア数」を設定します。
 

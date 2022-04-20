@@ -33,7 +33,7 @@ Windows (コマンドラインから操作する)
   java -jar sfinder.jar path
 
   # JRE同梱版の場合
-  .¥jre¥bin¥java.exe -jar sfinder.jar percent
+  .\jre\bin\java.exe -jar sfinder.jar percent
 
 このとき、各コマンドでオプションを指定することができます。
 

@@ -9,7 +9,7 @@ Alias command: combo
 
 ある地形から最もRENが続く手順を列挙する。
 
-なおREN数の表示は `ライン消去回数 - 1` に準拠する。 (1回目のライン消去で "0 REN"、2回目のライン消去で "1 REN" となる。)
+なおREN数の表示は ``ライン消去回数 - 1`` に準拠する。 (1回目のライン消去で "0 REN"、2回目のライン消去で "1 REN" となる。)
 
 
 基本コマンド
@@ -83,7 +83,7 @@ v115のテト譜データにのみ対応。
 
 * softdrop: ソフトドロップ＋回転入れ（制限なし）
 * harddrop: ハードドロップのみ
-* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します。
+* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します
 * t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ
 
 

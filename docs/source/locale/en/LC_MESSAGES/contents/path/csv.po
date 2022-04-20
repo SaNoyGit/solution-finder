@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solution-finder \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-30 19:39+0900\n"
+"POT-Creation-Date: 2022-07-25 20:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: ../../contents/path/csv.rst:2
 msgid "key: none"
@@ -30,8 +30,16 @@ msgstr ""
 msgid "例) ::"
 msgstr ""
 
+#: ../../contents/path/csv.rst:8
+msgid "J,R,3,3;L,L,2,3;O,0,7,0"
+msgstr ""
+
 #: ../../contents/path/csv.rst:10
 msgid "このうち、4つごとに1つのミノを置く操作を表しています。そのため、この例では3つのミノを置く操作手順を表しています。"
+msgstr ""
+
+#: ../../contents/path/csv.rst:14
+msgid "J,R,3,3"
 msgstr ""
 
 #: ../../contents/path/csv.rst:16
@@ -102,6 +110,13 @@ msgstr ""
 msgid ""
 "出力例) ``path -t v115@BhF8CeG8BeH8CeG8JeAgWDAqedBA -p *p4 -f csv -k "
 "solution`` ::"
+msgstr ""
+
+#: ../../contents/path/csv.rst:45
+msgid ""
+"テト譜,使用ミノ,対応ツモ数 (対地形&パターン),対応ツモ数 (対地形),対応ツモ数 (対パターン),ツモ (対地形&パターン),ツモ "
+"(対地形),ツモ (対パターン)\n"
+"http://fumen.zui.jp/?v115@9gh0R4F8g0R4G8BtH8g0BtG8JeAgWDA6vzBA,JSZ,2,2,48,ZSJ;ZJS,ZSJ;ZJS,JZSI;ZLJS;JZTS;SZJO;ZSLJ;ZSJI;ZSOJ;ZJSL;ZTSJ;SZLJ;SZJI;SZOJ;TZJS;IZJS;LZJS;ZISJ;ZSIJ;JZSL;OZJS;ZJLS;ZLSJ;ZJOS;SZIJ;ZJST;ZOJS;ZSJL;JZLS;ZSTJ;ZJIS;ZJSO;SZJL;JZOS;JZST;TZSJ;SZTJ;IZSJ;LZSJ;OZSJ;JZIS;JZSO;ZSJT;ZTJS;ZJSI;ZJTS;ZOSJ;SZJT;ZIJS;ZSJO"
 msgstr ""
 
 #: ../../contents/path/csv.rst:49 ../../contents/path/csv.rst:111
@@ -238,12 +253,24 @@ msgid ""
 "pattern`` ::"
 msgstr ""
 
+#: ../../contents/path/csv.rst:100
+msgid ""
+"ツモ,対応地形数,使用ミノ,未使用ミノ,テト譜\n"
+"TJSI,4,TJS;TIJ,I;S,v115@9gzhF8ywG8g0wwH8i0G8JeAgWDAqedBA;v115@9gh0R4F8g0R4G8g0wwH8ywG8JeAgWDAUtfBA;v115@9gh0R4F8ywG8g0wwH8g0R4G8JeAgWDA0vzBA;v115@9gQ4ywF8R4wwG8g0Q4H8i0G8JeAgWDAKN2BA"
+msgstr ""
+
 #: ../../contents/path/csv.rst:103
 msgid "なお、このCSV形式を選択した場合は、percentコマンドのようなパフェ成功確率がログ上に表示されます。"
 msgstr ""
 
 #: ../../contents/path/csv.rst:105
 msgid "ログ出力例) ::"
+msgstr ""
+
+#: ../../contents/path/csv.rst:107
+msgid ""
+"perfect clear percent\n"
+"  -> success = 61.19% (514/840)"
 msgstr ""
 
 #: ../../contents/path/csv.rst:117
@@ -308,6 +335,12 @@ msgstr ""
 
 #: ../../contents/path/csv.rst:144
 msgid "出力例) ``path -t v115@BhF8CeG8BeH8CeG8JeAgWDAqedBA -p *p4 -f csv -k use`` ::"
+msgstr ""
+
+#: ../../contents/path/csv.rst:146
+msgid ""
+"使用ミノ,対応地形数,対応ツモ数 (対パターン),テト譜,ツモ (対パターン)\n"
+"TIL,2,88,v115@9gzhF8ilG8glwwH8ywG8JeAgWDA0SdBA;v115@9gwhywF8whglwwG8whglH8whhlG8JeAgWDAM+1BA,TZIL;LOTI;ILZT;TOIL;TLOI;LITJ;LTIS;LITO;ILTJ;ITLZ;ILTO;TLIS;LIJT;TILZ;LTSI;ILJT;ITZL;TLSI;TIZL;LIOT;ILOT;LTIJ;JITL;SITL;ZITL;OITL;LITZ;JTLI;LTIO;STLI;ZTLI;ITLS;OTLI;ILTZ;JLIT;ITJL;SLIT;TLIJ;ZLIT;IJTL;OLIT;TILS;LJIT;TIJL;TLIO;ISTL;LIST;LTZI;TJLI;LSIT;IZTL;ILST;ITOL;TSLI;LZIT;IOTL;TLZI;TIOL;TZLI;LOIT;JTIL;STIL;TOLI;ZTIL;LITS;OTIL;LTIZ;JLTI;ITLJ;SLTI;ZLTI;OLTI;ILTS;LTJI;ITLO;LJTI;TILJ;TLIZ;ITSL;TILO;TJIL;LSTI;TLJI;TISL;TSIL;LZTI;LIZT;LTOI"
 msgstr ""
 
 #: ../../contents/path/csv.rst:154

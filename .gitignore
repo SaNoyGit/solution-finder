@@ -30,3 +30,5 @@ binary/*
 test_*/
 
 .venv/
+docs/source/.tx/*
+docs/source/_build/*

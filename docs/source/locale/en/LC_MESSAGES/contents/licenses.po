@@ -41,7 +41,3 @@ msgid ""
 "This product includes software developed at The Apache Software "
 "Foundation (http://www.apache.org/)."
 msgstr ""
-
-#~ msgid "利用ライセンス"
-#~ msgstr ""
-
