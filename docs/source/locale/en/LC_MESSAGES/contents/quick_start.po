@@ -19,7 +19,7 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../contents/quick_start.rst:3
-msgid "クイックスタート"
+msgid "クイックスタートガイド"
 msgstr ""
 
 #: ../../contents/quick_start.rst:6
