@@ -19,7 +19,7 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../contents/quick_start.rst:3
-msgid "クイックスタートガイド"
+msgid "クイックスタート"
 msgstr ""
 
 #: ../../contents/quick_start.rst:6
@@ -148,4 +148,7 @@ msgid ""
 "# ホールドを使用しないパフェ成功確率を知りたいとき\n"
 "java -jar sfinder.jar percent --hold avoid"
 msgstr ""
+
+#~ msgid "クイックスタートガイド"
+#~ msgstr ""
 
