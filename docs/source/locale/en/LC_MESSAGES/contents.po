@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solution-finder \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 15:05+0900\n"
+"POT-Creation-Date: 2022-12-02 17:01+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -675,7 +675,7 @@ msgstr ""
 msgid "``--mode``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:130 ../../contents/cover/main.rst:214
+#: ../../contents/cover/main.rst:130 ../../contents/cover/main.rst:215
 msgid "normal"
 msgstr ""
 
@@ -930,12 +930,17 @@ msgstr ""
 "harddrop"
 
 #: ../../contents/cover/main.rst:185 ../../contents/path/main.rst:207
-msgid "any-tspin (any, tspin0): Tミノは必ずT-Spin(Mini含むすべてのT-Spin)をする。その他のミノはハードドロップ"
+msgid "tsz (tspin0): Tミノは必ずT-Spinをする（ライン消去をしなくてもOK）。その他のミノはハードドロップ"
 msgstr ""
-"any-tspin (any, tspin0): T tetrominos must perform a T-Spin (all T-Spins,"
-" including Minis). Other tetrominos can only use harddrop."
+"tsz (tspin0): T tetrominos must perform a T-Spin (even if no lines are cleared). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:186
+#: ../../contents/cover/main.rst:186 ../../contents/path/main.rst:208
+msgid "tsm (tspinm): Tミノは必ずT-Spin Single,Double,Tripe(Miniを含む)をする。その他のミノはハードドロップ"
+msgstr ""
+"tsm (tspinm): T tetrominos must perform a T-Spin Single, Double, or "
+"Triple (while also being T-Spin Minis). Other tetrominos can only use harddrop."
+
+#: ../../contents/cover/main.rst:187 ../../contents/path/main.rst:209
 msgid ""
 "tss (tspin1): Tミノは必ずT-Spin "
 "Single,Double,Tripe(Miniは含まない)をする。その他のミノはハードドロップ"
@@ -943,91 +948,92 @@ msgstr ""
 "tss (tspin1): T tetrominos must perform a T-Spin Single, Double, or "
 "Triple (excluding Minis). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:187
+#: ../../contents/cover/main.rst:188 ../../contents/path/main.rst:210
 msgid "tsd (tspin2): Tミノは必ずT-Spin Double,Tripe(Miniは含まない)をする。その他のミノはハードドロップ"
 msgstr ""
 "tsd (tspin2): T tetrominos must perform a T-Spin Double, or Triple "
 "(excluding Minis). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:188
+#: ../../contents/cover/main.rst:189 ../../contents/path/main.rst:211
 msgid "tst (tspin3): Tミノは必ずT-Spin Tripe(Miniは含まない)をする。その他のミノはハードドロップ"
 msgstr ""
 "tst (tspin3): T tetrominos must perform a T-Spin Triple (excluding "
 "Minis). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:190 ../../contents/path/main.rst:212
+#: ../../contents/cover/main.rst:191
 msgid ""
-"※ T-Spin系のdropでは、「T-Spinできないケース」や「ライン消去が発生しないT-Spinになるケース」ではミノを置きません。 "
-"また、Tミノを使わないケースでは ``harddrop`` と同じになる点にご注意ください (solutionが省略されるわけではありません)。"
+"※ tspin0を除いたT-Spin系のdropでは、「T-Spinできないケース」や「ライン消去が発生しないT-"
+"Spinになるケース」ではミノを置きません。 また、Tミノを使わないケースでは ``harddrop`` と同じになる点にご注意ください "
+"(solutionが省略されるわけではありません)。"
 msgstr ""
-"※ For the drop options requiring T-spins, a tetromino will not be placed "
+"※ For the drop options requiring T-spins (aside from tspin0), a tetromino will not be placed "
 "if a T-Spin can't be done or it would be a T-spin only if lines were not "
-"cleared.Moreover, please note that they will be equivalent to "
+"cleared. Moreover, please note that they will be equivalent to "
 "``harddrop`` if T tetrominos are not used. (Solutions will not be "
 "omitted.(?)) (??)"
 
-#: ../../contents/cover/main.rst:195
+#: ../../contents/cover/main.rst:196
 msgid "``-m``, ``--mirror`` [default: no]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:197
+#: ../../contents/cover/main.rst:198
 msgid "``yes`` の場合、入力した組み方を左右に反転させた組み方も対象に加える。"
 msgstr "If set to ``yes``, the mirror of each setup will also be included."
 
-#: ../../contents/cover/main.rst:199
+#: ../../contents/cover/main.rst:200
 msgid "複数のテト譜を同時に指定した場合、すべての組み方が左右反転されます。"
 msgstr "When multiple fumen are assigned, all mirrored setups will be included."
 
-#: ../../contents/cover/main.rst:203
+#: ../../contents/cover/main.rst:204
 msgid "``-M``, ``--mode`` [default: normal]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:205
+#: ../../contents/cover/main.rst:206
 msgid "探索モードを変更します。モードを変更すると「成功とする条件」が変化します。 その結果、Outputに表示される数値が各条件に沿った値となります。"
 msgstr ""
 "Changes the mode of searching. The condition for success[ful cover] "
 "changes when the mode changes. The resulting data displayed in the output"
 " will follow all conditions.(??)"
 
-#: ../../contents/cover/main.rst:208
+#: ../../contents/cover/main.rst:209
 msgid "モードは以下からひとつ選択する。"
 msgstr "Pick one of the modes below."
 
-#: ../../contents/cover/main.rst:210
+#: ../../contents/cover/main.rst:211
 msgid "<Normal系>"
 msgstr "<Normal Modes>"
 
-#: ../../contents/cover/main.rst:213
+#: ../../contents/cover/main.rst:214
 msgid "指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider being able to place all tetrominos in their respective "
 "places successful"
 
-#: ../../contents/cover/main.rst:214
+#: ../../contents/cover/main.rst:215
 msgid "``Mode: 1L`` と同等のモードです"
 msgstr "equivalent to ``Mode: 1L``"
 
-#: ../../contents/cover/main.rst:219
+#: ../../contents/cover/main.rst:220
 msgid "1L (1line, 1lines) ~ 4L (4line, 4lines)"
 msgstr ""
 
-#: ../../contents/cover/main.rst:217
+#: ../../contents/cover/main.rst:218
 msgid "指定されたライン数以上での消去を許可された状況下で、指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider line clears above the selected line number, while also "
 "being able to place all tetrominos in their respective places successful"
 
-#: ../../contents/cover/main.rst:218
+#: ../../contents/cover/main.rst:219
 msgid "たとえば ``3L``　を指定した場合、3ライン or 4ライン が可能です"
 msgstr ""
 "For example, both 3 line and 4 line line clears are permitted under the "
 "``3L`` mode"
 
-#: ../../contents/cover/main.rst:219 ../../contents/cover/main.rst:224
+#: ../../contents/cover/main.rst:220 ../../contents/cover/main.rst:225
 msgid "ライン数は ``1~4`` の間で指定できます"
 msgstr "It is possible to specify line clear numbers ``1~4``"
 
-#: ../../contents/cover/main.rst:224
+#: ../../contents/cover/main.rst:225
 msgid ""
 "1L-OR-PC (1line-OR-PC, 1lines-OR-PC) ~ 4L-OR-PC (4line-OR-PC, 4lines-OR-"
 "PC)"
@@ -1035,201 +1041,199 @@ msgstr ""
 "1L-OR-PC (1line-OR-PC, 1lines-OR-PC) ~ 4L-OR-PC (4line-OR-PC, 4lines-OR-"
 "PC)"
 
-#: ../../contents/cover/main.rst:222
+#: ../../contents/cover/main.rst:223
 msgid "通常のライン消去 (``1L ~ 4L``) に加えて、Perfect Clearも許可します"
 msgstr ""
 "In addition to the line clear condition (``1L ~ 4L``), it also allows "
 "Perfect Clears"
 
-#: ../../contents/cover/main.rst:223
+#: ../../contents/cover/main.rst:224
 msgid "たとえば ``3L-OR-PC``　を指定した場合、3ライン or 4ライン or 任意のライン数のPC が可能です"
 msgstr ""
 "For example, when ``3L-OR-PC`` is selected, it is possible to do 3 line "
 "or 4 line line clears, or any number of lines with a PC"
 
-#: ../../contents/cover/main.rst:226
+#: ../../contents/cover/main.rst:227
 msgid "※ 上の3つのモードでは ``--max-softdrop`` ``--max-clearline`` をさらに指定できます"
 msgstr ""
 "※ The above 3 modes can be furthur restricted with ``--max-softdrop`` and"
 " ``--max-clearline``"
 
-#: ../../contents/cover/main.rst:229
+#: ../../contents/cover/main.rst:230
 msgid "<Tetris系>"
 msgstr "<Tetris Modes>"
 
-#: ../../contents/cover/main.rst:232
+#: ../../contents/cover/main.rst:233
 msgid "tetris"
 msgstr ""
 
-#: ../../contents/cover/main.rst:232
+#: ../../contents/cover/main.rst:233
 msgid "テトリス(4ライン消去)を1回以上しながら、指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider having at least one tetris (clearing 4 lines), while also "
 "being able to place all tetrominos in their respective places successful"
 
-#: ../../contents/cover/main.rst:233
+#: ../../contents/cover/main.rst:234
 msgid "途中でTetrisが含まれていれば、それ以外のミノでライン消去が発生しても成功となる"
 msgstr ""
 "If there is a tetris anywhere during placements, it will be successful "
 "even if other types of line clear are used"
 
-#: ../../contents/cover/main.rst:237
+#: ../../contents/cover/main.rst:238
 msgid "tetris-end"
 msgstr ""
 
-#: ../../contents/cover/main.rst:235
+#: ../../contents/cover/main.rst:236
 msgid "指定されたミノの置き場所通りにすべて置きながら、かつ最後の操作がテトリス(4ライン消去)にできれば成功とする"
 msgstr ""
 "Will consider being able to place all tetrominos in their respective "
 "places, while also having the last placement being a tetris (clearing 4 "
 "lines) successful"
 
-#: ../../contents/cover/main.rst:236
+#: ../../contents/cover/main.rst:237
 msgid "最後がTetrisであれば、それ以外のミノでライン消去が発生しても成功となる"
 msgstr ""
 "If there is a tetris at the end, it will be successful even if other "
 "types of line clear are used"
 
-#: ../../contents/cover/main.rst:239
+#: ../../contents/cover/main.rst:240
 msgid "<T-Spin系>"
 msgstr "<T-Spin Mode>"
 
-#: ../../contents/cover/main.rst:243
-msgid "any-tspin (any, tspin0)"
-msgstr ""
-
 #: ../../contents/cover/main.rst:242
-msgid "Tスピンを1回以上しながら、指定されたミノの置き場所通りにすべて置くことができれば成功とする"
+msgid ""
+"Tスピンを1回以上しながら、指定されたミノの置き場所通りにすべて置くことができれば成功とする。 "
+"途中で条件を満たしたTスピンを実現できれば、それ以外のミノでライン消去が発生しても成功となる。"
 msgstr ""
-"Will consider having at least one T-Spin, while also being able to place "
-"all tetrominos in their respective places successful"
+"If there are multiple T-Spins, it will return successful if all tetrominos are able to be placed in their positions."
+"As long as the T-Spin requirement is met, it will still return successful even if there are line clears by other tetrominos."
 
-#: ../../contents/cover/main.rst:243
-msgid "途中でTスピンが含まれていれば、それ以外のミノでライン消去が発生しても成功となる"
+#: ../../contents/cover/main.rst:245
+msgid "ライン消去を伴わないTスピンはカウントされませんので、ご注意ください。"
 msgstr ""
-"If there is a T-Spin anywhere during placements, it will be successful "
-"even if other types of line clear are used"
-
-#: ../../contents/cover/main.rst:244
-msgid "Tスピンは TSS,TSD,TST,Mini すべてが対象となる (ライン消去を伴わないTスピンはカウントされません)"
-msgstr ""
-"All TSS, TSD, TST, and Mini T-Spins are counted (T-Spins that do not "
-"clear any lines are not)"
-
-#: ../../contents/cover/main.rst:246
-msgid "tss (tspin1)"
-msgstr ""
-
-#: ../../contents/cover/main.rst:246 ../../contents/cover/main.rst:249
-#: ../../contents/cover/main.rst:252
-msgid "``any-tspin`` と同様"
-msgstr "Equivalent to ``any-tspin``"
 
 #: ../../contents/cover/main.rst:247
-msgid "ただし、TSS,TSD,TST が対象となる (Miniは含まれない)"
-msgstr "However, only TSS, TSD, and TST are counted (Minis are not counted)"
+msgid "tsm (tspinm, any-tspin, any)"
+msgstr ""
 
-#: ../../contents/cover/main.rst:249
-msgid "tsd (tspin2)"
+#: ../../contents/cover/main.rst:248
+msgid "Tスピンは TSS,TSD,TST,Mini が対象となる"
 msgstr ""
 
 #: ../../contents/cover/main.rst:250
-msgid "ただし、TSD,TST が対象となる (Miniは含まれない)"
-msgstr "However, only TSD and TST are counted (Minis are not counted)"
+msgid "tss (tspin1)"
+msgstr ""
+
+#: ../../contents/cover/main.rst:250 ../../contents/cover/main.rst:253
+#: ../../contents/cover/main.rst:256
+msgid "挙動は ``tsm`` と同様"
+msgstr "Equivalent to ``any-tspin``"
+
+#: ../../contents/cover/main.rst:251
+msgid "ただし、対象は TSS,TSD,TST となる (Miniは含まれない)"
+msgstr "However, only TSS, TSD, and TST are considered (not including Minis[?])"
+
+#: ../../contents/cover/main.rst:253
+msgid "tsd (tspin2)"
+msgstr ""
 
 #: ../../contents/cover/main.rst:254
+msgid "ただし、対象は TSD,TST となる (Miniは含まれない)"
+msgstr "However, only TSD and TST are considered (not including Minis)"
+
+#: ../../contents/cover/main.rst:258
 msgid "tst (tspin3)"
 msgstr ""
 
-#: ../../contents/cover/main.rst:253
-msgid "ただし、TST のみが対象となる (Miniは含まれない)"
-msgstr "However, only TST is counted (Minis are not counted)"
+#: ../../contents/cover/main.rst:257
+msgid "ただし、対象は TST となる (Miniは含まれない)"
+msgstr "However, only TST is considered (not including Minis)"
 
-#: ../../contents/cover/main.rst:256
+#: ../../contents/cover/main.rst:260
 msgid "<B2B系>"
 msgstr "<B2B Modes>"
 
-#: ../../contents/cover/main.rst:261
+#: ../../contents/cover/main.rst:265
 msgid "b2b"
 msgstr ""
 
-#: ../../contents/cover/main.rst:259
+#: ../../contents/cover/main.rst:263
 msgid "B2Bを継続したまま、指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider preserving B2B, while also being able to place all "
 "tetrominos in their respective places successful"
 
-#: ../../contents/cover/main.rst:260
+#: ../../contents/cover/main.rst:264
 msgid "つまり、途中でテトリス or Tスピン以外でライン消去が発生する場合は失敗となる"
 msgstr ""
 "In other words, having any line clears other than tetris or T-Spins will "
 "result in failure"
 
-#: ../../contents/cover/main.rst:264
+#: ../../contents/cover/main.rst:268
 msgid "``-sb``, ``--starting-b2b`` [default: 0]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:266
-msgid "``mode`` が ``any-tspin`` ``tss`` ``tsd`` ``tst`` の場合に、使用されるオプションです。"
+#: ../../contents/cover/main.rst:270
+msgid "``mode`` が ``tsm`` ``tss`` ``tsd`` ``tst`` の場合に、使用されるオプションです。"
 msgstr ""
 "Option used when ``mode`` is set to ``any-tspin``, ``tss``, ``tsd``, or "
 "``tst``."
 
-#: ../../contents/cover/main.rst:268
+#: ../../contents/cover/main.rst:272
 msgid "このオプションで指定した回数以上、開始直後からTスピン・テトリスを連続して成功させる必要があります。"
 msgstr ""
 "Makes it necessary to have at least the specified amount of consecutive "
 "T-Spin ot Tetris line clears in the option."
 
-#: ../../contents/cover/main.rst:270
-msgid "以下に ``-M any-tspin -sb 2`` で、ライン消去が起きた場合の例を記載します。"
+#: ../../contents/cover/main.rst:274
+msgid "以下に ``-M tsm -sb 2`` で、ライン消去が起きた場合の例を記載します。"
 msgstr ""
 "The following cases are examples of line clears under ``-M any-tspin -sb "
 "2``."
 
-#: ../../contents/cover/main.rst:272
+#: ../../contents/cover/main.rst:276
 msgid "START -> 3ライン : 失敗"
 msgstr "START -> 3 line : Failure"
 
-#: ../../contents/cover/main.rst:273
+#: ../../contents/cover/main.rst:277
 msgid "START -> TSS -> 3ライン : 失敗"
 msgstr "START -> TSS -> 3 line : Failure"
 
-#: ../../contents/cover/main.rst:274
+#: ../../contents/cover/main.rst:278
 msgid "START -> TSS -> TSS -> 3ライン : 成功"
 msgstr "START -> TSS -> TSS -> 3 line : Success"
 
-#: ../../contents/cover/main.rst:275
+#: ../../contents/cover/main.rst:279
 msgid "START -> 4ライン -> TSS : 成功"
 msgstr "START -> 4 line -> TSS : Success"
 
-#: ../../contents/cover/main.rst:276
+#: ../../contents/cover/main.rst:280
 msgid "START -> 4ライン -> 4ライン -> END : 失敗 (T-Spinが必須なモードを指定しているため)"
 msgstr ""
 "START -> 4 line -> 4 line -> END : Failure (since the current mode "
 "requires a T-Spin)"
 
-#: ../../contents/cover/main.rst:277
+#: ../../contents/cover/main.rst:281
 msgid "START -> 4ライン -> 4ライン -> TSS : 成功"
 msgstr "START -> 4 line -> 4 line -> TSS : Success"
 
-#: ../../contents/cover/main.rst:279
+#: ../../contents/cover/main.rst:283
 msgid "``0`` の場合は、開始直後にライン消去しても成功となります。"
 msgstr ""
 "When set to ``0``, it will be successful even if B2B is immediately "
 "broken at the start by line clear."
 
-#: ../../contents/cover/main.rst:282
+#: ../../contents/cover/main.rst:286
 msgid "``-P``, ``--priority`` [default: no]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:284
+#: ../../contents/cover/main.rst:288
 msgid "入力されるテト譜に優先度を設定し、1つのツモ順につき1つの組み方だけを成功にします。"
 msgstr ""
 "Setting to prioritize fumens, with 1 sequence only being successful for "
 "at most 1 setup."
 
-#: ../../contents/cover/main.rst:286
+#: ../../contents/cover/main.rst:290
 msgid ""
 "なお、優先度はテト譜の入力順によって決まり、先頭にあるテト譜の優先度が最も高く、末尾にあるテト譜の優先度が最も低くなります。 ``-P yes``"
 " の場合、優先度の高い組み方から成功/失敗が判定され、一番はじめに条件を満たしたテト譜のみを成功となります。"
@@ -1240,13 +1244,13 @@ msgstr ""
 "evaluated first, with the sequence being marked successful for its first "
 "buildable setup."
 
-#: ../../contents/cover/main.rst:290
+#: ../../contents/cover/main.rst:294
 msgid "たとえば ``-t テト譜A テト譜B テト譜C`` を入力し、``TIOSZLJ`` はすべてのテト譜で組めるとします。"
 msgstr ""
 "For example, when inputting ``-t fumenA fumenB fumenC``, where all setups"
 " are buildable by ``TIOSZLJ``,"
 
-#: ../../contents/cover/main.rst:292
+#: ../../contents/cover/main.rst:296
 msgid ""
 "このとき、``-P no`` ではすべて成功 (``TIOSZLJ,O,O,O``) となりますが、 ``-P yes`` ではテト譜Aのみ成功 "
 "(``TIOSZLJ,O,X,X``) となります。"
@@ -1255,11 +1259,11 @@ msgstr ""
 "(``TIOSZLJ,O,O,O``), while ``-P yes`` will only show fumenA being "
 "successful (``TIOSZLJ,O,X,X``)."
 
-#: ../../contents/cover/main.rst:297
+#: ../../contents/cover/main.rst:301
 msgid "``-l``, ``--last-sd`` [default: 0]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:299
+#: ../../contents/cover/main.rst:303
 msgid ""
 "``--drop`` の設定によらず、ソフトドロップを有効にするタイミングを指定します。 "
 "数値には、残り何ミノでソフトドロップを有効にするかを入力します。"
@@ -1268,7 +1272,7 @@ msgstr ""
 "corresponds to how many tetrominos at the end are allowed to use softdrop"
 " for its placement."
 
-#: ../../contents/cover/main.rst:302
+#: ../../contents/cover/main.rst:306
 msgid ""
 "たとえば、`このテト譜 <http://fumen.zui.jp/?v115@ThE8BeA8BeF8LeTJJvhAUtB>`_ で "
 "``--drop harddrop --last-sd 1`` と指定したとします。 本来 ``--drop harddrop`` "
@@ -1283,113 +1287,113 @@ msgstr ""
 "softdrop. In short, in this example, the Z tetromino can be placed after "
 "O is placed."
 
-#: ../../contents/cover/main.rst:308
+#: ../../contents/cover/main.rst:312
 msgid "なお、テト譜ごとで必要なミノ数が異なる場合では、それぞれのテト譜で適用されるタイミングが変わります。"
 msgstr ""
 "Furthermore, if the number of tetrominos needed to build each fumen is "
 "different, when softdrop becomes allowed will change."
 
-#: ../../contents/cover/main.rst:310
+#: ../../contents/cover/main.rst:314
 msgid "たとえば、4ミノと3ミノの組み方を指定したケースでは、それぞれの組み方で3ミノ・2ミノ置いた後から適用されることになります。"
 msgstr ""
 "For example, for using 4 and 3 tetrominos, softdrop will be allowed after"
 " 3 and 2 tetrominos are placed respectively."
 
-#: ../../contents/cover/main.rst:314
+#: ../../contents/cover/main.rst:318
 msgid "``-ms``, ``--max-softdrop`` [default: -1]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:316
+#: ../../contents/cover/main.rst:320
 msgid "途中でSoftdropを使用できる最大の回数を指定できます。指定された回数もOKとなります。"
 msgstr ""
 "Sets the maximum number of times softdrop can be used. It is still "
 "successful when number of times softdrop is used is equal to the "
 "specified amount."
 
-#: ../../contents/cover/main.rst:318
+#: ../../contents/cover/main.rst:322
 msgid "指定された回数より多くのSoftdropを使用しないといけない置き方は失敗となります。"
 msgstr ""
 "If the number of times softdrop must be used is strictly larger than "
 "specified, it results in failure."
 
-#: ../../contents/cover/main.rst:320 ../../contents/cover/main.rst:332
+#: ../../contents/cover/main.rst:324 ../../contents/cover/main.rst:336
 msgid "このオプションは ``normal`` ``1L ~ 4L`` ``1L-OR-PC ~ 4L-OR-PC`` モードで有効となります。"
 msgstr ""
 "This option is valid for the modes ``normal``, ``1L ~ 4L``, and ``1L-OR-"
 "PC ~ 4L-OR-PC``."
 
-#: ../../contents/cover/main.rst:322
+#: ../../contents/cover/main.rst:326
 msgid "もし ``-1`` を指定した場合、Softdropの回数は制限されません。"
 msgstr ""
 "If set to ``-1``, there will not be a limit to the number of times "
 "softdrop is used."
 
-#: ../../contents/cover/main.rst:326
+#: ../../contents/cover/main.rst:330
 msgid "``-mc``, ``--max-clearline`` [default: -1]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:328
+#: ../../contents/cover/main.rst:332
 msgid "途中でライン消去しても良い最大の回数を指定できます。指定された回数もOKとなります。"
 msgstr ""
 "Sets the maximum number of line clears that can be done. It is still "
 "successful if the number of line clears equals to the specified "
 "value(inclusive)."
 
-#: ../../contents/cover/main.rst:330
+#: ../../contents/cover/main.rst:334
 msgid "指定された回数より多くのライン消去が発生する置き方は失敗となります。"
 msgstr ""
 "If number of line clears is strictly larger than specified, it results in"
 " failure."
 
-#: ../../contents/cover/main.rst:334
+#: ../../contents/cover/main.rst:338
 msgid "もし ``-1`` を指定した場合、ライン消去の回数は制限されません。"
 msgstr "If set to ``-1``, there will not be a limit to the number of line clears."
 
-#: ../../contents/cover/main.rst:338 ../../contents/util/fumen.rst:76
+#: ../../contents/cover/main.rst:342 ../../contents/util/fumen.rst:76
 msgid "``-o``, ``--output-base`` [default: output/cover.csv]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:340 ../../contents/ren/main.rst:93
+#: ../../contents/cover/main.rst:344 ../../contents/ren/main.rst:93
 #: ../../contents/setup/main.rst:495 ../../contents/spin/main.rst:255
 #: ../../contents/util/fumen.rst:78
 msgid "出力結果を保存するファイルのパスを指定する。"
 msgstr "Specifies the file path the resulting data is saved in."
 
-#: ../../contents/cover/main.rst:344 ../../contents/path/main.rst:259
+#: ../../contents/cover/main.rst:348 ../../contents/path/main.rst:260
 #: ../../contents/percent/main.rst:131 ../../contents/ren/main.rst:97
 #: ../../contents/setup/main.rst:501 ../../contents/spin/main.rst:271
 #: ../../contents/util/fig.rst:221 ../../contents/util/fumen.rst:82
 msgid "``-lp``, ``--log-path`` [default: output/last_output.txt]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:346 ../../contents/path/main.rst:261
+#: ../../contents/cover/main.rst:350 ../../contents/path/main.rst:262
 #: ../../contents/percent/main.rst:133 ../../contents/ren/main.rst:99
 #: ../../contents/setup/main.rst:503 ../../contents/spin/main.rst:273
 #: ../../contents/util/fig.rst:223 ../../contents/util/fumen.rst:84
 msgid "実行時のログを保存するファイルのパスを指定する。"
 msgstr "Specifies the file path the log during execution is saved in."
 
-#: ../../contents/cover/main.rst:350 ../../contents/path/main.rst:265
+#: ../../contents/cover/main.rst:354 ../../contents/path/main.rst:266
 #: ../../contents/percent/main.rst:137 ../../contents/ren/main.rst:103
 #: ../../contents/setup/main.rst:507 ../../contents/spin/main.rst:259
 #: ../../contents/util/fig.rst:227 ../../contents/util/fumen.rst:88
 msgid "``-fp``, ``--field-path`` [default: input/field.txt]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:352 ../../contents/path/main.rst:267
+#: ../../contents/cover/main.rst:356 ../../contents/path/main.rst:268
 #: ../../contents/percent/main.rst:139 ../../contents/ren/main.rst:105
 #: ../../contents/setup/main.rst:509 ../../contents/spin/main.rst:261
 #: ../../contents/util/fig.rst:229 ../../contents/util/fumen.rst:90
 msgid "フィールドを定義するファイルのパスを指定する。"
 msgstr "Specifies the file path that defines the field."
 
-#: ../../contents/cover/main.rst:356 ../../contents/path/main.rst:271
+#: ../../contents/cover/main.rst:360 ../../contents/path/main.rst:272
 #: ../../contents/percent/main.rst:143 ../../contents/ren/main.rst:109
 #: ../../contents/setup/main.rst:513 ../../contents/spin/main.rst:265
 msgid "``-pp``, ``--patterns-path`` [default: input/patterns.txt]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:358
+#: ../../contents/cover/main.rst:362
 msgid "組み合わせパターンを定義するファイルのパスを指定する。"
 msgstr "Specifies the file path that defines the combination of patterns used."
 
@@ -2394,8 +2398,7 @@ msgstr ""
 msgid "none: 1行につき、1つのパフェでの操作手順を記述した形式（旧csvフォーマット形式）"
 msgstr "none: 1 solve order per row(?) (old CSV format)"
 
-#: ../../contents/path/main.rst:149
-#: ../../contents/spin/main.rst:249
+#: ../../contents/path/main.rst:149 ../../contents/spin/main.rst:249
 msgid "CSVの詳細なフォーマットは :doc:`CSV形式<csv>` を参照してください。"
 msgstr "Please see :doc:`CSV format document<csv>` for the details of each format."
 
@@ -2497,81 +2500,73 @@ msgstr ""
 msgid "この機能を有効にする場合は ``true`` を指定してください。"
 msgstr "Change the setting to ``true`` to enable this functionality."
 
-#: ../../contents/path/main.rst:208
+#: ../../contents/path/main.rst:213
 msgid ""
-"tss (tspin1): Tミノは必ずT-Spin "
-"Single,Double,Triple(Miniは含まない)をする。その他のミノはハードドロップ"
+"※ tspin0を除いたT-Spin系のdropでは、「T-Spinできないケース」や「ライン消去が発生しないT-"
+"Spinになるケース」ではミノを置きません。 また、Tミノを使わないケースでは `harddrop` と同じになる点にご注意ください "
+"(solutionが省略されるわけではありません)。"
 msgstr ""
-"tss (tspin1): T tetrominos must perform a T-Spin Single, Double, or "
-"Triple (excluding Minis). Other tetrominos can only use harddrop."
+"※ For the drop options requiring T-spins, a tetromino will not be placed "
+"if a T-Spin can't be done or it would be a T-spin only if lines were not "
+"cleared.Moreover, please note that they will be equivalent to "
+"``harddrop`` if T tetrominos are not used. (Solutions will not be "
+"omitted.(?)) (??)"
 
-#: ../../contents/path/main.rst:209
-msgid "tsd (tspin2): Tミノは必ずT-Spin Double,Triple(Miniは含まない)をする。その他のミノはハードドロップ"
-msgstr ""
-"tsd (tspin2): T tetrominos must perform a T-Spin Double, or Triple "
-"(excluding Minis). Other tetrominos can only use harddrop."
-
-#: ../../contents/path/main.rst:210
-msgid "tst (tspin3): Tミノは必ずT-Spin Triple(Miniは含まない)をする。その他のミノはハードドロップ"
-msgstr ""
-"tst (tspin3): T tetrominos must perform a T-Spin Triple (excluding "
-"Minis). Other tetrominos can only use harddrop."
-
-#: ../../contents/path/main.rst:217 ../../contents/percent/main.rst:103
+#: ../../contents/path/main.rst:218 ../../contents/percent/main.rst:103
 msgid "``-th``, ``--threads`` [default: -1]"
 msgstr ""
 
-#: ../../contents/path/main.rst:219 ../../contents/percent/main.rst:105
+#: ../../contents/path/main.rst:220 ../../contents/percent/main.rst:105
 msgid "探索時に使用するスレッド数を指定します。"
 msgstr "Sets number of threads used when searching."
 
-#: ../../contents/path/main.rst:221 ../../contents/percent/main.rst:107
+#: ../../contents/path/main.rst:222 ../../contents/percent/main.rst:107
 msgid "``1`` を指定したとき、シングルスレッドでの探索となります。"
 msgstr "When set to ``1``, a single thread will be used."
 
-#: ../../contents/path/main.rst:223 ../../contents/percent/main.rst:109
+#: ../../contents/path/main.rst:224 ../../contents/percent/main.rst:109
 msgid "もし、0以下を指定した場合は、自動的に「実行環境のコア数」を設定します。"
 msgstr ""
 "If set below 0, it will automatically be set to the number of cores "
 "available."
 
-#: ../../contents/path/main.rst:227
+#: ../../contents/path/main.rst:228
 msgid "``-cb``, ``--cached-bit`` [default: 0]"
 msgstr ""
 
-#: ../../contents/path/main.rst:229
+#: ../../contents/path/main.rst:230
 msgid "内部のアルゴリズムで使用するキャッシュの最小ビットを指定します。"
 msgstr "Sets the minimum internal cache used by the algorithm."
 
-#: ../../contents/path/main.rst:231
+#: ../../contents/path/main.rst:232
 msgid "基本的にこの値を変更する必要はありません。"
 msgstr "Normally there's no need to change this value."
 
-#: ../../contents/path/main.rst:233
+#: ../../contents/path/main.rst:234
 msgid "実行環境で使用できるメモリが小さく、OutOfMemoryErrorが頻発して計算が続行できなくなる場合のみ、この値を変更してください。"
 msgstr ""
 "Please only change this value when there is frequently insufficient "
 "memory, and [SFinder is] unable to continue computing due to "
 "OutOfMemoryError."
 
-#: ../../contents/path/main.rst:235
+#: ../../contents/path/main.rst:236
 msgid "この数値を大きくすることで計算結果を保存せずにその都度計算するようになるため、実行時間が非常に長くなります。"
 msgstr ""
 "When a large value is set, since [SFinder] will have to calculate case-"
 "by-case without access to cached data(?), the computation time will "
 "increase significantly."
 
-#: ../../contents/path/main.rst:237
+#: ../../contents/path/main.rst:238
 msgid "そのため、値を調節するときは1ずつ大きくしていき、再実行して確認しながら調整してください。"
 msgstr ""
 "Therefore, please only increment the value by 1 and re-run [SFinder] each"
 " time [when an OutOfMemoryError occurs]."
 
-#: ../../contents/path/main.rst:241
+#: ../../contents/path/main.rst:242
 msgid "``-o``, ``--output-base`` [default: output/path.txt]"
 msgstr ""
 
-#: ../../contents/path/main.rst:243
+#: ../../contents/path/main.rst:244
 msgid "実行後に結果を出力するファイルのパスを指定する。 ただし、拡張子は出力形式によって変更される可能性があります。"
 msgstr ""
 "Sets the file path of the results after execution. However, the file "
@@ -2579,30 +2574,30 @@ msgstr ""
 "this mean that the file path overwrites the output format? I'm pretty "
 "sure this happens, wouldn't hurt to double-check)"
 
-#: ../../contents/path/main.rst:246
+#: ../../contents/path/main.rst:247
 msgid "実際は、このオプションで指定したファイル名 + suffix にあたるファイルとして出力されます。"
 msgstr ""
 "In fact, the output filename will be the set filename appended with a "
 "suffix."
 
-#: ../../contents/path/main.rst:248
+#: ../../contents/path/main.rst:249
 msgid "出力されるファイルは以下の通りです。"
 msgstr "The following are the files that will be output."
 
-#: ../../contents/path/main.rst:250
+#: ../../contents/path/main.rst:251
 msgid "指定したファイル名 + _unique に unique (重複をのぞいた手順) の結果が出力される。"
 msgstr ""
 "For results of unique (removes duplicated solutions), the file name will "
 "be ``<set filename> + _unique``."
 
-#: ../../contents/path/main.rst:251
+#: ../../contents/path/main.rst:252
 msgid "指定したファイル名 + _minimal に minimal (同じミノ順をカバーするパターンをのぞいた手順) の結果が出力される。"
 msgstr ""
 "For results of minimal (removes solutions with covered sequences that "
 "have all been covered by other sequences(?? long)), the file name will be"
 " ``<set filename> + _minimal``."
 
-#: ../../contents/path/main.rst:254
+#: ../../contents/path/main.rst:255
 msgid ""
 "``--format csv`` の場合に限り、 ``-`` を指定することで、CSVファイルと同じ結果を標準出力します。 特に ``--key "
 "none`` の場合は ``--max-layer`` によって出力されるCSVファイルが選択されます。"
@@ -2612,7 +2607,7 @@ msgstr ""
 "file through ``--max-layer`` while ``--key none`` is set. (?? I don't "
 "trust myself, check this functionality later)"
 
-#: ../../contents/path/main.rst:273 ../../contents/percent/main.rst:145
+#: ../../contents/path/main.rst:274 ../../contents/percent/main.rst:145
 #: ../../contents/ren/main.rst:111 ../../contents/setup/main.rst:515
 #: ../../contents/spin/main.rst:267
 msgid "探索の組み合わせパターンを定義するファイルのパスを指定する。"
@@ -4379,14 +4374,19 @@ msgstr "Output Format of CSV"
 msgid ""
 "出力例) ``spin --format csv -t v115@9gA8IeB8HeA8BeA8CeE8AeA8AeE8JeAgH -fb 0 "
 "-ft 2 -m 5 -c 2 -p ILTZ`` ::"
-msgstr "Output of this example: ``spin --format csv -t v115@9gA8IeB8HeA8BeA8CeE8AeA8AeE8JeAgH -fb 0 -ft 2 -m 5 -c 2 -p ILTZ`` ::"
+msgstr ""
+"Output of this example: ``spin --format csv -t "
+"v115@9gA8IeB8HeA8BeA8CeE8AeA8AeE8JeAgH -fb 0 -ft 2 -m 5 -c 2 -p ILTZ`` ::"
 
 #: ../../contents/spin/csv.rst:6
 msgid ""
 "テト譜,有効マーク,使用ミノ,使用ミノ数,T-Spinライン数,MINI,名前,トータルクリアライン数,hole,t-rotate,t-x,t-y,t"
 "-deleted-linekey\n"
 "http://fumen.zui.jp/?v115@zgzhFeA8IeB8wwGeA8xwA8ilE8wwA8glE8JeAgWDA0?SdBA,O,TLI,3,2,X,ISO,2,3,L,2,1,0"
-msgstr "Fumen,Usability,Used Tetrominos,Tetromino Count,T-Spin Lines,MINI,Name,Total lines cleared,hole,t-rotate,t-x,t-y,t-deleted-linekey\n"
+msgstr ""
+"Fumen,Usability,Used Tetrominos,Tetromino Count,T-Spin "
+"Lines,MINI,Name,Total lines cleared,hole,t-rotate,t-x,t-y,t-deleted-"
+"linekey\n"
 "http://fumen.zui.jp/?v115@zgzhFeA8IeB8wwGeA8xwA8ilE8wwA8glE8JeAgWDA0?SdBA,O,TLI,3,2,X,ISO,2,3,L,2,1,0"
 
 #: ../../contents/spin/csv.rst:14
@@ -4397,7 +4397,8 @@ msgstr "Fumen representing the solution(?)"
 msgid ""
 "``http://fumen.zui.jp/?v115@zgzhFeA8IeB8wwGeA8xwA8ilE8wwA8glE8JeAgWDA0?SdBA``"
 " その行の対象となる手順のテト譜リンク"
-msgstr "``http://fumen.zui.jp/?v115@zgzhFeA8IeB8wwGeA8xwA8ilE8wwA8glE8JeAgWDA0?SdBA``"
+msgstr ""
+"``http://fumen.zui.jp/?v115@zgzhFeA8IeB8wwGeA8xwA8ilE8wwA8glE8JeAgWDA0?SdBA``"
 " is the fumen link to the solution(?) used for this row"
 
 #: ../../contents/spin/csv.rst:22
@@ -4406,7 +4407,9 @@ msgstr "Usability(?)"
 
 #: ../../contents/spin/csv.rst:19
 msgid "HTMLでの結果における「先頭のマーク」と同様で、実際に組むことができるか・Tスピンできるかを表します"
-msgstr "Shows if the field can be built/a T-Spin occurs, which is in the same format as the 'Starting Mark' in the HTML format."
+msgstr ""
+"Shows if the field can be built/a T-Spin occurs, which is in the same "
+"format as the 'Starting Mark' in the HTML format."
 
 #: ../../contents/spin/csv.rst:20
 msgid "マークの説明は :ref:`spin-output-html-label` を参照してください"
@@ -4454,7 +4457,9 @@ msgstr "Will be ``O`` when the T-Spin is MINI, and ``X`` otherwise"
 
 #: ../../contents/spin/csv.rst:41
 msgid "MINIかどうかの具体的な判定基準は :ref:`spin-output-html-label` を参照してください"
-msgstr "Please see :ref:`spin-output-html-label` for what counts as a MINI [T-Spin]. (?? There isn't a definition there yet)"
+msgstr ""
+"Please see :ref:`spin-output-html-label` for what counts as a MINI "
+"[T-Spin]. (?? There isn't a definition there yet)"
 
 #: ../../contents/spin/csv.rst:43
 msgid "``X`` MINIではない"
@@ -4466,7 +4471,9 @@ msgstr "Name"
 
 #: ../../contents/spin/csv.rst:46
 msgid "Tスピンに特殊な名前がついているとき出力します。名前がない場合は空白となります"
-msgstr "Outputs the special name of the T-Spin if it exists, and is empty if there is no specific name"
+msgstr ""
+"Outputs the special name of the T-Spin if it exists, and is empty if "
+"there is no specific name"
 
 #: ../../contents/spin/csv.rst:47
 msgid "取りうる値: ``FIN`` ``NEO`` ``ISO`` ``(empty)``"
@@ -4486,7 +4493,9 @@ msgstr "The total number of lines cleared in the solution"
 
 #: ../../contents/spin/csv.rst:54
 msgid "``2`` 全体で2ライン消去する（この例では、Tスピン以外で消去されるラインがない）"
-msgstr "``2`` means there are 2 lines cleared in total (In this example, there are no lines cleared that were not from T-Spins)"
+msgstr ""
+"``2`` means there are 2 lines cleared in total (In this example, there "
+"are no lines cleared that were not from T-Spins)"
 
 #: ../../contents/spin/csv.rst:59
 msgid "hole"
@@ -4495,8 +4504,9 @@ msgstr ""
 #: ../../contents/spin/csv.rst:57
 msgid "HTMLでの結果における「hole」で、Tスピン後の地形の穴の数（横穴も含む）"
 msgstr ""
-"The number of holes that remain after the T-Spin (including caves[, "
-"holes are defined as empty minos with a filled mino above it]), [which is the same as in HTML format]"
+"The number of holes that remain after the T-Spin (including caves[, holes"
+" are defined as empty minos with a filled mino above it]), [which is the "
+"same as in HTML format]"
 
 #: ../../contents/spin/csv.rst:59
 msgid "``3`` Tスピン後、3つの穴が残る手順である"
@@ -4512,7 +4522,9 @@ msgstr "Orientation of T tetromino during the T-Spin"
 
 #: ../../contents/spin/csv.rst:68
 msgid "``L`` T-Spinするとき、Tミノは1度左回転した状態である"
-msgstr "``L`` means the T tetromino is in the left orientation during the T-Spin(?? [When the T tetromino is placed])"
+msgstr ""
+"``L`` means the T tetromino is in the left orientation during the "
+"T-Spin(?? [When the T tetromino is placed])"
 
 #: ../../contents/spin/csv.rst:73
 msgid "t-x"
@@ -4524,7 +4536,9 @@ msgstr "The x-coordinate of the rotation axis of the T tetromino during the T-Sp
 
 #: ../../contents/spin/csv.rst:73
 msgid "``2`` T-Spinするとき、Tミノの回転軸は左端から3番目である"
-msgstr "``2`` means the T tetromino's rotation axis during the T-Spin is the on the x-coordinate 3, counting from the leftmost column"
+msgstr ""
+"``2`` means the T tetromino's rotation axis during the T-Spin is the on "
+"the x-coordinate 3, counting from the leftmost column"
 
 #: ../../contents/spin/csv.rst:79
 msgid "t-y"
@@ -4532,15 +4546,23 @@ msgstr ""
 
 #: ../../contents/spin/csv.rst:76
 msgid "手順上のすべてのミノをひとつにまとめたときの、T-SpinするTミノの回転軸のy座標"
-msgstr "Shows the y-coordinate of the rotation axis of the T tetromino during the T-Spin, where the coordinates are calculated from the unglued solution fumen."
+msgstr ""
+"Shows the y-coordinate of the rotation axis of the T tetromino during the"
+" T-Spin, where the coordinates are calculated from the unglued solution "
+"fumen."
 
 #: ../../contents/spin/csv.rst:77
 msgid "実際の手順上では、ライン消去によって座標がずれる可能性はあります（ミノの置く順番に依存する可能性があります）"
-msgstr "During the actual placement, the y-coordinate of the T-Spin may change (it will depend on placement order if [y-coordinate is] calculated when the T-Spin occurs [intead of from the unglued fumen])"
+msgstr ""
+"During the actual placement, the y-coordinate of the T-Spin may change "
+"(it will depend on placement order if [y-coordinate is] calculated when "
+"the T-Spin occurs [intead of from the unglued fumen])"
 
 #: ../../contents/spin/csv.rst:79
 msgid "``1`` T-Spinするとき、Tミノの回転軸は下から2番目である"
-msgstr "``1`` means the T tetromino's rotation axis is on the y-coordinate 2, counting from the bottommost row"
+msgstr ""
+"``1`` means the T tetromino's rotation axis is on the y-coordinate 2, "
+"counting from the bottommost row"
 
 #: ../../contents/spin/csv.rst:84
 msgid "t-deleted-linekey"
@@ -4552,15 +4574,21 @@ msgstr "**Will always be ``0`` for the current version (v1.30)**"
 
 #: ../../contents/spin/csv.rst:83
 msgid "手順上のすべてのミノをひとつにまとめたときの、Tミノを上下に分断するようなライン（T-SpinするTミノを置くために消えていないとならないライン）を示します"
-msgstr "Shows the number(?) of lines cleared (that must be cleared to T-Spin) which split the T tetromino in the unglued fumen"
+msgstr ""
+"Shows the number(?) of lines cleared (that must be cleared to T-Spin) "
+"which split the T tetromino in the unglued fumen"
 
 #: ../../contents/spin/csv.rst:84
 msgid "``0`` は、Tミノが上下に分離するようなライン消去が発生していないことを表します"
-msgstr "``0`` means that there are no line clears that split the T tetromino [in the unglued fumen]"
+msgstr ""
+"``0`` means that there are no line clears that split the T tetromino [in "
+"the unglued fumen]"
 
 #: ../../contents/spin/csv.rst:85
 msgid "0になる理由：現在のバージョンでは、このような解が探索対象となっていないため"
-msgstr "Why it's set to 0: The current version (v1.30) does not search for these types of solutions"
+msgstr ""
+"Why it's set to 0: The current version (v1.30) does not search for these "
+"types of solutions"
 
 #: ../../contents/spin/main.rst:3
 msgid "コマンド: spin"
@@ -4660,8 +4688,8 @@ msgstr "clear = Number of lines cleared that, not counting the ones from T-Spins
 #: ../../contents/spin/main.rst:56
 msgid "hole = Tスピン後の地形の穴の数（横穴も含む）"
 msgstr ""
-"hole = The number of holes that remain after the T-Spin (including caves[, "
-"holes are defined as empty minos with a filled mino above it])"
+"hole = The number of holes that remain after the T-Spin (including "
+"caves[, holes are defined as empty minos with a filled mino above it])"
 
 #: ../../contents/spin/main.rst:57
 msgid "piece = その解で使われたミノ数"
@@ -6155,3 +6183,4 @@ msgid "``percent`` の ``-fc 0 -td 1`` は、結果の表示を少なくする�
 msgstr ""
 "You can reduce the amount of output displayed for ``percent`` with ``-fc "
 "0 -td 1``."
+
