@@ -5862,7 +5862,7 @@ msgstr "``-n``, ``--num`` [default: none]"
 #: ../../contents/util/seq.rst:172
 msgid "変換後のシーケンスに対して、ミノの個数やホールドの回数の条件を満たすものだけを取り出します。"
 msgstr ""
-"Selects sequences after unfolding that satisfies conditions [involing "
+"Selects sequences after unfolding that satisfies conditions [involving "
 "comparing numbers,] such as the number of tetrominos contianed or the "
 "number of time hold is used."
 
