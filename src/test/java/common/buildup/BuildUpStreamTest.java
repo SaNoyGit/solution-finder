@@ -6,8 +6,9 @@ import common.datastore.Operations;
 import common.iterable.PermutationIterable;
 import common.parser.OperationInterpreter;
 import common.parser.OperationTransform;
-import concurrent.LockedReachableThreadLocal;
-import core.action.reachable.LockedReachable;
+import concurrent.ILockedReachableThreadLocal;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.column_field.ColumnField;
 import core.field.Field;
 import core.field.FieldFactory;
@@ -16,6 +17,7 @@ import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.Randoms;
 import module.LongTest;
 import org.junit.jupiter.api.Test;
@@ -50,8 +52,8 @@ class BuildUpStreamTest {
         int height = 4;
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, height);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
 
         // Create OperationWithKey List
         Field field = FieldFactory.createField("" +
@@ -81,8 +83,8 @@ class BuildUpStreamTest {
         int height = 4;
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, height);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
 
         // Create OperationWithKey List
         Field field = FieldFactory.createField("" +
@@ -114,7 +116,7 @@ class BuildUpStreamTest {
         Randoms randoms = new Randoms();
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
 
         // Define size
         int height = 4;
@@ -124,7 +126,7 @@ class BuildUpStreamTest {
 
         // Create basic solutions
         TaskResultHelper taskResultHelper = new Field4x10MinoPackingHelper();
-        LockedReachableThreadLocal lockedReachableThreadLocal = new LockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height);
+        ILockedReachableThreadLocal lockedReachableThreadLocal = new ILockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height, false);
         Predicate<ColumnField> memorizedPredicate = (columnField) -> true;
         OnDemandBasicSolutions basicSolutions = new OnDemandBasicSolutions(separableMinos, sizedBit, memorizedPredicate);
 
@@ -150,7 +152,7 @@ class BuildUpStreamTest {
                         .collect(Collectors.toCollection(LinkedList::new));
 
                 // Create Pieces
-                LockedReachable reachable = lockedReachableThreadLocal.get();
+                ILockedReachable reachable = lockedReachableThreadLocal.get();
                 Set<List<MinoOperationWithKey>> valid = new BuildUpStream(reachable, height)
                         .existsValidBuildPattern(field, operationWithKeys)
                         .collect(Collectors.toSet());
@@ -180,7 +182,7 @@ class BuildUpStreamTest {
         Randoms randoms = new Randoms();
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
 
         // Define size
         int height = 4;
@@ -190,7 +192,7 @@ class BuildUpStreamTest {
 
         // Create basic solutions
         TaskResultHelper taskResultHelper = new Field4x10MinoPackingHelper();
-        LockedReachableThreadLocal lockedReachableThreadLocal = new LockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height);
+        ILockedReachableThreadLocal lockedReachableThreadLocal = new ILockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height, false);
         Predicate<ColumnField> memorizedPredicate = (columnField) -> true;
         OnDemandBasicSolutions basicSolutions = new OnDemandBasicSolutions(separableMinos, sizedBit, memorizedPredicate);
 
@@ -216,7 +218,7 @@ class BuildUpStreamTest {
                         .collect(Collectors.toCollection(LinkedList::new));
 
                 // Create Pieces
-                LockedReachable reachable = lockedReachableThreadLocal.get();
+                ILockedReachable reachable = lockedReachableThreadLocal.get();
                 Set<List<MinoOperationWithKey>> valid = new BuildUpStream(reachable, height)
                         .existsValidBuildPattern(field, operationWithKeys)
                         .collect(Collectors.toSet());
@@ -239,7 +241,7 @@ class BuildUpStreamTest {
         }
     }
 
-    private SolutionFilter createRandomSolutionFilter(Randoms randoms, SizedBit sizedBit, LockedReachableThreadLocal lockedReachableThreadLocal, Field field) {
+    private SolutionFilter createRandomSolutionFilter(Randoms randoms, SizedBit sizedBit, ILockedReachableThreadLocal lockedReachableThreadLocal, Field field) {
         if (randoms.nextBoolean(0.3))
             return new SRSValidSolutionFilter(field, lockedReachableThreadLocal, sizedBit);
         else

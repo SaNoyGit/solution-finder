@@ -13,6 +13,7 @@ import core.mino.Piece;
 import core.neighbor.SimpleOriginalPiece;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import org.junit.jupiter.api.Test;
 import searcher.spins.candidates.CandidateWithMask;
 import searcher.spins.pieces.MinimalSimpleOriginalPieces;
@@ -32,7 +33,7 @@ class RoofRunnerTest {
         int fieldHeight = 8;
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         SimpleOriginalPieceFactory factory = new SimpleOriginalPieceFactory(minoFactory, minoShifter, fieldHeight);
         Field initField = FieldFactory.createField("" +
                         "XX_XXXX_XX" +
@@ -41,7 +42,7 @@ class RoofRunnerTest {
                 , fieldHeight);
         MinimalSimpleOriginalPieces minimalPieces = factory.createMinimalPieces(initField);
         Roofs roofs = new Roofs(minimalPieces);
-//        LockedReachableThreadLocal lockedReachableThreadLocal = new LockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, fieldHeight);
+//        ILockedReachableThreadLocal lockedReachableThreadLocal = new ILockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, fieldHeight);
         RotateReachableThreadLocal rotateReachableThreadLocal = new RotateReachableThreadLocal(minoFactory, minoShifter, minoRotation, fieldHeight);
         RoofRunner runner = new RoofRunner(roofs, rotateReachableThreadLocal, Integer.MAX_VALUE, fieldHeight);
 

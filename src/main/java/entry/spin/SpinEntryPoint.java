@@ -3,7 +3,7 @@ package entry.spin;
 import common.datastore.PieceCounter;
 import common.pattern.PatternGenerator;
 import common.tetfu.common.ColorConverter;
-import concurrent.LockedReachableThreadLocal;
+import concurrent.ILockedReachableThreadLocal;
 import concurrent.RotateReachableThreadLocal;
 import core.FinderConstant;
 import core.field.Field;
@@ -16,6 +16,7 @@ import core.srs.MinoRotation;
 import core.srs.MinoRotationDetail;
 import entry.EntryPoint;
 import entry.Verify;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import entry.path.output.FumenParser;
 import entry.path.output.MyFile;
 import entry.path.output.OneFumenParser;
@@ -147,11 +148,12 @@ public class SpinEntryPoint implements EntryPoint {
         output();
 
         MinoFactory minoFactory = new MinoFactory();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         MinoRotationDetail minoRotationDetail = new MinoRotationDetail(minoFactory, minoRotation);
         MinoShifter minoShifter = new MinoShifter();
         ColorConverter colorConverter = new ColorConverter();
-        FumenParser fumenParser = createFumenParser(settings.isTetfuSplit(), minoFactory, colorConverter);
+        boolean use180Rotation = false;
+        FumenParser fumenParser = createFumenParser(settings.isTetfuSplit(), minoFactory, minoRotation, colorConverter, use180Rotation);
         RotateReachableThreadLocal rotateReachableThreadLocal = new RotateReachableThreadLocal(minoFactory, minoShifter, minoRotation, fieldHeight);
 
         Field initField = FieldFactory.createField(fieldHeight);
@@ -182,7 +184,7 @@ public class SpinEntryPoint implements EntryPoint {
 
         output("# Output");
 
-        LockedReachableThreadLocal lockedReachableThreadLocal = new LockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, fieldHeight);
+        ILockedReachableThreadLocal lockedReachableThreadLocal = new ILockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, fieldHeight, use180Rotation);
         SpinOutput output;
         switch (settings.getOutputType()) {
             case HTML: {
@@ -256,9 +258,11 @@ public class SpinEntryPoint implements EntryPoint {
         return path.substring(0, pointIndex);
     }
 
-    private FumenParser createFumenParser(boolean isTetfuSplit, MinoFactory minoFactory, ColorConverter colorConverter) {
+    private FumenParser createFumenParser(
+            boolean isTetfuSplit, MinoFactory minoFactory, MinoRotation minoRotation, ColorConverter colorConverter, boolean use180Rotation
+    ) {
         if (isTetfuSplit)
-            return new SequenceFumenParser(minoFactory, colorConverter);
+            return new SequenceFumenParser(minoFactory, minoRotation, colorConverter, use180Rotation);
         return new OneFumenParser(minoFactory, colorConverter);
     }
 

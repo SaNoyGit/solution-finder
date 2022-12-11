@@ -1,18 +1,20 @@
 package searcher.checker;
 
+import common.SyntaxException;
 import common.datastore.action.Action;
 import common.iterable.PermutationIterable;
 import common.pattern.LoadedPatternGenerator;
 import common.pattern.PatternGenerator;
 import common.tree.AnalyzeTree;
 import core.action.candidate.Candidate;
-import core.action.candidate.LockedCandidate;
+import core.action.candidate.CandidateFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import module.LongTest;
 import org.junit.jupiter.api.Test;
 import searcher.common.validator.PerfectValidator;
@@ -30,12 +32,12 @@ class CheckerUsingHoldCountTest {
         // Initialize
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         PerfectValidator validator = new PerfectValidator();
         CheckerUsingHold<Action> checker = new CheckerUsingHold<>(minoFactory, validator);
 
         // Measure
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
         AnalyzeTree tree = new AnalyzeTree();
 
         Iterable<List<Piece>> combinations = new PermutationIterable<>(pieces, popCount);
@@ -48,7 +50,7 @@ class CheckerUsingHoldCountTest {
     }
 
     @Test
-    void testGraceSystem() throws Exception {
+    void testGraceSystem() {
         // Invoker
         List<Piece> pieces = Arrays.asList(I, T, S, Z, J, L, O);
         int popCount = 4;
@@ -70,7 +72,7 @@ class CheckerUsingHoldCountTest {
     }
 
     @Test
-    void testTemplate() throws Exception {
+    void testTemplate() {
         // Invoker
         List<Piece> pieces = Arrays.asList(I, T, S, Z, J, L, O);
         int popCount = 4;
@@ -89,12 +91,12 @@ class CheckerUsingHoldCountTest {
         // Initialize
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         PerfectValidator validator = new PerfectValidator();
         CheckerUsingHold<Action> checker = new CheckerUsingHold<>(minoFactory, validator);
 
         // Measure
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
         AnalyzeTree tree = new AnalyzeTree();
         Iterable<List<Piece>> combinations = new PermutationIterable<>(pieces, popCount);
         for (List<Piece> combination : combinations) {
@@ -107,7 +109,7 @@ class CheckerUsingHoldCountTest {
     }
 
     @Test
-    void testTemplateWithHoldI() throws Exception {
+    void testTemplateWithHoldI() throws SyntaxException {
         // Invoker
         String pattern = "I, *p4";
         int maxClearLine = 4;
@@ -125,12 +127,12 @@ class CheckerUsingHoldCountTest {
         // Initialize
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         PerfectValidator validator = new PerfectValidator();
         CheckerUsingHold<Action> checker = new CheckerUsingHold<>(minoFactory, validator);
 
         // Measure
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
         AnalyzeTree tree = new AnalyzeTree();
 
         PatternGenerator generator = new LoadedPatternGenerator(pattern);
@@ -147,7 +149,7 @@ class CheckerUsingHoldCountTest {
 
     @Test
     @LongTest
-    void testAfter4Line() throws Exception {
+    void testAfter4Line() {
         // Invoker
         List<Piece> pieces = Arrays.asList(I, T, S, Z, J, L, O);
         int popCount = 7;
@@ -166,12 +168,12 @@ class CheckerUsingHoldCountTest {
         // Initialize
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         PerfectValidator validator = new PerfectValidator();
         CheckerUsingHold<Action> checker = new CheckerUsingHold<>(minoFactory, validator);
 
         // Measure
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
         AnalyzeTree tree = new AnalyzeTree();
         Iterable<List<Piece>> combinations = new PermutationIterable<>(pieces, popCount);
         for (List<Piece> combination : combinations) {
@@ -185,7 +187,7 @@ class CheckerUsingHoldCountTest {
 
     @Test
     @LongTest
-    void testBT4_5() throws Exception {
+    void testBT4_5() {
         // Invoker
         List<Piece> pieces = Arrays.asList(I, T, S, Z, J, L, O);
         int popCount = 7;
@@ -206,12 +208,12 @@ class CheckerUsingHoldCountTest {
         // Initialize
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         PerfectValidator validator = new PerfectValidator();
         CheckerUsingHold<Action> checker = new CheckerUsingHold<>(minoFactory, validator);
 
         // Measure
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
         AnalyzeTree tree = new AnalyzeTree();
         Iterable<List<Piece>> combinations = new PermutationIterable<>(pieces, popCount);
         for (List<Piece> combination : combinations) {

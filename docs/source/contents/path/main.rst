@@ -71,7 +71,8 @@ short    long                   default
 ``-L``   ``--max-layer``        2
 ``-so``   ``--specified-only``   yes
 ``-r``   ``--reserved``         false
-``-d``   ``--drop``             softdrop
+``-K``   ``--kicks``            srs
+``-d``   ``--drop``             soft
 ``-th``  ``--threads``          -1
 ``-cb``  ``--cached-bit``       0
 ``-o``   ``--output-base``      output/path.txt
@@ -192,7 +193,20 @@ noの場合、解自体から抽出したパターンをもとに、重複をチ
 この機能を有効にする場合は ``true`` を指定してください。
 
 
-``-d``, ``--drop`` [default: softdrop]
+``-K``, ``--kicks`` [default: srs]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+適用する回転法則を指定する。
+
+以下から操作方法をひとつ選択する。
+
+* srs (default): SRSに準拠した回転法則。90度回転のみ
+* @ファイル名: ``kicks/ファイル名.properties`` からKickテーブルを読み込みます ( ``@`` の代わりに ``+`` も利用可能です)
+
+なお、kicksファイルのフォーマットは :doc:`../inputs` を参照してください。
+
+
+``-d``, ``--drop`` [default: soft]
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ミノの操作に制限を加える。
@@ -201,7 +215,7 @@ noの場合、解自体から抽出したパターンをもとに、重複をチ
 
 * softdrop: ソフトドロップ＋回転入れ（制限なし）
 * harddrop: ハードドロップのみ
-* 180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino <https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します
+* 180 (softdrop180): ソフトドロップ＋180度回転入れ（使用するには、180度回転に対応したkicksを選択する必要があります）
 * t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ
 
 * tsz (tspin0): Tミノは必ずT-Spinをする（ライン消去をしなくてもOK）。その他のミノはハードドロップ

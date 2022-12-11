@@ -4,7 +4,7 @@ import common.cover.reachable.ReachableForCoverWrapper;
 import common.datastore.*;
 import common.parser.BlockInterpreter;
 import common.parser.OperationTransform;
-import core.action.reachable.LockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.Mino;
@@ -13,6 +13,7 @@ import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -24,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class TetrisCoverTest {
     private final MinoFactory minoFactory = new MinoFactory();
     private final MinoShifter minoShifter = new MinoShifter();
-    private final MinoRotation minoRotation = MinoRotation.create();
+    private final MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
 
     @Test
     void cansBuild() {
@@ -41,7 +42,7 @@ class TetrisCoverTest {
                 new SimpleOperation(Piece.I, Rotate.Left, 0, 1)
         );
         List<MinoOperationWithKey> operationsWithKey = toMinoOperationWithKey(operationList, field, height);
-        ReachableForCoverWrapper reachable = new ReachableForCoverWrapper(new LockedReachable(minoFactory, minoShifter, minoRotation, height));
+        ReachableForCoverWrapper reachable = new ReachableForCoverWrapper(ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, height));
 
         TetrisCover cover = new TetrisCover();
 
@@ -116,7 +117,7 @@ class TetrisCoverTest {
                 new SimpleOperation(Piece.I, Rotate.Left, 0, 1)
         );
         List<MinoOperationWithKey> operationsWithKey = toMinoOperationWithKey(operationList, field, height);
-        ReachableForCoverWrapper reachable = new ReachableForCoverWrapper(new LockedReachable(minoFactory, minoShifter, minoRotation, height));
+        ReachableForCoverWrapper reachable = new ReachableForCoverWrapper(ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, height));
 
         TetrisCover cover = new TetrisCover();
 

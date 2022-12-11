@@ -49,7 +49,6 @@ public class PercentSettingParser extends SettingParser<PercentSettings> {
                 PercentOptions.Fumen.optName(),
                 PercentOptions.FieldPath.optName(),
                 DEFAULT_FIELD_TXT,
-                Charset.forName(CHARSET_NAME),
                 Optional::of,
                 fieldLines -> {
                     try {
@@ -100,6 +99,10 @@ public class PercentSettingParser extends SettingParser<PercentSettings> {
                 Charset.forName(CHARSET_NAME)
         );
         settings.setPatterns(patterns);
+
+        // Load kicks
+        Optional<String> kicks = wrapper.getStringOption(PercentOptions.Kicks.optName());
+        kicks.ifPresent(settings::setKicks);
 
         // ドロップの設定
         Optional<String> dropType = wrapper.getStringOption(PercentOptions.Drop.optName());

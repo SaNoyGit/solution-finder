@@ -6,7 +6,7 @@ import common.datastore.MinoOperationWithKey;
 import common.datastore.Operation;
 import common.datastore.Operations;
 import common.datastore.SimpleOperation;
-import concurrent.LockedReachableThreadLocal;
+import concurrent.ILockedReachableThreadLocal;
 import core.column_field.ColumnField;
 import core.field.Field;
 import core.field.FieldFactory;
@@ -17,6 +17,7 @@ import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.ListComparator;
 import lib.Randoms;
 import module.LongTest;
@@ -200,7 +201,7 @@ class OperationTransformTest {
         Randoms randoms = new Randoms();
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
 
         // Define size
         int height = 4;
@@ -210,7 +211,7 @@ class OperationTransformTest {
 
         // Create basic solutions
         TaskResultHelper taskResultHelper = new Field4x10MinoPackingHelper();
-        LockedReachableThreadLocal lockedReachableThreadLocal = new LockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height);
+        ILockedReachableThreadLocal lockedReachableThreadLocal = new ILockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height, false);
         Predicate<ColumnField> memorizedPredicate = (columnField) -> true;
         OnDemandBasicSolutions basicSolutions = new OnDemandBasicSolutions(separableMinos, sizedBit, memorizedPredicate);
 

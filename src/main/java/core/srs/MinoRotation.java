@@ -4,10 +4,6 @@ import core.field.Field;
 import core.mino.Mino;
 
 public interface MinoRotation {
-    static MinoRotation create() {
-        return new MinoRotationImpl();
-    }
-
     int[] getKicks(Field field, Mino before, Mino after, int x, int y, RotateDirection direction);
 
     int[] getKicksWithRightRotation(Field field, Mino before, Mino after, int x, int y);
@@ -23,4 +19,12 @@ public interface MinoRotation {
     int[][] getLeftPatternsFrom(Mino current);
 
     int[][] getRotate180PatternsFrom(Mino current);
+
+    boolean isPrivilegeSpins(Mino before, RotateDirection direction, int testPatternIndex);
+
+    default boolean noSupports180() {
+        return !supports180();
+    }
+
+    boolean supports180();
 }

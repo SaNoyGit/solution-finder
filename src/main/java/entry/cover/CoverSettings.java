@@ -1,11 +1,15 @@
 package entry.cover;
 
+import core.srs.MinoRotation;
 import entry.DropType;
+import entry.common.kicks.NamedSupplierMinoRotation;
+import entry.common.option.OptionsFacade;
 import exceptions.FinderParseException;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 public class CoverSettings {
     private static final String DEFAULT_LOG_FILE_PATH = "output/last_output.txt";
@@ -23,6 +27,7 @@ public class CoverSettings {
     private int startingB2B = 0;
     private int maxSoftdropTimes = -1;
     private int maxClearLineTimes = -1;
+    private NamedSupplierMinoRotation namedSupplierMinoRotation = NamedSupplierMinoRotation.createDefault();
 
     // ********* Getter ************
     boolean isUsingHold() {
@@ -73,6 +78,14 @@ public class CoverSettings {
         return 0 <= maxClearLineTimes ? Optional.of(maxClearLineTimes) : Optional.empty();
     }
 
+    String getKicksName() {
+        return namedSupplierMinoRotation.getName();
+    }
+
+    Supplier<MinoRotation> createMinoRotationSupplier() {
+        return namedSupplierMinoRotation.getSupplier();
+    }
+
     // ********* Setter ************
     void setUsingHold(Boolean isUsingHold) {
         this.isUsingHold = isUsingHold;
@@ -113,7 +126,8 @@ public class CoverSettings {
                 this.dropType = DropType.Harddrop;
                 return;
             case "180":
-                this.dropType = DropType.Rotation180;
+            case "softdrop180":
+                this.dropType = DropType.Softdrop180;
                 return;
             case "tsoft":
             case "tsoftdrop":
@@ -241,5 +255,9 @@ public class CoverSettings {
 
     void setMaxClearLineTimes(int maxClearLineTimes) {
         this.maxClearLineTimes = maxClearLineTimes;
+    }
+
+    void setKicks(String name) {
+        namedSupplierMinoRotation = OptionsFacade.createNamedMinoRotationSupplier(name);
     }
 }

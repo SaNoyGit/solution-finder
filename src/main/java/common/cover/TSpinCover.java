@@ -4,7 +4,8 @@ import common.SpinChecker;
 import common.cover.reachable.ReachableForCover;
 import common.datastore.MinoOperationWithKey;
 import common.datastore.SimpleMinoOperation;
-import core.action.reachable.LockedReachable;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.KeyOperators;
 import core.mino.Mino;
@@ -47,37 +48,36 @@ public class TSpinCover implements Cover {
         }
     }
 
-    public static TSpinCover createRegularTSpinCover(int requiredTSpinLine, boolean use180Rotation) {
-        return createRegularTSpinCover(requiredTSpinLine, 0, use180Rotation);
+    public static TSpinCover createRegularTSpinCover(MinoRotation minoRotation, int requiredTSpinLine, boolean use180Rotation) {
+        return createRegularTSpinCover(minoRotation, requiredTSpinLine, 0, use180Rotation);
     }
 
-    public static TSpinCover createRegularTSpinCover(int requiredTSpinLine, int b2bContinuousAfterStart, boolean use180Rotation) {
+    public static TSpinCover createRegularTSpinCover(MinoRotation minoRotation, int requiredTSpinLine, int b2bContinuousAfterStart, boolean use180Rotation) {
         TSpinCondition tSpinCondition = new RegularTSpinCondition(requiredTSpinLine);
         TSpinGuard tSpinGuard = new TSpinGuard(b2bContinuousAfterStart);
-        return new TSpinCover(tSpinCondition, tSpinGuard, use180Rotation);
+        return new TSpinCover(minoRotation, tSpinCondition, tSpinGuard, use180Rotation);
     }
 
-    public static TSpinCover createTSpinMiniCover(boolean use180Rotation) {
-        return createTSpinMiniCover(use180Rotation, 0);
+    public static TSpinCover createTSpinMiniCover(MinoRotation minoRotation, boolean use180Rotation) {
+        return createTSpinMiniCover(minoRotation, use180Rotation, 0);
     }
 
-    public static TSpinCover createTSpinMiniCover(boolean use180Rotation, int b2bContinuousAfterStart) {
+    public static TSpinCover createTSpinMiniCover(MinoRotation minoRotation, boolean use180Rotation, int b2bContinuousAfterStart) {
         TSpinCondition tSpinCondition = new TSpinMiniCondition();
         TSpinGuard tSpinGuard = new TSpinGuard(b2bContinuousAfterStart);
-        return new TSpinCover(tSpinCondition, tSpinGuard, use180Rotation);
+        return new TSpinCover(minoRotation, tSpinCondition, tSpinGuard, use180Rotation);
     }
 
     private final SpinChecker spinChecker;
     private final TSpinCondition tSpinCondition;
     private final TSpinGuard initGuard;
 
-    private TSpinCover(TSpinCondition tSpinCondition, TSpinGuard initGuard, boolean use180Rotation) {
+    private TSpinCover(MinoRotation minoRotation, TSpinCondition tSpinCondition, TSpinGuard initGuard, boolean use180Rotation) {
         int maxY = 24;
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
         MinoRotationDetail minoRotationDetail = new MinoRotationDetail(minoFactory, minoRotation);
-        LockedReachable lockedReachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxY);
+        ILockedReachable lockedReachable = ReachableFacade.createLocked(minoFactory, minoShifter, minoRotation, maxY, use180Rotation);
         this.spinChecker = new SpinChecker(minoFactory, minoRotationDetail, lockedReachable, use180Rotation);
         this.initGuard = initGuard;
         this.tSpinCondition = tSpinCondition;
@@ -229,6 +229,7 @@ public class TSpinCover implements Cover {
 
         return piece != null && existsValidByOrderWithHold(field, eachBlocks, pieces, height, reachable, maxDepth, depth, piece, deleteKey, hold, guard);
     }
+
 
     private boolean existsValidByOrderWithHold(Field field, EnumMap<Piece, LinkedList<MinoOperationWithKey>> eachBlocks, List<Piece> pieces, int height, ReachableForCover reachable, int maxDepth, int depth, Piece usePiece, long deleteKey, Piece nextHoldPiece, TSpinGuard guard) {
         LinkedList<MinoOperationWithKey> operationWithKeys = eachBlocks.get(usePiece);

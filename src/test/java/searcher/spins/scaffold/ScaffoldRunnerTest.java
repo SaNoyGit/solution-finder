@@ -4,7 +4,8 @@ import common.buildup.BuildUp;
 import common.datastore.BlockField;
 import common.datastore.PieceCounter;
 import common.parser.OperationTransform;
-import core.action.reachable.LockedReachable;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.Mino;
@@ -12,8 +13,8 @@ import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.neighbor.SimpleOriginalPiece;
-import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import org.junit.jupiter.api.Test;
 import searcher.spins.pieces.Scaffolds;
 import searcher.spins.pieces.SimpleOriginalPieceFactory;
@@ -177,7 +178,7 @@ class ScaffoldRunnerTest {
     }
 
     private void verify(List<? extends ScaffoldResult> results, Field initField, int fieldHeight) {
-        LockedReachable reachable = new LockedReachable(new MinoFactory(), new MinoShifter(), MinoRotation.create(), fieldHeight);
+        ILockedReachable reachable = ReachableFacade.create90Locked(new MinoFactory(), new MinoShifter(), SRSMinoRotationFactory.createDefault(), fieldHeight);
 
         // BlockFieldに重複がない
         TreeSet<BlockField> blockFields = new TreeSet<>(BlockField::compareTo);

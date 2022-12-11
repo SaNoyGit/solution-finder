@@ -195,6 +195,8 @@ public class FigUtilSettings {
     }
 
     void setColorTheme(String colorTheme) {
-        this.colorTheme = colorTheme;
+        this.colorTheme = colorTheme.startsWith("@") || colorTheme.startsWith("+")
+                ? colorTheme.substring(1)
+                : colorTheme;
     }
 }

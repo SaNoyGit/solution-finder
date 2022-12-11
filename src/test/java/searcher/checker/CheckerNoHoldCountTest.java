@@ -6,13 +6,14 @@ import common.pattern.LoadedPatternGenerator;
 import common.pattern.PatternGenerator;
 import common.tree.AnalyzeTree;
 import core.action.candidate.Candidate;
-import core.action.candidate.LockedCandidate;
+import core.action.candidate.CandidateFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -29,12 +30,12 @@ class CheckerNoHoldCountTest {
         // Initialize
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         PerfectValidator validator = new PerfectValidator();
         CheckerNoHold<Action> checker = new CheckerNoHold<>(minoFactory, validator);
 
         // Measure
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
         AnalyzeTree tree = new AnalyzeTree();
 
         blocksGenerator.blocksStream()
@@ -131,14 +132,15 @@ class CheckerNoHoldCountTest {
 
     @Nested
     class BT {
-        private final int maxClearLine = 4;
-        private final int maxDepth = 6;
-        private final String pattern = "*p7";
+        private static final int MAX_CLEAR_LINE = 4;
+        private static final int MAX_DEPTH = 6;
+        private static final String PATTERN = "*p7";
+
         private PatternGenerator blocksGenerator;
 
         @BeforeEach
         void setUp() throws SyntaxException {
-            this.blocksGenerator = new LoadedPatternGenerator(pattern);
+            this.blocksGenerator = new LoadedPatternGenerator(PATTERN);
         }
 
         @Test
@@ -152,7 +154,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(1439 / 5040.0);
         }
 
@@ -167,7 +169,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(475 / 5040.0);
         }
 
@@ -182,7 +184,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(353 / 5040.0);
         }
 
@@ -197,7 +199,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(290 / 5040.0);
         }
 
@@ -212,7 +214,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(434 / 5040.0);
         }
 
@@ -227,7 +229,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(328 / 5040.0);
         }
 
@@ -242,7 +244,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(346 / 5040.0);
         }
 
@@ -257,7 +259,7 @@ class CheckerNoHoldCountTest {
                     "";
 
             // Source: twitter from @26_nameless 20170729
-            AnalyzeTree tree = runTestCase(blocksGenerator, maxClearLine, maxDepth, marks);
+            AnalyzeTree tree = runTestCase(blocksGenerator, MAX_CLEAR_LINE, MAX_DEPTH, marks);
             assertThat(tree.getSuccessPercent()).isEqualTo(843 / 5040.0);
         }
     }

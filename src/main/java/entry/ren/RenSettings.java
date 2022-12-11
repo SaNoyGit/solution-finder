@@ -2,11 +2,15 @@ package entry.ren;
 
 import core.field.Field;
 import core.field.FieldFactory;
+import core.srs.MinoRotation;
 import entry.DropType;
+import entry.common.kicks.NamedSupplierMinoRotation;
+import entry.common.option.OptionsFacade;
 import exceptions.FinderParseException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class RenSettings {
     private static final String DEFAULT_LOG_FILE_PATH = "output/last_output.txt";
@@ -18,6 +22,7 @@ public class RenSettings {
     private Field field = FieldFactory.createField(24);
     private List<String> patterns = new ArrayList<>();
     private DropType dropType = DropType.Softdrop;
+    private NamedSupplierMinoRotation namedSupplierMinoRotation = NamedSupplierMinoRotation.createDefault();
 
     // ********* Getter ************
     public boolean isUsingHold() {
@@ -46,6 +51,14 @@ public class RenSettings {
 
     DropType getDropType() {
         return dropType;
+    }
+
+    String getKicksName() {
+        return namedSupplierMinoRotation.getName();
+    }
+
+    Supplier<MinoRotation> createMinoRotationSupplier() {
+        return namedSupplierMinoRotation.getSupplier();
     }
 
     // ********* Setter ************
@@ -80,7 +93,8 @@ public class RenSettings {
                 this.dropType = DropType.Harddrop;
                 return;
             case "180":
-                this.dropType = DropType.Rotation180;
+            case "softdrop180":
+                this.dropType = DropType.Softdrop180;
                 return;
             case "tsoft":
             case "tsoftdrop":
@@ -93,5 +107,9 @@ public class RenSettings {
             default:
                 throw new FinderParseException("Unsupported droptype: type=" + type);
         }
+    }
+
+    void setKicks(String name) {
+        namedSupplierMinoRotation = OptionsFacade.createNamedMinoRotationSupplier(name);
     }
 }

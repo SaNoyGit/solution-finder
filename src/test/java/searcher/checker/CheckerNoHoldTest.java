@@ -9,14 +9,16 @@ import common.datastore.blocks.Pieces;
 import common.parser.BlockInterpreter;
 import common.parser.OperationTransform;
 import core.action.candidate.Candidate;
-import core.action.candidate.LockedCandidate;
-import core.action.reachable.LockedReachable;
+import core.action.candidate.CandidateFacade;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import module.LongTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -42,7 +44,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CheckerNoHoldTest {
     private final MinoFactory minoFactory = new MinoFactory();
     private final MinoShifter minoShifter = new MinoShifter();
-    private final MinoRotation minoRotation = MinoRotation.create();
+    private final MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
     private final PerfectValidator validator = new PerfectValidator();
     private final CheckerNoHold<Action> checker = new CheckerNoHold<>(minoFactory, validator);
 
@@ -56,7 +58,7 @@ class CheckerNoHoldTest {
         return new Operations(ResultHelper.createOperationStream(result));
     }
 
-    private void assertResult(Field field, int maxClearLine, LockedReachable reachable, List<Piece> pieces) {
+    private void assertResult(Field field, int maxClearLine, ILockedReachable reachable, List<Piece> pieces) {
         Result result = checker.getResult();
 
         // Check pieces is same
@@ -71,7 +73,7 @@ class CheckerNoHoldTest {
     }
 
     @Test
-    void testGraceSystem() throws Exception {
+    void testGraceSystem() {
         List<Pair<List<Piece>, Boolean>> testCases = new ArrayList<Pair<List<Piece>, Boolean>>() {
             {
                 add(new Pair<>(Arrays.asList(T, S, O, J), false));
@@ -99,8 +101,8 @@ class CheckerNoHoldTest {
         int maxDepth = 4;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         for (Pair<List<Piece>, Boolean> testCase : testCases) {
@@ -119,7 +121,7 @@ class CheckerNoHoldTest {
     }
 
     @Test
-    void testCase1() throws Exception {
+    void testCase1() {
         List<Pair<List<Piece>, Boolean>> testCases = new ArrayList<Pair<List<Piece>, Boolean>>() {
             {
                 add(new Pair<>(Arrays.asList(J, I, O, L, S, Z, T), true));
@@ -140,8 +142,8 @@ class CheckerNoHoldTest {
         int maxDepth = 6;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         for (Pair<List<Piece>, Boolean> testCase : testCases) {
@@ -160,7 +162,7 @@ class CheckerNoHoldTest {
     }
 
     @Test
-    void testCase2() throws Exception {
+    void testCase2() {
         List<Pair<List<Piece>, Boolean>> testCases = new ArrayList<Pair<List<Piece>, Boolean>>() {
             {
                 add(new Pair<>(Arrays.asList(I, L, T, S, Z), true));
@@ -179,8 +181,8 @@ class CheckerNoHoldTest {
         int maxDepth = 5;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         for (Pair<List<Piece>, Boolean> testCase : testCases) {
@@ -199,7 +201,7 @@ class CheckerNoHoldTest {
     }
 
     @Test
-    void testCase3() throws Exception {
+    void testCase3() {
         List<Pair<List<Piece>, Boolean>> testCases = new ArrayList<Pair<List<Piece>, Boolean>>() {
             {
                 add(new Pair<>(Arrays.asList(T, I, L, S, O, Z, J), false));
@@ -224,8 +226,8 @@ class CheckerNoHoldTest {
         int maxDepth = 7;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         for (Pair<List<Piece>, Boolean> testCase : testCases) {
@@ -244,7 +246,7 @@ class CheckerNoHoldTest {
     }
 
     @Test
-    void testCaseFilledLine() throws Exception {
+    void testCaseFilledLine() {
         List<Pair<List<Piece>, Boolean>> testCases = new ArrayList<Pair<List<Piece>, Boolean>>() {
             {
                 add(new Pair<>(Arrays.asList(I, Z, L, I), true));
@@ -264,8 +266,8 @@ class CheckerNoHoldTest {
         int maxDepth = 4;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         for (Pair<List<Piece>, Boolean> testCase : testCases) {
@@ -286,14 +288,14 @@ class CheckerNoHoldTest {
     @ParameterizedTest
     @ArgumentsSource(TestCase.class)
     @LongTest
-    void testCaseList(Pieces pieces, boolean expectedCount) throws Exception {
+    void testCaseList(Pieces pieces, boolean expectedCount) {
         int maxDepth = 10;
         int maxClearLine = 4;
         Field field = FieldFactory.createField(maxClearLine);
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         // Set test case
@@ -317,16 +319,19 @@ class CheckerNoHoldTest {
 
         private List<Pair<Pieces, Boolean>> loadTestCases() throws IOException {
             String resultPath = ClassLoader.getSystemResource("perfects/checker_avoidhold.txt").getPath();
-            List<Pair<Pieces, Boolean>> testCases = Files.lines(Paths.get(resultPath))
-                    .filter(line -> !line.startsWith("//"))
-                    .map(line -> line.split("="))
-                    .map(split -> {
-                        Stream<Piece> blocks = BlockInterpreter.parse(split[0]);
-                        LongPieces pieces = new LongPieces(blocks);
-                        boolean isSucceed = "o".equals(split[1]);
-                        return new Pair<Pieces, Boolean>(pieces, isSucceed);
-                    })
-                    .collect(Collectors.toList());
+            List<Pair<Pieces, Boolean>> testCases;
+            try (Stream<String> lines = Files.lines(Paths.get(resultPath))) {
+                testCases = lines
+                        .filter(line -> !line.startsWith("//"))
+                        .map(line -> line.split("="))
+                        .map(split -> {
+                            Stream<Piece> blocks = BlockInterpreter.parse(split[0]);
+                            LongPieces pieces = new LongPieces(blocks);
+                            boolean isSucceed = "o".equals(split[1]);
+                            return new Pair<Pieces, Boolean>(pieces, isSucceed);
+                        })
+                        .collect(Collectors.toList());
+            }
             Collections.shuffle(testCases);
             return testCases;
         }

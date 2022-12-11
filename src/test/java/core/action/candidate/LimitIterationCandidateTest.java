@@ -9,6 +9,7 @@ import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.Randoms;
 import org.junit.jupiter.api.Test;
 
@@ -18,11 +19,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class LimitIterationCandidateTest {
     @Test
-    void testSearch1() throws Exception {
+    void testSearch1() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 3);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 3, false);
 
         String marks = "" +
                 "__________" +
@@ -38,11 +39,11 @@ class LimitIterationCandidateTest {
     }
 
     @Test
-    void testSearch2() throws Exception {
+    void testSearch2() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 3);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 3, false);
 
         String marks = "" +
                 "XXXX______" +
@@ -59,11 +60,11 @@ class LimitIterationCandidateTest {
     }
 
     @Test
-    void testSearch3When3Iteration() throws Exception {
+    void testSearch3When3Iteration() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 3);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 3, false);
 
         String marks = "" +
                 "XXXX______" +
@@ -87,11 +88,11 @@ class LimitIterationCandidateTest {
     }
 
     @Test
-    void testSearch3When4Iteration() throws Exception {
+    void testSearch3When4Iteration() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 4);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 4, false);
 
         String marks = "" +
                 "XXXX______" +
@@ -110,11 +111,11 @@ class LimitIterationCandidateTest {
     }
 
     @Test
-    void testSearch4() throws Exception {
+    void testSearch4() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 4);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 4, false);
 
         String marks = "" +
                 "XXXXX__XXX" +
@@ -139,9 +140,9 @@ class LimitIterationCandidateTest {
 
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         HarddropCandidate harddropCandidate = new HarddropCandidate(minoFactory, minoShifter);
-        LimitIterationCandidate limitIterationCandidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 0);
+        LimitIterationCandidate limitIterationCandidate = new LimitIterationCandidate(minoFactory, minoShifter, minoRotation, 0, false);
 
         for (int count = 0; count < 10000; count++) {
             int randomHeight = randoms.nextIntClosed(2, 12);

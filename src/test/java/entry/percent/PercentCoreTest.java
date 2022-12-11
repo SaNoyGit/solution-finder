@@ -3,35 +3,34 @@ package entry.percent;
 import common.datastore.blocks.LongPieces;
 import common.pattern.LoadedPatternGenerator;
 import common.pattern.PatternGenerator;
+import concurrent.ILockedReachableThreadLocal;
 import concurrent.LockedCandidateThreadLocal;
-import concurrent.LockedReachableThreadLocal;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.MinoFactory;
+import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import entry.searching_pieces.NormalEnumeratePieces;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.function.Supplier;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class PercentCoreTest {
     private static class Obj {
-        private String marks;
-        private int maxClearLine;
-        private int maxDepth;
-        private boolean isUsingHold;
-        private List<String> patterns;
+        private final String marks;
+        private final int maxClearLine;
+        private final int maxDepth;
+        private final boolean isUsingHold;
+        private final List<String> patterns;
         private final boolean isSingleThread;
 
         private Obj(String marks, int maxClearLine, int maxDepth, boolean isUsingHold, String pattern) {
             this(marks, maxClearLine, maxDepth, isUsingHold, Collections.singletonList(pattern), false);
-        }
-
-        private Obj(String marks, int maxClearLine, int maxDepth, boolean isUsingHold, String pattern, boolean isSingleThread) {
-            this(marks, maxClearLine, maxDepth, isUsingHold, Collections.singletonList(pattern), isSingleThread);
         }
 
         private Obj(String marks, int maxClearLine, int maxDepth, boolean isUsingHold, List<String> patterns) {
@@ -54,8 +53,9 @@ class PercentCoreTest {
         Set<LongPieces> blocks = enumeratePieces.enumerate();
 
         Optional<ExecutorService> executorService = obj.isSingleThread ? Optional.empty() : Optional.of(Executors.newCachedThreadPool());
-        LockedCandidateThreadLocal candidateThreadLocal = new LockedCandidateThreadLocal(obj.maxClearLine);
-        LockedReachableThreadLocal reachableThreadLocal = new LockedReachableThreadLocal(obj.maxClearLine);
+        Supplier<MinoRotation> minoRotationSupplier = SRSMinoRotationFactory::createDefault;
+        LockedCandidateThreadLocal candidateThreadLocal = new LockedCandidateThreadLocal(minoRotationSupplier, obj.maxClearLine, false);
+        ILockedReachableThreadLocal reachableThreadLocal = new ILockedReachableThreadLocal(minoRotationSupplier, obj.maxClearLine, false);
         MinoFactory minoFactory = new MinoFactory();
 
         PercentCore percentCore = getPercentCore(obj, executorService.orElse(null), candidateThreadLocal, reachableThreadLocal, minoFactory);
@@ -68,7 +68,7 @@ class PercentCoreTest {
         assertThat(percentCore.getResultTree().getSuccessPercent()).isEqualTo(successPercent);
     }
 
-    private PercentCore getPercentCore(Obj obj, ExecutorService executorService, LockedCandidateThreadLocal candidateThreadLocal, LockedReachableThreadLocal reachableThreadLocal, MinoFactory minoFactory) {
+    private PercentCore getPercentCore(Obj obj, ExecutorService executorService, LockedCandidateThreadLocal candidateThreadLocal, ILockedReachableThreadLocal reachableThreadLocal, MinoFactory minoFactory) {
         if (executorService == null)
             return new PercentCore(candidateThreadLocal, obj.isUsingHold, reachableThreadLocal, minoFactory);
         return new PercentCore(executorService, candidateThreadLocal, obj.isUsingHold, reachableThreadLocal, minoFactory);

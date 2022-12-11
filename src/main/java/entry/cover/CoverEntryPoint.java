@@ -98,6 +98,7 @@ public class CoverEntryPoint implements EntryPoint {
         }
 
         output("Using hold: " + (settings.isUsingHold() ? "use" : "avoid"));
+        output("Kicks: " + settings.getKicksName().toLowerCase());
         output("Drop: " + settings.getDropType().name().toLowerCase());
         output("Mode: " + settings.getCoverModes().name().toLowerCase());
 
@@ -148,11 +149,12 @@ public class CoverEntryPoint implements EntryPoint {
 
         Stopwatch stopwatch = Stopwatch.createStartedStopwatch();
 
-        ReachableForCover reachableForCover = getReachableForCover(settings.getLastSoftdrop(), height);
+        MinoRotation minoRotation = settings.createMinoRotationSupplier().get();
+        ReachableForCover reachableForCover = getReachableForCover(minoRotation, settings.getLastSoftdrop(), height);
         List<BitSet> results = new ArrayList<>();
 
         // Check
-        Cover cover = createCover();
+        Cover cover = createCover(minoRotation);
 
         boolean isUsingPrioritized = settings.isUsingPriority();
 
@@ -287,8 +289,8 @@ public class CoverEntryPoint implements EntryPoint {
         }
     }
 
-    private Cover createCover() {
-        boolean use180Rotation = this.settings.getDropType() == DropType.Rotation180;
+    private Cover createCover(MinoRotation minoRotation) {
+        boolean use180Rotation = this.settings.getDropType().uses180Rotation();
 
         CoverModes modes = this.settings.getCoverModes();
         switch (modes) {
@@ -298,19 +300,19 @@ public class CoverEntryPoint implements EntryPoint {
                 return createClearLinesCover(1, false);
             }
             case B2BContinuous: {
-                return new B2BContinuousCover(use180Rotation);
+                return new B2BContinuousCover(minoRotation, use180Rotation);
             }
             case TSpinMini: {
-                return TSpinCover.createTSpinMiniCover(use180Rotation, this.settings.getStartingB2B());
+                return TSpinCover.createTSpinMiniCover(minoRotation, use180Rotation, this.settings.getStartingB2B());
             }
             case TSpinSingle: {
-                return TSpinCover.createRegularTSpinCover(1, this.settings.getStartingB2B(), use180Rotation);
+                return TSpinCover.createRegularTSpinCover(minoRotation, 1, this.settings.getStartingB2B(), use180Rotation);
             }
             case TSpinDouble: {
-                return TSpinCover.createRegularTSpinCover(2, this.settings.getStartingB2B(), use180Rotation);
+                return TSpinCover.createRegularTSpinCover(minoRotation, 2, this.settings.getStartingB2B(), use180Rotation);
             }
             case TSpinTriple: {
-                return TSpinCover.createRegularTSpinCover(3, this.settings.getStartingB2B(), use180Rotation);
+                return TSpinCover.createRegularTSpinCover(minoRotation, 3, this.settings.getStartingB2B(), use180Rotation);
             }
             case Tetris: {
                 return new TetrisCover();
@@ -356,54 +358,47 @@ public class CoverEntryPoint implements EntryPoint {
         );
     }
 
-    private ReachableForCover getReachableForCover(int lastSoftdrop, int maxY) {
-        Reachable reachable = createReachable(settings.getDropType(), maxY);
+    private ReachableForCover getReachableForCover(
+            MinoRotation minoRotation, int lastSoftdrop, int maxY
+    ) {
+        DropType dropType = settings.getDropType();
+        Reachable reachable = createReachable(minoRotation, dropType, maxY);
         if (lastSoftdrop <= 0) {
             return new ReachableForCoverWrapper(reachable);
         }
-        return new LastSoftdropReachableForCover(reachable, maxY, lastSoftdrop);
+        return new LastSoftdropReachableForCover(reachable, minoRotation, maxY, lastSoftdrop, dropType.uses180Rotation());
     }
 
-    private Reachable createReachable(DropType dropType, int maxY) {
+    private Reachable createReachable(MinoRotation minoRotation, DropType dropType, int maxY) {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
 
+        boolean use180Rotation = dropType.uses180Rotation();
+
         switch (dropType) {
-            case Harddrop: {
+            case Harddrop:
                 return new HarddropReachable(minoFactory, minoShifter, maxY);
-            }
-            case Softdrop: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new LockedReachable(minoFactory, minoShifter, minoRotation, maxY);
-            }
-            case Rotation180: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new SRSAnd180Reachable(minoFactory, minoShifter, minoRotation, maxY);
-            }
-            case SoftdropTOnly: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new SoftdropTOnlyReachable(minoFactory, minoShifter, minoRotation, maxY);
-            }
-            case TSpinZero: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 0, false);
-            }
-            case TSpinMini: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 1, false);
-            }
-            case TSpinSingle: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 1, true);
-            }
-            case TSpinDouble: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 2, true);
-            }
-            case TSpinTriple: {
-                MinoRotation minoRotation = MinoRotation.create();
-                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 3, true);
-            }
+            case Softdrop:
+            case Softdrop180:
+                return ReachableFacade.createLocked(minoFactory, minoShifter, minoRotation, maxY, use180Rotation);
+            case SoftdropTOnly:
+            case SoftdropTOnly180:
+                return new SoftdropTOnlyReachable(minoFactory, minoShifter, minoRotation, maxY, use180Rotation);
+            case TSpinZero:
+            case TSpinZero180:
+                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 0, false, use180Rotation);
+            case TSpinMini:
+            case TSpinMini180:
+                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 1, false, use180Rotation);
+            case TSpinSingle:
+            case TSpinSingle180:
+                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 1, true, use180Rotation);
+            case TSpinDouble:
+            case TSpinDouble180:
+                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 2, true, use180Rotation);
+            case TSpinTriple:
+            case TSpinTriple180:
+                return new TSpinOrHarddropReachable(minoFactory, minoShifter, minoRotation, maxY, 3, true, use180Rotation);
         }
 
         throw new IllegalStateException("Unknown drop type: " + dropType);

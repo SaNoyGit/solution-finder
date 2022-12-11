@@ -11,6 +11,7 @@ import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -24,7 +25,7 @@ class TSpinOrHarddropCandidateTest {
     private final int maxY = 8;
     private final MinoFactory minoFactory = new MinoFactory();
     private final MinoShifter minoShifter = new MinoShifter();
-    private final MinoRotation minoRotation = MinoRotation.create();
+    private final MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
 
     private final HarddropCandidate harddropCandidate = new HarddropCandidate(minoFactory, minoShifter);
 
@@ -32,7 +33,7 @@ class TSpinOrHarddropCandidateTest {
     @ValueSource(ints = {1, 2, 3})
     void caseHarddrop(int required) {
         TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, required, true
+                minoFactory, minoShifter, minoRotation, maxY, required, true, false
         );
         {
             Field field = FieldFactory.createField("" +
@@ -60,7 +61,7 @@ class TSpinOrHarddropCandidateTest {
     @ValueSource(ints = {1, 2, 3})
     void caseNotReachable(int required) {
         TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, required, true
+                minoFactory, minoShifter, minoRotation, maxY, required, true, false
         );
         {
             Field field = FieldFactory.createField("" +
@@ -90,7 +91,7 @@ class TSpinOrHarddropCandidateTest {
     @ValueSource(ints = {1, 2, 3})
     void caseTOther(int required) {
         TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, required, true
+                minoFactory, minoShifter, minoRotation, maxY, required, true, false
         );
         {
             Field field = FieldFactory.createField("" +
@@ -119,7 +120,7 @@ class TSpinOrHarddropCandidateTest {
     @ValueSource(ints = {1, 2, 3})
     void caseTSpinWithoutCleared(int required) {
         TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, required, true
+                minoFactory, minoShifter, minoRotation, maxY, required, true, false
         );
         {
             Field field = FieldFactory.createField("" +
@@ -136,7 +137,7 @@ class TSpinOrHarddropCandidateTest {
 
     private void assertReachable(Field field, Piece piece, int required, Set<Action> result) {
         TSpinOrHarddropReachable reachable = new TSpinOrHarddropReachable(
-                minoFactory, minoShifter, minoRotation, maxY, required, true
+                minoFactory, minoShifter, minoRotation, maxY, required, true, false
         );
         assertThat(result)
                 .allMatch(action -> {
@@ -148,10 +149,10 @@ class TSpinOrHarddropCandidateTest {
     @Nested
     class TSpinZeroOrHarddropCandidateTest {
         private final TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, 0, false
+                minoFactory, minoShifter, minoRotation, maxY, 0, false, false
         );
         private final TSpinOrHarddropReachable reachable = new TSpinOrHarddropReachable(
-                minoFactory, minoShifter, minoRotation, maxY, 0, false
+                minoFactory, minoShifter, minoRotation, maxY, 0, false, false
         );
 
         @Test
@@ -301,10 +302,10 @@ class TSpinOrHarddropCandidateTest {
     @Nested
     class TSMOrHarddropCandidateTest {
         private final TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, 1, false
+                minoFactory, minoShifter, minoRotation, maxY, 1, false, false
         );
         private final TSpinOrHarddropReachable reachable = new TSpinOrHarddropReachable(
-                minoFactory, minoShifter, minoRotation, maxY, 1, false
+                minoFactory, minoShifter, minoRotation, maxY, 1, false, false
         );
 
         @Test
@@ -453,10 +454,10 @@ class TSpinOrHarddropCandidateTest {
     @Nested
     class TSSOrHarddropCandidateTest {
         private final TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, 1, true
+                minoFactory, minoShifter, minoRotation, maxY, 1, true, false
         );
         private final TSpinOrHarddropReachable reachable = new TSpinOrHarddropReachable(
-                minoFactory, minoShifter, minoRotation, maxY, 1, true
+                minoFactory, minoShifter, minoRotation, maxY, 1, true, false
         );
 
         @Test
@@ -583,10 +584,10 @@ class TSpinOrHarddropCandidateTest {
     @Nested
     class TSDOrHarddropCandidateTest {
         private final TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, 2, true
+                minoFactory, minoShifter, minoRotation, maxY, 2, true, false
         );
         private final TSpinOrHarddropReachable reachable = new TSpinOrHarddropReachable(
-                minoFactory, minoShifter, minoRotation, maxY, 2, true
+                minoFactory, minoShifter, minoRotation, maxY, 2, true, false
         );
 
         @Test
@@ -713,10 +714,10 @@ class TSpinOrHarddropCandidateTest {
     @Nested
     class TSTOrHarddropCandidateTest {
         private final TSpinOrHarddropCandidate candidate = new TSpinOrHarddropCandidate(
-                minoFactory, minoShifter, minoRotation, maxY, 3, true
+                minoFactory, minoShifter, minoRotation, maxY, 3, true, false
         );
         private final TSpinOrHarddropReachable reachable = new TSpinOrHarddropReachable(
-                minoFactory, minoShifter, minoRotation, maxY, 3, true
+                minoFactory, minoShifter, minoRotation, maxY, 3, true, false
         );
 
         @Test

@@ -46,7 +46,6 @@ public class RenSettingParser extends SettingParser<RenSettings> {
                 RenOptions.Fumen.optName(),
                 RenOptions.FieldPath.optName(),
                 DEFAULT_FIELD_TXT,
-                Charset.forName(CHARSET_NAME),
                 Optional::of,
                 fieldLines -> {
                     // フィールドの設定
@@ -78,6 +77,10 @@ public class RenSettingParser extends SettingParser<RenSettings> {
                 Charset.forName(CHARSET_NAME)
         );
         settings.setPatterns(patterns);
+
+        // Load kicks
+        Optional<String> kicks = wrapper.getStringOption(RenOptions.Kicks.optName());
+        kicks.ifPresent(settings::setKicks);
 
         // ログファイルの設定
         Optional<String> logFilePath = wrapper.getStringOption(RenOptions.LogPath.optName());

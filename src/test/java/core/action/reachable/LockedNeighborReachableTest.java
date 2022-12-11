@@ -11,6 +11,7 @@ import core.neighbor.OriginalPiece;
 import core.neighbor.OriginalPieceFactory;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.Randoms;
 import org.junit.jupiter.api.Test;
 
@@ -19,17 +20,17 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class LockedNeighborReachableTest {
-    private LockedReachable createLockedReachable(int maxClearLine) {
+    private ILockedReachable createLockedReachable(int maxClearLine) {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        return new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        return ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
     }
 
     private LockedNeighborReachable createLockedNeighborReachable(int maxClearLine) {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         OriginalPieceFactory pieceFactory = new OriginalPieceFactory(maxClearLine + 3);
         Neighbors neighbors = new Neighbors(minoFactory, minoRotation, pieceFactory);
         return new LockedNeighborReachable(minoShifter, neighbors, maxClearLine);
@@ -69,7 +70,7 @@ class LockedNeighborReachableTest {
     @Test
     void randoms() {
         int maxClearLine = 4;
-        LockedReachable reachable1 = createLockedReachable(maxClearLine);
+        ILockedReachable reachable1 = createLockedReachable(maxClearLine);
         LockedNeighborReachable reachable2 = createLockedNeighborReachable(maxClearLine);
 
         OriginalPieceFactory pieceFactory = new OriginalPieceFactory(maxClearLine + 3);

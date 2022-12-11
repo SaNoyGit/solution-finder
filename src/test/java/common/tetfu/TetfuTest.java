@@ -9,7 +9,7 @@ import common.tetfu.common.ColorType;
 import common.tetfu.field.ArrayColoredField;
 import common.tetfu.field.ColoredField;
 import common.tetfu.field.ColoredFieldFactory;
-import concurrent.LockedReachableThreadLocal;
+import concurrent.ILockedReachableThreadLocal;
 import core.column_field.ColumnField;
 import core.field.Field;
 import core.mino.MinoFactory;
@@ -17,6 +17,7 @@ import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import exceptions.FinderParseException;
 import lib.Randoms;
 import module.LongTest;
@@ -513,7 +514,7 @@ class TetfuTest {
         Randoms randoms = new Randoms();
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         ColorConverter colorConverter = new ColorConverter();
 
         // Define size
@@ -524,7 +525,7 @@ class TetfuTest {
 
         // Create basic solutions
         TaskResultHelper taskResultHelper = new Field4x10MinoPackingHelper();
-        LockedReachableThreadLocal lockedReachableThreadLocal = new LockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height);
+        ILockedReachableThreadLocal lockedReachableThreadLocal = new ILockedReachableThreadLocal(minoFactory, minoShifter, minoRotation, height, false);
         Predicate<ColumnField> memorizedPredicate = (columnField) -> true;
         OnDemandBasicSolutions basicSolutions = new OnDemandBasicSolutions(separableMinos, sizedBit, memorizedPredicate);
 

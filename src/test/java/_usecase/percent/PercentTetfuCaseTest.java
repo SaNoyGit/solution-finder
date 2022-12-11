@@ -401,7 +401,7 @@ class PercentTetfuCaseTest extends PercentUseCaseBaseTest {
         String tetfu = "v115@GhA8DeA8CeB8DeF8DeF8JeAgH";
 
         {
-            String command = String.format("percent -t %s -p *!", tetfu);
+            String command = String.format("percent -t %s -p *! --kicks default", tetfu);
             Log log = RunnerHelper.runnerCatchingLog(() -> EntryPointMain.main(command.split(" ")));
 
             assertThat(log.getOutput())
@@ -413,12 +413,24 @@ class PercentTetfuCaseTest extends PercentUseCaseBaseTest {
             assertThat(log.getError()).isEmpty();
         }
         {
-            String command = String.format("percent -t %s -p *! -drop 180", tetfu);
+            String command = String.format("percent -t %s -p *! --kicks +srs", tetfu);
             Log log = RunnerHelper.runnerCatchingLog(() -> EntryPointMain.main(command.split(" ")));
 
             assertThat(log.getOutput())
                     .contains(Messages.useHold())
-                    .contains(Messages.rotation180())
+                    .contains(Messages.softdrop())
+                    .contains(Messages.success(5028, 5040))
+                    .contains("*!");
+
+            assertThat(log.getError()).isEmpty();
+        }
+        {
+            String command = String.format("percent -t %s -p *! --drop 180 --kicks @nullpomino180", tetfu);
+            Log log = RunnerHelper.runnerCatchingLog(() -> EntryPointMain.main(command.split(" ")));
+
+            assertThat(log.getOutput())
+                    .contains(Messages.useHold())
+                    .contains(Messages.softdrop180())
                     .contains(Messages.success(5040, 5040))
                     .contains("*!");
 
@@ -437,5 +449,29 @@ class PercentTetfuCaseTest extends PercentUseCaseBaseTest {
                 .contains(Messages.success(1, 1));
 
         assertThat(log.getError()).isEmpty();
+    }
+
+    @Test
+    void noKicks() throws Exception {
+        String tetfu = "v115@9gE8DeG8CeH8BeG8CeA8JeAgH";
+
+        {
+            String command = String.format("percent -t %s -p *p4", tetfu);
+            Log log = RunnerHelper.runnerCatchingLog(() -> EntryPointMain.main(command.split(" ")));
+
+            assertThat(log.getOutput())
+                    .contains(Messages.success(514, 840));
+
+            assertThat(log.getError()).isEmpty();
+        }
+        {
+            String command = String.format("percent -t %s -p *p4 --kicks @nokicks", tetfu);
+            Log log = RunnerHelper.runnerCatchingLog(() -> EntryPointMain.main(command.split(" ")));
+
+            assertThat(log.getOutput())
+                    .contains(Messages.success(346, 840));
+
+            assertThat(log.getError()).isEmpty();
+        }
     }
 }

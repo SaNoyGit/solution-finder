@@ -1,24 +1,29 @@
 package concurrent;
 
-import common.datastore.action.Action;
-import core.action.candidate.Candidate;
-import core.action.candidate.LockedCandidate;
+import core.action.candidate.CandidateFacade;
+import core.action.candidate.ILockedCandidate;
 import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.srs.MinoRotation;
 
-public class LockedCandidateThreadLocal extends ThreadLocal<LockedCandidate> {
-    private final int maxY;
+import java.util.function.Supplier;
 
-    public LockedCandidateThreadLocal(int maxY) {
+public class LockedCandidateThreadLocal extends ThreadLocal<ILockedCandidate> {
+    private final Supplier<MinoRotation> minoRotationSupplier;
+    private final int maxY;
+    private final boolean use180Rotation;
+
+    public LockedCandidateThreadLocal(Supplier<MinoRotation> minoRotationSupplier, int maxY, boolean use180Rotation) {
+        this.minoRotationSupplier = minoRotationSupplier;
         this.maxY = maxY;
+        this.use180Rotation = use180Rotation;
     }
 
     @Override
-    protected LockedCandidate initialValue() {
+    protected ILockedCandidate initialValue() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        return new LockedCandidate(minoFactory, minoShifter, minoRotation, maxY);
+        MinoRotation minoRotation = minoRotationSupplier.get();
+        return CandidateFacade.createLocked(minoFactory, minoShifter, minoRotation, maxY, use180Rotation);
     }
 }

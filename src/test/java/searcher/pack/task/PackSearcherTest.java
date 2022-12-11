@@ -10,10 +10,11 @@ import common.datastore.blocks.LongPieces;
 import common.datastore.blocks.Pieces;
 import common.pattern.LoadedPatternGenerator;
 import common.pattern.PatternGenerator;
-import concurrent.LockedReachableThreadLocal;
+import concurrent.ILockedReachableThreadLocal;
 import core.action.candidate.Candidate;
-import core.action.candidate.LockedCandidate;
-import core.action.reachable.LockedReachable;
+import core.action.candidate.CandidateFacade;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.column_field.ColumnField;
 import core.column_field.ColumnSmallField;
 import core.field.Field;
@@ -22,6 +23,7 @@ import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.Randoms;
 import module.LongTest;
 import org.junit.jupiter.api.Nested;
@@ -58,7 +60,7 @@ class PackSearcherTest {
 
     private final MinoFactory minoFactory = new MinoFactory();
     private final MinoShifter minoShifter = new MinoShifter();
-    private final MinoRotation minoRotation = MinoRotation.create();
+    private final MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
 
     private BasicSolutions createMappedBasicSolutions(SizedBit sizedBit) {
         SeparableMinos separableMinos = SeparableMinos.createSeparableMinos(minoFactory, minoShifter, sizedBit);
@@ -80,7 +82,7 @@ class PackSearcherTest {
     }
 
     private SolutionFilter createSRSSolutionFilter(SizedBit sizedBit, Field initField) {
-        LockedReachableThreadLocal lockedReachableThreadLocal = new LockedReachableThreadLocal(sizedBit.getHeight());
+        ILockedReachableThreadLocal lockedReachableThreadLocal = new ILockedReachableThreadLocal(minoRotation, sizedBit.getHeight(), false);
         return new SRSValidSolutionFilter(initField, lockedReachableThreadLocal, sizedBit);
     }
 
@@ -284,8 +286,8 @@ class PackSearcherTest {
         int height = sizedBit.getHeight();
         Randoms randoms = new Randoms();
 
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, height);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, height);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
 
         TaskResultHelper taskResultHelper = new Field4x10MinoPackingHelper();
 
@@ -342,8 +344,8 @@ class PackSearcherTest {
         int height = sizedBit.getHeight();
         Randoms randoms = new Randoms();
 
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, height);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, height);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
 
         TaskResultHelper taskResultHelper = new BasicMinoPackingHelper();
 

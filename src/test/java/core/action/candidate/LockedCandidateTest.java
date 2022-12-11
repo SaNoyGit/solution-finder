@@ -2,12 +2,14 @@ package core.action.candidate;
 
 import common.datastore.action.Action;
 import common.datastore.action.MinimalAction;
-import core.action.reachable.LockedReachable;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.*;
 import core.srs.MinoRotation;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.Coordinates;
 import lib.Randoms;
 import org.junit.jupiter.api.Test;
@@ -21,8 +23,8 @@ class LockedCandidateTest {
     void testSearch1() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, 4);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, 4);
 
         String marks = "" +
                 "__________" +
@@ -41,8 +43,8 @@ class LockedCandidateTest {
     void testSearch2() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, 4);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, 4);
 
         String marks = "" +
                 "XXXX______" +
@@ -62,8 +64,8 @@ class LockedCandidateTest {
     void testSearch3() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, 4);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, 4);
 
         String marks = "" +
                 "XXXX______" +
@@ -92,8 +94,8 @@ class LockedCandidateTest {
     void testSearch4() {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new PassedMinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, 4);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, 4);
 
         String marks = "" +
                 "X_________" +
@@ -118,7 +120,7 @@ class LockedCandidateTest {
 
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new PassedMinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
 
         for (int count = 0; count < 10000; count++) {
             int randomHeight = randoms.nextIntClosed(2, 12);
@@ -127,10 +129,10 @@ class LockedCandidateTest {
             int height = randomHeight - field.clearLine();
             Piece piece = randoms.block();
 
-            LockedCandidate candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, height);
+            ILockedCandidate candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
             Set<Action> actions = candidate.search(field, piece, height);
 
-            LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, height);
+            ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, height);
 
             for (Rotate rotate : Rotate.values()) {
                 Coordinates.walk(minoFactory.create(piece, rotate), height)

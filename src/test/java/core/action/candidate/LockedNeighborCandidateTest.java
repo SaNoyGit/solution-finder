@@ -11,6 +11,7 @@ import core.neighbor.Neighbor;
 import core.neighbor.OriginalPiece;
 import core.neighbor.OriginalPieceFactory;
 import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.Randoms;
 import lib.Stopwatch;
 import org.junit.jupiter.api.Test;
@@ -28,17 +29,17 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class LockedNeighborCandidateTest {
-    private LockedCandidate createLockedCandidate(int maxClearLine) {
+    private ILockedCandidate createLockedCandidate(int maxClearLine) {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
-        return new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
+        return CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
     }
 
     private LockedNeighborCandidate createLockedNeighborCandidate(int maxClearLine) {
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
+        MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
         OriginalPieceFactory pieceFactory = new OriginalPieceFactory(maxClearLine + 3);
         return new LockedNeighborCandidate(minoFactory, minoShifter, minoRotation, pieceFactory);
     }
@@ -50,7 +51,7 @@ class LockedNeighborCandidateTest {
     @Test
     void random() {
         int maxClearLine = 3;
-        LockedCandidate candidate1 = createLockedCandidate(maxClearLine);
+        ILockedCandidate candidate1 = createLockedCandidate(maxClearLine);
         LockedNeighborCandidate candidate2 = createLockedNeighborCandidate(maxClearLine);
         MinoShifter minoShifter = new MinoShifter();
 
@@ -88,7 +89,7 @@ class LockedNeighborCandidateTest {
     @ArgumentsSource(FieldTestCase.class)
     void testField(Field field, Piece piece) {
         int maxClearLine = 4;
-        LockedCandidate candidate1 = createLockedCandidate(maxClearLine);
+        ILockedCandidate candidate1 = createLockedCandidate(maxClearLine);
         LockedNeighborCandidate candidate2 = createLockedNeighborCandidate(maxClearLine);
         MinoShifter minoShifter = new MinoShifter();
 

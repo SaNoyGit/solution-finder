@@ -4,14 +4,18 @@ import common.parser.StringEnumTransform;
 import common.tetfu.common.ColorType;
 import core.field.Field;
 import core.mino.Piece;
+import core.srs.MinoRotation;
 import core.srs.Rotate;
 import entry.DropType;
+import entry.common.kicks.NamedSupplierMinoRotation;
+import entry.common.option.OptionsFacade;
 import entry.setup.operation.*;
 import exceptions.FinderParseException;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,6 +44,7 @@ public class SetupSettings {
     private boolean isSplit = false;
     private boolean isLogOutputToConsole = true;
     private boolean isResultOutputToConsole = false;
+    private NamedSupplierMinoRotation namedSupplierMinoRotation = NamedSupplierMinoRotation.createDefault();
 
     // ********* Getter ************
     public boolean isUsingHold() {
@@ -124,6 +129,14 @@ public class SetupSettings {
 
     boolean isTetfuSplit() {
         return isSplit;
+    }
+
+    String getKicksName() {
+        return namedSupplierMinoRotation.getName();
+    }
+
+    Supplier<MinoRotation> createMinoRotationSupplier() {
+        return namedSupplierMinoRotation.getSupplier();
     }
 
     // ********* Setter ************
@@ -276,7 +289,8 @@ public class SetupSettings {
                 this.dropType = DropType.Harddrop;
                 return;
             case "180":
-                this.dropType = DropType.Rotation180;
+            case "softdrop180":
+                this.dropType = DropType.Softdrop180;
                 return;
             case "tsoft":
             case "tsoftdrop":
@@ -435,6 +449,10 @@ public class SetupSettings {
     void useOutputToConsole() {
         setLogOutputToConsole(false);
         setResultOutputToConsole(true);
+    }
+
+    void setKicks(String name) {
+        namedSupplierMinoRotation = OptionsFacade.createNamedMinoRotationSupplier(name);
     }
 }
 

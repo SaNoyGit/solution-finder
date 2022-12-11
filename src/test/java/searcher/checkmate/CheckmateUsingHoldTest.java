@@ -11,14 +11,16 @@ import common.order.StackOrder;
 import common.parser.BlockInterpreter;
 import common.parser.OperationTransform;
 import core.action.candidate.Candidate;
-import core.action.candidate.LockedCandidate;
-import core.action.reachable.LockedReachable;
+import core.action.candidate.CandidateFacade;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
 import core.srs.MinoRotation;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import module.LongTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -41,7 +43,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CheckmateUsingHoldTest {
     private final MinoFactory minoFactory = new MinoFactory();
     private final MinoShifter minoShifter = new MinoShifter();
-    private final MinoRotation minoRotation = MinoRotation.create();
+    private final MinoRotation minoRotation = SRSMinoRotationFactory.createDefault();
     private final PerfectValidator validator = new PerfectValidator();
     private final Checkmate<Action> checkmate = new CheckmateUsingHold<>(minoFactory, validator);
 
@@ -55,7 +57,7 @@ class CheckmateUsingHoldTest {
         return new Operations(ResultHelper.createOperationStream(result));
     }
 
-    private void assertResult(Result result, Field field, int maxClearLine, LockedReachable reachable, List<Piece> blocks) {
+    private void assertResult(Result result, Field field, int maxClearLine, ILockedReachable reachable, List<Piece> blocks) {
         // Check blocks is same
         List<Piece> resultPieces = parseToBlocks(result);
         Piece lastHoldPiece = result.getLastHold();
@@ -104,8 +106,8 @@ class CheckmateUsingHoldTest {
         int maxDepth = 9;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         for (Pair<List<Piece>, Integer> testCase : testCases) {
@@ -140,8 +142,8 @@ class CheckmateUsingHoldTest {
         Field field = FieldFactory.createField(maxClearLine);
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         for (Pair<List<Piece>, Integer> testCase : testCases) {
@@ -174,8 +176,8 @@ class CheckmateUsingHoldTest {
         int maxDepth = 4;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         // Set test case
@@ -208,8 +210,8 @@ class CheckmateUsingHoldTest {
         int maxDepth = 3;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         // Set test case
@@ -242,8 +244,8 @@ class CheckmateUsingHoldTest {
         int maxDepth = 4;
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         // Set test case
@@ -271,8 +273,8 @@ class CheckmateUsingHoldTest {
         Field field = FieldFactory.createField(maxClearLine);
 
         // Initialize
-        Candidate<Action> candidate = new LockedCandidate(minoFactory, minoShifter, minoRotation, maxClearLine);
-        LockedReachable reachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxClearLine);
+        Candidate<Action> candidate = CandidateFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, minoShifter, minoRotation, maxClearLine);
 
         // Assertion
         // Set test case
@@ -298,18 +300,21 @@ class CheckmateUsingHoldTest {
 
         private List<Pair<Pieces, Integer>> loadTestCases() throws IOException {
             String resultPath = ClassLoader.getSystemResource("perfects/checkmate_usinghold.txt").getPath();
-            List<Pair<Pieces, Integer>> testCases = Files.lines(Paths.get(resultPath))
-                    .map(line -> line.split("//")[0])
-                    .map(String::trim)
-                    .filter(line -> !line.isEmpty())
-                    .map(line -> line.split("="))
-                    .map(split -> {
-                        Stream<Piece> blocks = BlockInterpreter.parse(split[0]);
-                        LongPieces pieces = new LongPieces(blocks);
-                        int count = Integer.parseInt(split[1]);
-                        return new Pair<Pieces, Integer>(pieces, count);
-                    })
-                    .collect(Collectors.toList());
+            List<Pair<Pieces, Integer>> testCases;
+            try (Stream<String> lines = Files.lines(Paths.get(resultPath))) {
+                testCases = lines
+                        .map(line -> line.split("//")[0])
+                        .map(String::trim)
+                        .filter(line -> !line.isEmpty())
+                        .map(line -> line.split("="))
+                        .map(split -> {
+                            Stream<Piece> blocks = BlockInterpreter.parse(split[0]);
+                            LongPieces pieces = new LongPieces(blocks);
+                            int count = Integer.parseInt(split[1]);
+                            return new Pair<Pieces, Integer>(pieces, count);
+                        })
+                        .collect(Collectors.toList());
+            }
             Collections.shuffle(testCases);
             return testCases;
         }

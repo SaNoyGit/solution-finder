@@ -53,7 +53,6 @@ public class PathSettingParser extends SettingParser<PathSettings> {
                 PathOptions.Fumen.optName(),
                 PathOptions.FieldPath.optName(),
                 DEFAULT_FIELD_TXT,
-                Charset.forName(CHARSET_NAME),
                 Optional::of,
                 fieldLines -> {
                     try {
@@ -106,6 +105,10 @@ public class PathSettingParser extends SettingParser<PathSettings> {
                 Charset.forName(CHARSET_NAME)
         );
         settings.setPatterns(patterns);
+
+        // Load kicks
+        Optional<String> kicks = wrapper.getStringOption(PathOptions.Kicks.optName());
+        kicks.ifPresent(settings::setKicks);
 
         // ドロップの設定
         Optional<String> dropType = wrapper.getStringOption(PathOptions.Drop.optName());

@@ -4,14 +4,15 @@ import common.buildup.BuildUp;
 import common.datastore.FullOperationWithKey;
 import common.datastore.MinoOperationWithKey;
 import common.datastore.OperationWithKey;
-import core.action.reachable.LockedReachable;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
-import core.srs.MinoRotationImpl;
 import core.srs.Rotate;
+import entry.common.kicks.factory.SRSMinoRotationFactory;
 import lib.Randoms;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +36,7 @@ class OperationWithKeyInterpreterTest {
         MinoFactory minoFactory = new MinoFactory();
         List<MinoOperationWithKey> operationWithKeys = OperationWithKeyInterpreter.parseToList(base, minoFactory);
 
-        LockedReachable reachable = new LockedReachable(minoFactory, new MinoShifter(), new MinoRotationImpl(), 8);
+        ILockedReachable reachable = ReachableFacade.create90Locked(minoFactory, new MinoShifter(), SRSMinoRotationFactory.createDefault(), 8);
         assertThat(BuildUp.cansBuild(initField, operationWithKeys, 8, reachable)).isTrue();
 
         String line = OperationWithKeyInterpreter.parseToString(operationWithKeys);

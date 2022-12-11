@@ -54,7 +54,6 @@ public class SetupSettingParser extends SettingParser<SetupSettings> {
                 SetupOptions.Fumen.optName(),
                 SetupOptions.FieldPath.optName(),
                 DEFAULT_FIELD_TXT,
-                Charset.forName(CHARSET_NAME),
                 fieldData -> {
                     ColoredField coloredField = fieldData.toColoredField();
 
@@ -119,6 +118,10 @@ public class SetupSettingParser extends SettingParser<SetupSettings> {
                 Charset.forName(CHARSET_NAME)
         );
         settings.setPatterns(patterns);
+
+        // Load kicks
+        Optional<String> kicks = wrapper.getStringOption(SetupOptions.Kicks.optName());
+        kicks.ifPresent(settings::setKicks);
 
         // ドロップの設定
         Optional<String> dropType = wrapper.getStringOption(SetupOptions.Drop.optName());

@@ -7,11 +7,15 @@ import common.tetfu.field.ColoredField;
 import core.field.Field;
 import core.field.FieldFactory;
 import core.mino.Piece;
+import core.srs.MinoRotation;
 import entry.DropType;
+import entry.common.kicks.NamedSupplierMinoRotation;
+import entry.common.option.OptionsFacade;
 import exceptions.FinderParseException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class PathSettings {
     private static final String DEFAULT_LOG_FILE_PATH = "output/last_output.txt";
@@ -34,6 +38,7 @@ public class PathSettings {
     private boolean isMinimalSpecifiedOnly = true;
     private boolean isLogOutputToConsole = true;
     private boolean isResultOutputToConsole = false;
+    private NamedSupplierMinoRotation namedSupplierMinoRotation = NamedSupplierMinoRotation.createDefault();
 
     // ********* Getter ************
     public boolean isUsingHold() {
@@ -96,12 +101,20 @@ public class PathSettings {
         return threadCount;
     }
 
-    DropType getDropType() {
+    public DropType getDropType() {
         return dropType;
     }
 
     public boolean getMinimalSpecifiedOnly() {
         return isMinimalSpecifiedOnly;
+    }
+
+    String getKicksName() {
+        return namedSupplierMinoRotation.getName();
+    }
+
+    public Supplier<MinoRotation> createMinoRotationSupplier() {
+        return namedSupplierMinoRotation.getSupplier();
     }
 
     // ********* Setter ************
@@ -239,7 +252,8 @@ public class PathSettings {
                 this.dropType = DropType.Harddrop;
                 return;
             case "180":
-                this.dropType = DropType.Rotation180;
+            case "softdrop180":
+                this.dropType = DropType.Softdrop180;
                 return;
             case "tsoft":
             case "tsoftdrop":
@@ -295,5 +309,9 @@ public class PathSettings {
     void useOutputToConsole() {
         setLogOutputToConsole(false);
         setResultOutputToConsole(true);
+    }
+
+    void setKicks(String name) {
+        namedSupplierMinoRotation = OptionsFacade.createNamedMinoRotationSupplier(name);
     }
 }

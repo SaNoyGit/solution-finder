@@ -7,8 +7,7 @@ import common.iterable.CombinationIterable;
 import common.pattern.PatternGenerator;
 import common.tetfu.common.ColorConverter;
 import concurrent.HarddropReachableThreadLocal;
-import concurrent.LockedReachableThreadLocal;
-import concurrent.SRSAnd180ReachableThreadLocal;
+import concurrent.ILockedReachableThreadLocal;
 import concurrent.SoftdropTOnlyReachableThreadLocal;
 import core.FinderConstant;
 import core.action.reachable.Reachable;
@@ -19,6 +18,7 @@ import core.mino.Mino;
 import core.mino.MinoFactory;
 import core.mino.MinoShifter;
 import core.mino.Piece;
+import core.srs.MinoRotation;
 import entry.DropType;
 import entry.EntryPoint;
 import entry.Verify;
@@ -60,6 +60,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -167,6 +168,7 @@ public class SetupEntryPoint implements EntryPoint {
         DropType dropType = settings.getDropType();
         output("# Initialize / User-defined");
         output("Max height: " + maxHeight);
+        output("Kicks: " + settings.getKicksName().toLowerCase());
         output("Drop: " + dropType.name().toLowerCase());
         output("Operations: " + settings.getAddOperations().stream().map(FieldOperation::toName).collect(Collectors.joining(" -> ")));
         output("Exclude: " + settings.getExcludeType().name().toLowerCase());
@@ -207,12 +209,14 @@ public class SetupEntryPoint implements EntryPoint {
         // Initialize
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
+        Supplier<MinoRotation> minoRotationSupplier = settings.createMinoRotationSupplier();
         ColorConverter colorConverter = new ColorConverter();
         SizedBit sizedBit = decideSizedBitSolutionWidth(maxHeight);
         TaskResultHelper taskResultHelper = new BasicMinoPackingHelper();
         SolutionFilter solutionFilter = new ForPathSolutionFilter(generator, maxHeight);
-        ThreadLocal<BuildUpStream> buildUpStreamThreadLocal = createBuildUpStreamThreadLocal(dropType, maxHeight);
-        FumenParser oneFumenParser = createFumenParser(settings.isTetfuSplit(), minoFactory, colorConverter);
+        ThreadLocal<BuildUpStream> buildUpStreamThreadLocal = createBuildUpStreamThreadLocal(minoRotationSupplier, dropType, maxHeight);
+        boolean use180Rotation = this.settings.getDropType().uses180Rotation();
+        FumenParser oneFumenParser = createFumenParser(settings.isTetfuSplit(), minoFactory, minoRotationSupplier.get(), colorConverter, use180Rotation);
 
         // ミノリストの作成
         long deleteKeyMask = getDeleteKeyMask(notFilledField, initField, needFilledField, freeField, maxHeight);
@@ -341,9 +345,11 @@ public class SetupEntryPoint implements EntryPoint {
         throw new FinderExecuteException("Unsupported format: format=" + outputType);
     }
 
-    private FumenParser createFumenParser(boolean isTetfuSplit, MinoFactory minoFactory, ColorConverter colorConverter) {
+    private FumenParser createFumenParser(
+            boolean isTetfuSplit, MinoFactory minoFactory, MinoRotation minoRotation, ColorConverter colorConverter, boolean use180Rotation
+    ) {
         if (isTetfuSplit)
-            return new SequenceFumenParser(minoFactory, colorConverter);
+            return new SequenceFumenParser(minoFactory, minoRotation, colorConverter, use180Rotation);
         return new OneFumenParser(minoFactory, colorConverter);
     }
 
@@ -504,23 +510,28 @@ public class SetupEntryPoint implements EntryPoint {
         return maxClearLine <= 4 ? new SizedBit(3, maxClearLine) : new SizedBit(2, maxClearLine);
     }
 
-    private ThreadLocal<BuildUpStream> createBuildUpStreamThreadLocal(DropType dropType, int maxClearLine) throws FinderInitializeException {
-        ThreadLocal<? extends Reachable> reachableThreadLocal = createReachableThreadLocal(dropType, maxClearLine);
+    private ThreadLocal<BuildUpStream> createBuildUpStreamThreadLocal(
+            Supplier<MinoRotation> minoRotationSupplier, DropType dropType, int maxClearLine
+    ) throws FinderInitializeException {
+        ThreadLocal<? extends Reachable> reachableThreadLocal = createReachableThreadLocal(minoRotationSupplier, dropType, maxClearLine);
         return new BuildUpListUpThreadLocal(reachableThreadLocal, maxClearLine);
     }
 
-    private ThreadLocal<? extends Reachable> createReachableThreadLocal(DropType dropType, int maxClearLine) throws FinderInitializeException {
+    private ThreadLocal<? extends Reachable> createReachableThreadLocal(
+            Supplier<MinoRotation> minoRotationSupplier, DropType dropType, int maxClearLine
+    ) throws FinderInitializeException {
+        boolean use180Rotation = dropType.uses180Rotation();
+
         switch (dropType) {
-            case Softdrop:
-                return new LockedReachableThreadLocal(maxClearLine);
             case Harddrop:
                 return new HarddropReachableThreadLocal(maxClearLine);
+            case Softdrop:
+            case Softdrop180:
+                return new ILockedReachableThreadLocal(minoRotationSupplier, maxClearLine, use180Rotation);
             case SoftdropTOnly:
-                return new SoftdropTOnlyReachableThreadLocal(maxClearLine);
-            case Rotation180:
-                return new SRSAnd180ReachableThreadLocal(maxClearLine);
+                return new SoftdropTOnlyReachableThreadLocal(minoRotationSupplier, maxClearLine, use180Rotation);
         }
-        throw new FinderInitializeException("Unsupport droptype: droptype=" + dropType);
+        throw new FinderInitializeException("Unsupported droptype: droptype=" + dropType);
     }
 
     private void output() throws FinderExecuteException {

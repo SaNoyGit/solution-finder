@@ -103,24 +103,28 @@ public class SpinCommons {
         RotateDirection direction = spinResult.getDirection();
         TSpinNames name = getTSpinName(spinResult, toRotate, filledTFront, direction);
 
-        TSpins spin = getTSpin(spinResult, toRotate, filledTFront, name);
+        TSpins spin = getTSpin(spinResult, filledTFront);
 
         return new Spin(spin, name, clearedLine);
     }
 
-    private static TSpins getTSpin(SpinResult spinResult, Rotate toRotate, boolean filledTFront, TSpinNames name) {
-        if (!filledTFront) {
-            // 正面側に2つブロックがない
-            // Mini判定の可能性がある
-            if (isHorizontal(toRotate) || spinResult.getTestPatternIndex() != 4) {
-                // 接着時にTが横向き or 回転テストパターンが最後のケースではない
-                return TSpins.Mini;
-            }
+    private static TSpins getTSpin(SpinResult spinResult, boolean filledTFront) {
+        // 前提: Tスピンとなる条件（Tの隅に3つ以上ブロックが存在している）はこの時点で満たしている
 
-            // TSTの形のみ、Regularとなる
+        if (filledTFront) {
+            // Tの凸側のブロックが両方揃っている
+            return TSpins.Regular;
         }
 
-        return TSpins.Regular;
+        // Tの凸側のブロックが両方揃っていない
+        if (spinResult.isPrivilegeSpins()) {
+            // TSTフォームのような特権がある場合はRegularと判定する
+            // e.g. SRSでは「接着時にTが横向き and 回転テストパターンが最後のケース」の場合はRegular
+            return TSpins.Regular;
+        }
+
+        // 通常はMini
+        return TSpins.Mini;
     }
 
     private static TSpinNames getTSpinName(SpinResult spinResult, Rotate toRotate, boolean filledTFront, RotateDirection direction) {
@@ -143,6 +147,7 @@ public class SpinCommons {
         return TSpinNames.NoName;
     }
 
+    // Tの凸側のブロックが両方とも埋まっているか
     // `true`のとき、T-SpinはRegularになる。
     // `false`のとき、MiniかRegularか判別するにはさらに条件が必要
     public static boolean isFilledTFront(Field field, Rotate rotate, int x, int y) {
@@ -161,9 +166,5 @@ public class SpinCommons {
             }
         }
         throw new IllegalStateException();
-    }
-
-    private static boolean isHorizontal(Rotate rotate) {
-        return rotate == Rotate.Spawn || rotate == Rotate.Reverse;
     }
 }

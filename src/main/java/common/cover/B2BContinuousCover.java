@@ -5,7 +5,8 @@ import common.cover.reachable.ReachableForCover;
 import common.datastore.MinoOperation;
 import common.datastore.MinoOperationWithKey;
 import common.datastore.SimpleMinoOperation;
-import core.action.reachable.LockedReachable;
+import core.action.reachable.ILockedReachable;
+import core.action.reachable.ReachableFacade;
 import core.field.Field;
 import core.field.KeyOperators;
 import core.mino.Mino;
@@ -29,13 +30,16 @@ public class B2BContinuousCover implements Cover {
 
     private final B2BCondition b2BCondition;
 
-    public B2BContinuousCover(boolean use180Rotation) {
+    public B2BContinuousCover(MinoRotation minoRotation, boolean use180Rotation) {
+        if (use180Rotation && minoRotation.noSupports180()) {
+            throw new IllegalArgumentException("kicks do not support 180");
+        }
+
         int maxY = 24;
         MinoFactory minoFactory = new MinoFactory();
         MinoShifter minoShifter = new MinoShifter();
-        MinoRotation minoRotation = MinoRotation.create();
         MinoRotationDetail minoRotationDetail = new MinoRotationDetail(minoFactory, minoRotation);
-        LockedReachable lockedReachable = new LockedReachable(minoFactory, minoShifter, minoRotation, maxY);
+        ILockedReachable lockedReachable = ReachableFacade.createLocked(minoFactory, minoShifter, minoRotation, maxY, use180Rotation);
         SpinChecker spinChecker = new SpinChecker(minoFactory, minoRotationDetail, lockedReachable, use180Rotation);
 
         this.b2BCondition = (Field field, int height, MinoOperation key) -> {
