@@ -9,16 +9,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solution-finder \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 15:30+0900\n"
+"POT-Creation-Date: 2022-12-12 00:32+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.10.3\n"
 
-#: ../../index.rst:45
+#: ../../index.rst:46
 msgid "目次"
 msgstr "Table of Contents"
 
@@ -87,15 +87,19 @@ msgstr "**util fumen** : Convert the input fumens and output new fumens."
 msgid "**util seq** : solution-finderのパターンをツモ順に展開します。"
 msgstr "**util seq** : Expand to piece sequences from solution-finder patterns."
 
-#: ../../index.rst:21
+#: ../../index.rst:20
+msgid "**verify kicks** : 設定されたKickテーブルの検証を行います。"
+msgstr ""
+
+#: ../../index.rst:22
 msgid "詳細は各コマンドのページをご参照ください。"
 msgstr "Please see the page for each command for details."
 
-#: ../../index.rst:25
+#: ../../index.rst:26
 msgid "補助GUI"
 msgstr "GUI for assistance"
 
-#: ../../index.rst:27
+#: ../../index.rst:28
 msgid ""
 "solution-finderは基本的にCLIからコマンドで操作する必要があります。 一方で ``percent`` ``path`` "
 "``util fig`` コマンドについては、solution-finderを操作しやすくするGUIが付属しています。"
@@ -104,29 +108,31 @@ msgstr ""
 " hand, for ``percent`` ``path`` ``util fig`` commands, GUIs are included "
 "to assist the solution-finder."
 
-#: ../../index.rst:30
+#: ../../index.rst:31
 msgid ""
 "こちらのGUIは `@kitsune_fuchi (twitter) <https://twitter.com/kitsune_fuchi>`_ "
 "さんに作成していただきました。"
 msgstr ""
-"These GUIs are made by `@kitsune_fuchi (twitter) <https://twitter.com/kitsune_fuchi>`_."
+"These GUIs are made by `@kitsune_fuchi (twitter) "
+"<https://twitter.com/kitsune_fuchi>`_."
 
-#: ../../index.rst:34
+#: ../../index.rst:35
 msgid "ダウンロード"
 msgstr "Download"
 
-#: ../../index.rst:36
+#: ../../index.rst:37
 msgid "https://github.com/knewjade/solution-finder/releases/ からダウンロードしてください。"
 msgstr "Download from https://github.com/knewjade/solution-finder/releases."
 
-#: ../../index.rst:38
+#: ../../index.rst:39
 msgid "（補助GUIを利用したい方は ``solution-finder-*-GUI.zip`` を選択してください。）"
 msgstr "If you want to use the GUI, please select ``solution-finder-*-GUI.zip``."
 
-#: ../../index.rst:40
+#: ../../index.rst:41
 msgid "また、プログラムの実行には `Java8(64bit) <https://java.com/ja/download/>`_ 以上が必要となります。"
 msgstr "Java 8 (64bit) or higher is required to run the program."
 
-#: ../../index.rst:42
+#: ../../index.rst:43
 msgid "その後のステップは :doc:`contents/quick_start` をご覧ください。"
 msgstr "See :doc:`contents/quick_start` for subsequent steps."
+

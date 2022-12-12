@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solution-finder \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-02 17:01+0900\n"
+"POT-Creation-Date: 2022-12-12 00:32+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 "Because the information in this page is largely dependent on the "
 "execution environemnt, please have some reservations with its accuracy."
 
-#: ../../contents/caution.rst:17 ../../contents/command.rst:21
+#: ../../contents/caution.rst:17 ../../contents/command.rst:19
 msgid "percent"
 msgstr ""
 
@@ -98,7 +98,7 @@ msgstr ""
 "However, SFinder only sees 2 sequences: T and Z, so the resulting "
 "percentage is erroneously 50%.)"
 
-#: ../../contents/caution.rst:32 ../../contents/command.rst:22
+#: ../../contents/caution.rst:32 ../../contents/command.rst:20
 msgid "path"
 msgstr ""
 
@@ -112,11 +112,11 @@ msgstr ""
 "In practice, fields above 7-high become difficult to search (depends on "
 "size of memory)"
 
-#: ../../contents/caution.rst:41
+#: ../../contents/caution.rst:41 ../../contents/command.rst:21
 msgid "setup"
 msgstr ""
 
-#: ../../contents/caution.rst:50
+#: ../../contents/caution.rst:50 ../../contents/command.rst:22
 msgid "ren"
 msgstr ""
 
@@ -134,7 +134,8 @@ msgstr "Commands"
 #: ../../contents/ren/main.rst:8 ../../contents/setup/main.rst:6
 #: ../../contents/spin/main.rst:6 ../../contents/util/fig.rst:6
 #: ../../contents/util/fumen.rst:6 ../../contents/util/main.rst:6
-#: ../../contents/util/seq.rst:6
+#: ../../contents/util/seq.rst:6 ../../contents/verify/kicks.rst:6
+#: ../../contents/verify/main.rst:6
 msgid "概要"
 msgstr "Summary"
 
@@ -154,63 +155,88 @@ msgstr ""
 msgid "このとき、<command>を必ず指定する必要があります。"
 msgstr "Here, ``<command>`` must be specified."
 
-#: ../../contents/command.rst:16
-msgid "solution-finderでは、現在3つのコマンドが実装されており、それぞれ以下の処理を行います。"
-msgstr ""
-"There are currently 3 [basic] commands implemented in solution-finder['s "
-"GUI], which has the following functions: "
-
-#: ../../contents/command.rst:19
+#: ../../contents/command.rst:17
 msgid "<command>"
 msgstr ""
 
-#: ../../contents/command.rst:19
+#: ../../contents/command.rst:17
 msgid "処理内容"
 msgstr "Description"
 
-#: ../../contents/command.rst:21
-msgid "ある地形からパーフェクトできる確率を計算する"
+#: ../../contents/command.rst:19
+msgid "ある地形からパーフェクトクリアできる確率を計算します。"
 msgstr ""
-"Calculates the percentage of getting a Perfect Clear from a specified "
-"field.(?? TODO: I should make these follow index.html)"
+"Calculate the probability of getting a perfect clear from a specified field."
 
-#: ../../contents/command.rst:22 ../../contents/path/main.rst:8
-msgid "ある地形からパーフェクトまでの操作手順をすべて列挙する"
+#: ../../contents/command.rst:20
+msgid "ある地形からパーフェクトクリアする手順をすべて出力します。"
 msgstr ""
-"Lists all possible orders of getting a Perfect Clear from a specified "
-"field."
+"Outputs all possible solutions for a specified field."
+
+#: ../../contents/command.rst:21
+msgid "ある地形から指定したブロックを埋める操作手順をすべて出力します。"
+msgstr "Outputs all the setups that fill a field in a specified way."
+
+#: ../../contents/command.rst:22
+msgid "ある地形からRENを続ける手順をすべて出力します。"
+msgstr "Outputs all the build orders that continue REN(COMBO) from a specified field."
 
 #: ../../contents/command.rst:23
+msgid "spin"
+msgstr ""
+
+#: ../../contents/command.rst:23
+#, fuzzy
+msgid "ある地形からTスピンできる手順をすべて出力します。"
+msgstr "Output all the setups for fields that can be T-Spin."
+
+#: ../../contents/command.rst:24
+msgid "cover"
+msgstr "cover"
+
+#: ../../contents/command.rst:24
+msgid "指定された場所・条件通りにミノを置くことができる確率を計算します。"
+msgstr "Calculate the percentage of sequences that can build a field (and other optional constraints)."
+
+#: ../../contents/command.rst:25
 msgid "util"
 msgstr ""
 
-#: ../../contents/command.rst:23
+#: ../../contents/command.rst:25
 msgid "ユーティリティ群 （※ コマンドのあとにサブコマンドが続く。詳細は次節を参照）"
 msgstr ""
 "Utility functions (※ This command must be followed by a subcommand. See "
-"the details on the next section.)"
+"the details on its section.)"
 
-#: ../../contents/command.rst:26 ../../contents/command.rst:46
+#: ../../contents/command.rst:26
+msgid "verify"
+msgstr ""
+
+#: ../../contents/command.rst:26 ../../contents/verify/main.rst:8
+msgid "solution-finderの動作確認を行うためのコマンド群"
+msgstr "Confirms the kick property file used by solution-finder."
+
+#: ../../contents/command.rst:29 ../../contents/command.rst:49
 msgid "このコマンドごとにそれぞれオプションが用意されています。"
 msgstr "Each command has various options."
 
-#: ../../contents/command.rst:28 ../../contents/command.rst:48
+#: ../../contents/command.rst:31 ../../contents/command.rst:51
 msgid "オプションの詳細は各コマンドに記載されていますので、そちらをご参照ください。"
 msgstr ""
 "The details of the options of each command will be documented [in its own"
 " page], so please refer to those pages."
 
-#: ../../contents/command.rst:32
+#: ../../contents/command.rst:35
 msgid "``java -jar sfinder.jar -v`` で、現在のバージョンを表示します"
 msgstr "``java -jar sfinder.jar -v`` displays the current version."
 
-#: ../../contents/command.rst:33
+#: ../../contents/command.rst:36
 msgid "``java -jar sfinder.jar -h`` で、Usage (現在の実装されているコマンド)を表示します"
 msgstr ""
 "``java -jar sfinder.jar -h`` displays the usage of the (currently "
 "implemented) commands."
 
-#: ../../contents/command.rst:34
+#: ../../contents/command.rst:37
 msgid ""
 "``java -jar sfinder.jar <command> -h`` で、各オプションごとのUsage "
 "(使用できるオプション一覧)を表示します"
@@ -218,72 +244,72 @@ msgstr ""
 "``java -jar sfinder.jar <command> -h`` displays the usage of (all "
 "possible) options for a command."
 
-#: ../../contents/command.rst:38
+#: ../../contents/command.rst:41
 msgid "サブコマンドについて"
 msgstr "Subcommands"
 
-#: ../../contents/command.rst:40
+#: ../../contents/command.rst:43
 msgid "utilコマンドについては、コマンドの下にサブコマンドを指定します。 ::"
 msgstr "For the util command, a subcommand is specified after the command. ::"
 
-#: ../../contents/command.rst:42
+#: ../../contents/command.rst:45
 msgid "java -jar sfinder.jar util <sub-command> [options]"
 msgstr ""
 
-#: ../../contents/command.rst:44
+#: ../../contents/command.rst:47
 msgid "このとき、<sub-command>を必ず指定する必要があります。"
 msgstr "Here, <sub-command> must be specified."
 
-#: ../../contents/command.rst:52
+#: ../../contents/command.rst:55
 msgid "テト譜からオプションを指定する"
 msgstr "Specifying options from the fumen"
 
-#: ../../contents/command.rst:54
+#: ../../contents/command.rst:57
 msgid "テト譜のコメント欄で、削除ライン数の横に上記のオプションを並べることで設定できます。"
 msgstr ""
 "You can declare the number of cleared rows, then other options in the "
 "comment of the fumen."
 
-#: ../../contents/command.rst:56
+#: ../../contents/command.rst:59
 msgid "例) 4ラインパフェで、パターンを*p4、ホールドなしで探索したい場合 ::"
 msgstr ""
 "Example: When searching for a 4-line Perfect Clear, with pattern *p4, "
 "without using hold ::"
 
-#: ../../contents/command.rst:58
+#: ../../contents/command.rst:61
 msgid "4 --patterns *p4 --hold avoid"
 msgstr ""
 
-#: ../../contents/command.rst:62
+#: ../../contents/command.rst:65
 msgid "オプションの優先順位"
 msgstr "Priority of Options"
 
-#: ../../contents/command.rst:64
+#: ../../contents/command.rst:67
 msgid "コマンドラインやテト譜など、複数箇所で同一オプションを設定した場合、次の数字が小さい場所の値が優先されます。"
 msgstr ""
 "When there are multiple declarations for the same option in the command "
 "prompt and the fumen, the first declaration that appears in the following"
 " order will be prioritized."
 
-#: ../../contents/command.rst:66
+#: ../../contents/command.rst:69
 msgid "コマンドライン引数 ``sfinder.jar <command> [options]``"
 msgstr "Arguments in the command line ``sfinder.jar <command> [options]``"
 
-#: ../../contents/command.rst:67
+#: ../../contents/command.rst:70
 msgid "テト譜のコマンド"
 msgstr "Commands in the fumen"
 
-#: ../../contents/command.rst:68
+#: ../../contents/command.rst:71
 msgid "フィールドファイル・パターンファイルの設定値"
 msgstr "Settings(?) from Field file/Pattern file"
 
-#: ../../contents/command.rst:72
+#: ../../contents/command.rst:75
 msgid "すべてのオプションをひとつの場所に書く必要はありません"
 msgstr ""
 "It is not necessary to write all options in only one [of the listed "
 "locations]."
 
-#: ../../contents/command.rst:73
+#: ../../contents/command.rst:76
 msgid "たとえば、フィールドの高さをテト譜に指定して、コマンドでパターンを指定することができる"
 msgstr ""
 "For example, the field height can be set in the fumen, while the pattern "
@@ -294,22 +320,18 @@ msgid "連絡先"
 msgstr "Contact"
 
 #: ../../contents/contact.rst:5
-msgid "twitter か github から 作者 (newjade) までご連絡ください"
-msgstr "Please contact the author (newjade) on twitter or github."
-
-#: ../../contents/contact.rst:7
 msgid "twitter @1millim"
 msgstr ""
 
-#: ../../contents/contact.rst:9
+#: ../../contents/contact.rst:7
 msgid "https://twitter.com/1millim"
 msgstr ""
 
-#: ../../contents/contact.rst:11
+#: ../../contents/contact.rst:9
 msgid "github @solution-finder"
 msgstr ""
 
-#: ../../contents/contact.rst:13
+#: ../../contents/contact.rst:11
 msgid "https://github.com/knewjade/solution-finder"
 msgstr ""
 
@@ -333,9 +355,9 @@ msgstr "The result will be output to a CSV file."
 
 #: ../../contents/cover/main.rst:15 ../../contents/path/main.rst:18
 #: ../../contents/percent/main.rst:12 ../../contents/ren/main.rst:16
-#: ../../contents/setup/main.rst:16 ../../contents/spin/main.rst:11
+#: ../../contents/setup/main.rst:16 ../../contents/spin/main.rst:13
 #: ../../contents/util/fig.rst:18 ../../contents/util/fumen.rst:18
-#: ../../contents/util/seq.rst:21
+#: ../../contents/util/seq.rst:21 ../../contents/verify/kicks.rst:18
 msgid "基本コマンド"
 msgstr "Basic Command"
 
@@ -418,7 +440,8 @@ msgid "コンソール表示"
 msgstr "Console Output"
 
 #: ../../contents/cover/main.rst:55 ../../contents/cover/main.rst:81
-#: ../../contents/field.rst:54 ../../contents/path/main.rst:35
+#: ../../contents/field.rst:54 ../../contents/inputs.rst:21
+#: ../../contents/inputs.rst:93 ../../contents/path/main.rst:35
 #: ../../contents/setup/main.rst:205
 msgid "サンプル ::"
 msgstr "Example ::"
@@ -467,7 +490,7 @@ msgid "指定された組み方のうち、すべてを組むことができる�
 msgstr "The percentage of sequences that can build all setups."
 
 #: ../../contents/cover/main.rst:79 ../../contents/path/main.rst:49
-#: ../../contents/setup/main.rst:235 ../../contents/spin/main.rst:63
+#: ../../contents/setup/main.rst:235 ../../contents/spin/main.rst:65
 msgid "CSV形式"
 msgstr "CSV format"
 
@@ -540,47 +563,48 @@ msgstr ""
 
 #: ../../contents/cover/main.rst:120 ../../contents/path/main.rst:58
 #: ../../contents/percent/main.rst:30 ../../contents/ren/main.rst:22
-#: ../../contents/setup/main.rst:267 ../../contents/spin/main.rst:16
-#: ../../contents/util/fig.rst:82 ../../contents/util/fumen.rst:24
-#: ../../contents/util/seq.rst:92
+#: ../../contents/setup/main.rst:267 ../../contents/spin/main.rst:18
+#: ../../contents/util/fig.rst:63 ../../contents/util/fumen.rst:24
+#: ../../contents/util/seq.rst:92 ../../contents/verify/kicks.rst:37
 msgid "オプション一覧"
 msgstr "List of Options"
 
 #: ../../contents/cover/main.rst:123 ../../contents/path/main.rst:61
 #: ../../contents/percent/main.rst:33 ../../contents/ren/main.rst:25
-#: ../../contents/setup/main.rst:270 ../../contents/spin/main.rst:19
-#: ../../contents/util/fig.rst:85 ../../contents/util/fumen.rst:27
-#: ../../contents/util/seq.rst:95
+#: ../../contents/setup/main.rst:270 ../../contents/spin/main.rst:21
+#: ../../contents/util/fig.rst:66 ../../contents/util/fumen.rst:27
+#: ../../contents/util/seq.rst:95 ../../contents/verify/kicks.rst:40
 msgid "short"
 msgstr ""
 
 #: ../../contents/cover/main.rst:123 ../../contents/path/main.rst:61
 #: ../../contents/percent/main.rst:33 ../../contents/ren/main.rst:25
-#: ../../contents/setup/main.rst:270 ../../contents/spin/main.rst:19
-#: ../../contents/util/fig.rst:85 ../../contents/util/fumen.rst:27
-#: ../../contents/util/seq.rst:95
+#: ../../contents/setup/main.rst:270 ../../contents/spin/main.rst:21
+#: ../../contents/util/fig.rst:66 ../../contents/util/fumen.rst:27
+#: ../../contents/util/seq.rst:95 ../../contents/verify/kicks.rst:40
 msgid "long"
 msgstr ""
 
 #: ../../contents/cover/main.rst:123 ../../contents/path/main.rst:61
 #: ../../contents/percent/main.rst:33 ../../contents/ren/main.rst:25
-#: ../../contents/setup/main.rst:270 ../../contents/spin/main.rst:19
-#: ../../contents/util/fig.rst:85 ../../contents/util/fig.rst:97
+#: ../../contents/setup/main.rst:270 ../../contents/spin/main.rst:21
+#: ../../contents/util/fig.rst:66 ../../contents/util/fig.rst:78
 #: ../../contents/util/fumen.rst:27 ../../contents/util/seq.rst:95
+#: ../../contents/verify/kicks.rst:40
 msgid "default"
 msgstr ""
 
 #: ../../contents/cover/main.rst:125 ../../contents/path/main.rst:64
 #: ../../contents/percent/main.rst:36 ../../contents/ren/main.rst:28
-#: ../../contents/setup/main.rst:272 ../../contents/spin/main.rst:21
-#: ../../contents/util/fig.rst:92 ../../contents/util/fumen.rst:29
+#: ../../contents/setup/main.rst:272 ../../contents/spin/main.rst:23
+#: ../../contents/util/fig.rst:73 ../../contents/util/fumen.rst:29
 msgid "``-t``"
 msgstr ""
 
 #: ../../contents/cover/main.rst:125 ../../contents/path/main.rst:64
 #: ../../contents/percent/main.rst:36 ../../contents/ren/main.rst:28
-#: ../../contents/setup/main.rst:272 ../../contents/spin/main.rst:21
-#: ../../contents/util/fig.rst:92 ../../contents/util/fumen.rst:29
+#: ../../contents/setup/main.rst:272 ../../contents/spin/main.rst:23
+#: ../../contents/util/fig.rst:73 ../../contents/util/fumen.rst:29
 msgid "``--tetfu``"
 msgstr ""
 
@@ -590,9 +614,9 @@ msgstr ""
 #: ../../contents/ren/main.rst:28 ../../contents/ren/main.rst:30
 #: ../../contents/setup/main.rst:272 ../../contents/setup/main.rst:274
 #: ../../contents/setup/main.rst:276 ../../contents/setup/main.rst:277
-#: ../../contents/setup/main.rst:278 ../../contents/setup/main.rst:283
-#: ../../contents/spin/main.rst:21 ../../contents/spin/main.rst:23
-#: ../../contents/util/fig.rst:92 ../../contents/util/fumen.rst:29
+#: ../../contents/setup/main.rst:278 ../../contents/setup/main.rst:284
+#: ../../contents/spin/main.rst:23 ../../contents/spin/main.rst:25
+#: ../../contents/util/fig.rst:73 ../../contents/util/fumen.rst:29
 #: ../../contents/util/fumen.rst:30 ../../contents/util/fumen.rst:31
 #: ../../contents/util/seq.rst:97 ../../contents/util/seq.rst:101
 #: ../../contents/util/seq.rst:102 ../../contents/util/seq.rst:103
@@ -601,27 +625,27 @@ msgstr "null"
 
 #: ../../contents/cover/main.rst:126 ../../contents/path/main.rst:66
 #: ../../contents/percent/main.rst:38 ../../contents/ren/main.rst:30
-#: ../../contents/setup/main.rst:274 ../../contents/spin/main.rst:23
+#: ../../contents/setup/main.rst:274 ../../contents/spin/main.rst:25
 #: ../../contents/util/seq.rst:97
 msgid "``-p``"
 msgstr ""
 
 #: ../../contents/cover/main.rst:126 ../../contents/path/main.rst:66
 #: ../../contents/percent/main.rst:38 ../../contents/ren/main.rst:30
-#: ../../contents/setup/main.rst:274 ../../contents/spin/main.rst:23
+#: ../../contents/setup/main.rst:274 ../../contents/spin/main.rst:25
 #: ../../contents/util/seq.rst:97
 msgid "``--patterns``"
 msgstr ""
 
 #: ../../contents/cover/main.rst:127 ../../contents/path/main.rst:63
 #: ../../contents/percent/main.rst:35 ../../contents/ren/main.rst:27
-#: ../../contents/setup/main.rst:280 ../../contents/util/fig.rst:98
+#: ../../contents/setup/main.rst:280 ../../contents/util/fig.rst:79
 msgid "``-H``"
 msgstr ""
 
 #: ../../contents/cover/main.rst:127 ../../contents/path/main.rst:63
 #: ../../contents/percent/main.rst:35 ../../contents/ren/main.rst:27
-#: ../../contents/setup/main.rst:280 ../../contents/util/fig.rst:98
+#: ../../contents/setup/main.rst:280 ../../contents/util/fig.rst:79
 msgid "``--hold``"
 msgstr ""
 
@@ -633,314 +657,356 @@ msgstr ""
 
 #: ../../contents/cover/main.rst:128 ../../contents/path/main.rst:74
 #: ../../contents/percent/main.rst:40 ../../contents/ren/main.rst:31
-#: ../../contents/setup/main.rst:281 ../../contents/util/fig.rst:90
+#: ../../contents/setup/main.rst:281 ../../contents/verify/kicks.rst:42
+msgid "``-K``"
+msgstr ""
+
+#: ../../contents/cover/main.rst:128 ../../contents/path/main.rst:74
+#: ../../contents/percent/main.rst:40 ../../contents/ren/main.rst:31
+#: ../../contents/setup/main.rst:281 ../../contents/verify/kicks.rst:42
+msgid "``--kicks``"
+msgstr ""
+
+#: ../../contents/cover/main.rst:128 ../../contents/path/main.rst:74
+#: ../../contents/percent/main.rst:40 ../../contents/ren/main.rst:31
+#: ../../contents/setup/main.rst:281 ../../contents/verify/kicks.rst:42
+msgid "srs"
+msgstr ""
+
+#: ../../contents/cover/main.rst:129 ../../contents/path/main.rst:75
+#: ../../contents/percent/main.rst:41 ../../contents/ren/main.rst:32
+#: ../../contents/setup/main.rst:282 ../../contents/util/fig.rst:71
 #: ../../contents/util/seq.rst:100
 msgid "``-d``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:128 ../../contents/path/main.rst:74
-#: ../../contents/percent/main.rst:40 ../../contents/ren/main.rst:31
-#: ../../contents/setup/main.rst:281
+#: ../../contents/cover/main.rst:129 ../../contents/path/main.rst:75
+#: ../../contents/percent/main.rst:41 ../../contents/ren/main.rst:32
+#: ../../contents/setup/main.rst:282
 msgid "``--drop``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:128 ../../contents/path/main.rst:74
-#: ../../contents/percent/main.rst:40 ../../contents/ren/main.rst:31
-#: ../../contents/setup/main.rst:281
+#: ../../contents/cover/main.rst:129 ../../contents/percent/main.rst:41
+#: ../../contents/ren/main.rst:32 ../../contents/setup/main.rst:282
 msgid "softdrop"
 msgstr ""
 
-#: ../../contents/cover/main.rst:129 ../../contents/setup/main.rst:277
-#: ../../contents/spin/main.rst:26
+#: ../../contents/cover/main.rst:130 ../../contents/setup/main.rst:277
+#: ../../contents/spin/main.rst:28
 msgid "``-m``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:129
+#: ../../contents/cover/main.rst:130
 msgid "``--mirror``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:129 ../../contents/cover/main.rst:132
+#: ../../contents/cover/main.rst:130 ../../contents/cover/main.rst:133
 #: ../../contents/path/main.rst:70 ../../contents/setup/main.rst:275
-#: ../../contents/setup/main.rst:286 ../../contents/spin/main.rst:30
+#: ../../contents/setup/main.rst:287 ../../contents/spin/main.rst:32
 msgid "no"
 msgstr ""
 
-#: ../../contents/cover/main.rst:130 ../../contents/util/fumen.rst:30
+#: ../../contents/cover/main.rst:131 ../../contents/util/fumen.rst:30
 #: ../../contents/util/seq.rst:98
 msgid "``-M``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:130 ../../contents/util/fumen.rst:30
+#: ../../contents/cover/main.rst:131 ../../contents/util/fumen.rst:30
 #: ../../contents/util/seq.rst:98
 msgid "``--mode``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:130 ../../contents/cover/main.rst:215
+#: ../../contents/cover/main.rst:131 ../../contents/cover/main.rst:229
 msgid "normal"
 msgstr ""
 
-#: ../../contents/cover/main.rst:131
+#: ../../contents/cover/main.rst:132
 msgid "``-sb``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:131
+#: ../../contents/cover/main.rst:132
 msgid "``--starting-b2b``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:131 ../../contents/cover/main.rst:133
-#: ../../contents/path/main.rst:76 ../../contents/spin/main.rst:24
+#: ../../contents/cover/main.rst:132 ../../contents/cover/main.rst:134
+#: ../../contents/path/main.rst:77 ../../contents/spin/main.rst:26
 msgid "0"
 msgstr ""
 
-#: ../../contents/cover/main.rst:132 ../../contents/path/main.rst:65
+#: ../../contents/cover/main.rst:133 ../../contents/path/main.rst:65
 #: ../../contents/percent/main.rst:37 ../../contents/ren/main.rst:29
-#: ../../contents/setup/main.rst:273 ../../contents/spin/main.rst:22
+#: ../../contents/setup/main.rst:273 ../../contents/spin/main.rst:24
 msgid "``-P``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:132
+#: ../../contents/cover/main.rst:133
 msgid "``--priority``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:133 ../../contents/setup/main.rst:279
-#: ../../contents/util/fig.rst:95 ../../contents/util/seq.rst:99
+#: ../../contents/cover/main.rst:134 ../../contents/setup/main.rst:279
+#: ../../contents/util/fig.rst:76 ../../contents/util/seq.rst:99
 msgid "``-l``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:133
+#: ../../contents/cover/main.rst:134
 msgid "``--last-sd``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:134
+#: ../../contents/cover/main.rst:135
 msgid "``-ms``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:134
+#: ../../contents/cover/main.rst:135
 msgid "``--max-softdrop``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:134 ../../contents/cover/main.rst:135
-#: ../../contents/path/main.rst:75 ../../contents/percent/main.rst:41
-#: ../../contents/setup/main.rst:279 ../../contents/setup/main.rst:284
-#: ../../contents/spin/main.rst:25 ../../contents/spin/main.rst:26
-#: ../../contents/spin/main.rst:29 ../../contents/util/fig.rst:94
-#: ../../contents/util/fig.rst:95 ../../contents/util/seq.rst:99
+#: ../../contents/cover/main.rst:135 ../../contents/cover/main.rst:136
+#: ../../contents/path/main.rst:76 ../../contents/percent/main.rst:42
+#: ../../contents/setup/main.rst:279 ../../contents/setup/main.rst:285
+#: ../../contents/spin/main.rst:27 ../../contents/spin/main.rst:28
+#: ../../contents/spin/main.rst:31 ../../contents/util/fig.rst:75
+#: ../../contents/util/fig.rst:76 ../../contents/util/seq.rst:99
 msgid "-1"
 msgstr ""
 
-#: ../../contents/cover/main.rst:135
+#: ../../contents/cover/main.rst:136
 msgid "``-mc``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:135
+#: ../../contents/cover/main.rst:136
 msgid "``--max-clearline``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:136 ../../contents/path/main.rst:77
-#: ../../contents/ren/main.rst:32 ../../contents/setup/main.rst:287
-#: ../../contents/spin/main.rst:33 ../../contents/util/fig.rst:87
+#: ../../contents/cover/main.rst:137 ../../contents/path/main.rst:78
+#: ../../contents/ren/main.rst:33 ../../contents/setup/main.rst:288
+#: ../../contents/spin/main.rst:35 ../../contents/util/fig.rst:68
 #: ../../contents/util/fumen.rst:32
 msgid "``-o``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:136 ../../contents/path/main.rst:77
-#: ../../contents/ren/main.rst:32 ../../contents/setup/main.rst:287
-#: ../../contents/spin/main.rst:33 ../../contents/util/fumen.rst:32
+#: ../../contents/cover/main.rst:137 ../../contents/path/main.rst:78
+#: ../../contents/ren/main.rst:33 ../../contents/setup/main.rst:288
+#: ../../contents/spin/main.rst:35 ../../contents/util/fumen.rst:32
 msgid "``--output-base``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:136
+#: ../../contents/cover/main.rst:137
 msgid "output/cover.csv"
 msgstr ""
 
-#: ../../contents/cover/main.rst:137 ../../contents/path/main.rst:78
-#: ../../contents/percent/main.rst:44 ../../contents/ren/main.rst:33
-#: ../../contents/setup/main.rst:288 ../../contents/spin/main.rst:36
-#: ../../contents/util/fig.rst:99 ../../contents/util/fumen.rst:33
+#: ../../contents/cover/main.rst:138 ../../contents/path/main.rst:79
+#: ../../contents/percent/main.rst:45 ../../contents/ren/main.rst:34
+#: ../../contents/setup/main.rst:289 ../../contents/spin/main.rst:38
+#: ../../contents/util/fig.rst:80 ../../contents/util/fumen.rst:33
 msgid "``-lp``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:137 ../../contents/path/main.rst:78
-#: ../../contents/percent/main.rst:44 ../../contents/ren/main.rst:33
-#: ../../contents/setup/main.rst:288 ../../contents/spin/main.rst:36
-#: ../../contents/util/fig.rst:99 ../../contents/util/fumen.rst:33
+#: ../../contents/cover/main.rst:138 ../../contents/path/main.rst:79
+#: ../../contents/percent/main.rst:45 ../../contents/ren/main.rst:34
+#: ../../contents/setup/main.rst:289 ../../contents/spin/main.rst:38
+#: ../../contents/util/fig.rst:80 ../../contents/util/fumen.rst:33
 msgid "``--log-path``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:137 ../../contents/path/main.rst:78
-#: ../../contents/percent/main.rst:44 ../../contents/ren/main.rst:33
-#: ../../contents/setup/main.rst:288 ../../contents/spin/main.rst:36
-#: ../../contents/util/fig.rst:99 ../../contents/util/fumen.rst:33
+#: ../../contents/cover/main.rst:138 ../../contents/path/main.rst:79
+#: ../../contents/percent/main.rst:45 ../../contents/ren/main.rst:34
+#: ../../contents/setup/main.rst:289 ../../contents/spin/main.rst:38
+#: ../../contents/util/fig.rst:80 ../../contents/util/fumen.rst:33
 msgid "output/last_output.txt"
 msgstr ""
 
-#: ../../contents/cover/main.rst:138 ../../contents/path/main.rst:79
-#: ../../contents/percent/main.rst:45 ../../contents/ren/main.rst:34
-#: ../../contents/setup/main.rst:289 ../../contents/spin/main.rst:34
-#: ../../contents/util/fig.rst:100 ../../contents/util/fumen.rst:34
+#: ../../contents/cover/main.rst:139 ../../contents/path/main.rst:80
+#: ../../contents/percent/main.rst:46 ../../contents/ren/main.rst:35
+#: ../../contents/setup/main.rst:290 ../../contents/spin/main.rst:36
+#: ../../contents/util/fig.rst:81 ../../contents/util/fumen.rst:34
 msgid "``-fp``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:138 ../../contents/path/main.rst:79
-#: ../../contents/percent/main.rst:45 ../../contents/ren/main.rst:34
-#: ../../contents/setup/main.rst:289 ../../contents/spin/main.rst:34
-#: ../../contents/util/fig.rst:100 ../../contents/util/fumen.rst:34
+#: ../../contents/cover/main.rst:139 ../../contents/path/main.rst:80
+#: ../../contents/percent/main.rst:46 ../../contents/ren/main.rst:35
+#: ../../contents/setup/main.rst:290 ../../contents/spin/main.rst:36
+#: ../../contents/util/fig.rst:81 ../../contents/util/fumen.rst:34
 msgid "``--field-path``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:138 ../../contents/path/main.rst:79
-#: ../../contents/percent/main.rst:45 ../../contents/ren/main.rst:34
-#: ../../contents/setup/main.rst:289 ../../contents/spin/main.rst:34
-#: ../../contents/util/fig.rst:100 ../../contents/util/fumen.rst:34
+#: ../../contents/cover/main.rst:139 ../../contents/path/main.rst:80
+#: ../../contents/percent/main.rst:46 ../../contents/ren/main.rst:35
+#: ../../contents/setup/main.rst:290 ../../contents/spin/main.rst:36
+#: ../../contents/util/fig.rst:81 ../../contents/util/fumen.rst:34
 msgid "input/field.txt"
 msgstr ""
 
-#: ../../contents/cover/main.rst:139 ../../contents/path/main.rst:80
-#: ../../contents/percent/main.rst:46 ../../contents/ren/main.rst:35
-#: ../../contents/setup/main.rst:290 ../../contents/spin/main.rst:35
+#: ../../contents/cover/main.rst:140 ../../contents/path/main.rst:81
+#: ../../contents/percent/main.rst:47 ../../contents/ren/main.rst:36
+#: ../../contents/setup/main.rst:291 ../../contents/spin/main.rst:37
 msgid "``-pp``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:139 ../../contents/path/main.rst:80
-#: ../../contents/percent/main.rst:46 ../../contents/ren/main.rst:35
-#: ../../contents/setup/main.rst:290 ../../contents/spin/main.rst:35
+#: ../../contents/cover/main.rst:140 ../../contents/path/main.rst:81
+#: ../../contents/percent/main.rst:47 ../../contents/ren/main.rst:36
+#: ../../contents/setup/main.rst:291 ../../contents/spin/main.rst:37
 msgid "``--patterns-path``"
 msgstr ""
 
-#: ../../contents/cover/main.rst:139 ../../contents/path/main.rst:80
-#: ../../contents/percent/main.rst:46 ../../contents/ren/main.rst:35
-#: ../../contents/setup/main.rst:290 ../../contents/spin/main.rst:35
+#: ../../contents/cover/main.rst:140 ../../contents/path/main.rst:81
+#: ../../contents/percent/main.rst:47 ../../contents/ren/main.rst:36
+#: ../../contents/setup/main.rst:291 ../../contents/spin/main.rst:37
 msgid "input/patterns.txt"
 msgstr ""
 
-#: ../../contents/cover/main.rst:144 ../../contents/path/main.rst:93
-#: ../../contents/percent/main.rst:59 ../../contents/ren/main.rst:48
-#: ../../contents/setup/main.rst:295 ../../contents/spin/main.rst:128
-#: ../../contents/util/fig.rst:151 ../../contents/util/fumen.rst:39
+#: ../../contents/cover/main.rst:145 ../../contents/path/main.rst:94
+#: ../../contents/percent/main.rst:60 ../../contents/ren/main.rst:49
+#: ../../contents/setup/main.rst:296 ../../contents/spin/main.rst:130
+#: ../../contents/util/fig.rst:132 ../../contents/util/fumen.rst:39
 msgid "``-t``, ``--tetfu`` [default: なし]"
 msgstr "``-t``, ``--tetfu`` [default: none]"
 
-#: ../../contents/cover/main.rst:146 ../../contents/path/main.rst:95
-#: ../../contents/percent/main.rst:61 ../../contents/ren/main.rst:50
-#: ../../contents/setup/main.rst:297 ../../contents/spin/main.rst:130
+#: ../../contents/cover/main.rst:147 ../../contents/path/main.rst:96
+#: ../../contents/percent/main.rst:62 ../../contents/ren/main.rst:51
+#: ../../contents/setup/main.rst:298 ../../contents/spin/main.rst:132
 #: ../../contents/util/fumen.rst:41
 msgid "フィールドやオプションなどを指定したテト譜データを指定する。"
 msgstr "Assigns fumen data that specifies the field and options."
 
-#: ../../contents/cover/main.rst:148 ../../contents/util/fumen.rst:43
+#: ../../contents/cover/main.rst:149 ../../contents/util/fumen.rst:43
 msgid "テト譜を複数個同時に指定する場合は ``--tetfu v115@vhAAgH v115@vhAAgH`` のように指定する。"
 msgstr ""
 "Assign multiple fumens at the same time by ``--tetfu v115@vhAAgH "
 "v115@vhAAgH``."
 
-#: ../../contents/cover/main.rst:150 ../../contents/path/main.rst:99
-#: ../../contents/percent/main.rst:65 ../../contents/ren/main.rst:54
-#: ../../contents/setup/main.rst:301 ../../contents/spin/main.rst:134
-#: ../../contents/util/fig.rst:157 ../../contents/util/fumen.rst:45
+#: ../../contents/cover/main.rst:151 ../../contents/path/main.rst:100
+#: ../../contents/percent/main.rst:66 ../../contents/ren/main.rst:55
+#: ../../contents/setup/main.rst:302 ../../contents/spin/main.rst:136
+#: ../../contents/util/fig.rst:138 ../../contents/util/fumen.rst:45
 msgid "v115のテト譜データにのみ対応。"
 msgstr "Only accepts fumen data of version v115."
 
-#: ../../contents/cover/main.rst:152
+#: ../../contents/cover/main.rst:153
 msgid "coverコマンドでは、上述したページを指定する書き方にも対応しています。"
 msgstr ""
 
-#: ../../contents/cover/main.rst:156 ../../contents/path/main.rst:111
-#: ../../contents/percent/main.rst:77 ../../contents/ren/main.rst:66
-#: ../../contents/setup/main.rst:313 ../../contents/spin/main.rst:146
+#: ../../contents/cover/main.rst:157 ../../contents/path/main.rst:112
+#: ../../contents/percent/main.rst:78 ../../contents/ren/main.rst:67
+#: ../../contents/setup/main.rst:314 ../../contents/spin/main.rst:148
 #: ../../contents/util/seq.rst:109
 msgid "``-p``, ``--patterns`` [default: なし]"
 msgstr "``-p``, ``--patterns`` [default: none]"
 
-#: ../../contents/cover/main.rst:158 ../../contents/ren/main.rst:68
+#: ../../contents/cover/main.rst:159 ../../contents/ren/main.rst:69
 msgid "探索したいミノ順を指定する。"
 msgstr "Assigns the sequences to be searched."
 
-#: ../../contents/cover/main.rst:160 ../../contents/ren/main.rst:70
+#: ../../contents/cover/main.rst:161 ../../contents/ren/main.rst:71
 msgid "最大で22個のミノまで指定できる。"
 msgstr "Accepts a maximum sequence length of 22 tetrominos."
 
-#: ../../contents/cover/main.rst:162 ../../contents/ren/main.rst:74
+#: ../../contents/cover/main.rst:163 ../../contents/ren/main.rst:75
 msgid "パターンを変更したい場合は ``--pattern IOSZLJTIO`` のように指定します。"
 msgstr "Alter the pattern by ``--pattern IOSZLJTIO``."
 
-#: ../../contents/cover/main.rst:166 ../../contents/path/main.rst:85
-#: ../../contents/percent/main.rst:51 ../../contents/ren/main.rst:40
-#: ../../contents/setup/main.rst:389
+#: ../../contents/cover/main.rst:167 ../../contents/path/main.rst:86
+#: ../../contents/percent/main.rst:52 ../../contents/ren/main.rst:41
+#: ../../contents/setup/main.rst:390
 msgid "``-H``, ``--hold`` [default: use]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:168 ../../contents/path/main.rst:87
-#: ../../contents/percent/main.rst:53 ../../contents/ren/main.rst:42
-#: ../../contents/setup/main.rst:391
+#: ../../contents/cover/main.rst:169 ../../contents/path/main.rst:88
+#: ../../contents/percent/main.rst:54 ../../contents/ren/main.rst:43
+#: ../../contents/setup/main.rst:392
 msgid "ホールドの有無を指定する。"
 msgstr "Specifies if hold will be used."
 
-#: ../../contents/cover/main.rst:170 ../../contents/path/main.rst:89
-#: ../../contents/percent/main.rst:55 ../../contents/ren/main.rst:44
-#: ../../contents/setup/main.rst:393
+#: ../../contents/cover/main.rst:171 ../../contents/path/main.rst:90
+#: ../../contents/percent/main.rst:56 ../../contents/ren/main.rst:45
+#: ../../contents/setup/main.rst:394
 msgid "ホールドなしで探索する場合は ``--hold avoid`` を指定する。"
 msgstr "Search without using hold by ``--hold avoid``."
 
-#: ../../contents/cover/main.rst:174 ../../contents/path/main.rst:196
-#: ../../contents/percent/main.rst:91 ../../contents/ren/main.rst:78
-#: ../../contents/setup/main.rst:397
-msgid "``-d``, ``--drop`` [default: softdrop]"
+#: ../../contents/cover/main.rst:175 ../../contents/path/main.rst:197
+#: ../../contents/percent/main.rst:92 ../../contents/ren/main.rst:79
+#: ../../contents/setup/main.rst:398 ../../contents/verify/kicks.rst:47
+msgid "``-K``, ``--kicks`` [default: srs]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:176 ../../contents/path/main.rst:198
-#: ../../contents/percent/main.rst:93 ../../contents/ren/main.rst:80
-#: ../../contents/setup/main.rst:399
-msgid "ミノの操作に制限を加える。"
-msgstr "Adds restrictions to placements of tetrominos."
+#: ../../contents/cover/main.rst:177 ../../contents/path/main.rst:199
+#: ../../contents/percent/main.rst:94 ../../contents/ren/main.rst:81
+#: ../../contents/setup/main.rst:400
+msgid "適用する回転法則を指定する。"
+msgstr "Specifies which kick table should be used."
 
-#: ../../contents/cover/main.rst:178 ../../contents/path/main.rst:200
-#: ../../contents/percent/main.rst:95 ../../contents/ren/main.rst:82
-#: ../../contents/setup/main.rst:401
+#: ../../contents/cover/main.rst:179 ../../contents/cover/main.rst:192
+#: ../../contents/path/main.rst:201 ../../contents/path/main.rst:214
+#: ../../contents/percent/main.rst:96 ../../contents/percent/main.rst:109
+#: ../../contents/ren/main.rst:83 ../../contents/ren/main.rst:96
+#: ../../contents/setup/main.rst:402 ../../contents/setup/main.rst:415
+#: ../../contents/verify/kicks.rst:51
 msgid "以下から操作方法をひとつ選択する。"
 msgstr "Pick one of the handling(?) options below."
 
-#: ../../contents/cover/main.rst:180 ../../contents/path/main.rst:202
-#: ../../contents/percent/main.rst:97 ../../contents/ren/main.rst:84
-#: ../../contents/setup/main.rst:403
-msgid "softdrop: ソフトドロップ＋回転入れ（制限なし）"
-msgstr "softdrop: softdrop + rotations (unlimited)"
-
 #: ../../contents/cover/main.rst:181 ../../contents/path/main.rst:203
 #: ../../contents/percent/main.rst:98 ../../contents/ren/main.rst:85
-#: ../../contents/setup/main.rst:404
-msgid "harddrop: ハードドロップのみ"
-msgstr "harddrop: only using harddropp"
+#: ../../contents/setup/main.rst:404 ../../contents/verify/kicks.rst:53
+msgid "srs (default): SRSに準拠した回転法則。90度回転のみ"
+msgstr "srs (default): Kick table following SRS. Only 90 degree rotations are supported"
 
 #: ../../contents/cover/main.rst:182 ../../contents/path/main.rst:204
 #: ../../contents/percent/main.rst:99 ../../contents/ren/main.rst:86
-#: ../../contents/setup/main.rst:405
+#: ../../contents/setup/main.rst:405 ../../contents/verify/kicks.rst:54
 msgid ""
-"180: ソフトドロップ＋180度回転入れ。180度回転は `Nullpomino "
-"<https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickに準拠します"
-msgstr ""
-"180: harddrop + 180 rotations. The 180 rotations are from the Standard "
-"Wallkick in `Nullpomino <https://github.com/nullpomino/nullpomino>`_"
+"@ファイル名: ``kicks/ファイル名.properties`` からKickテーブルを読み込みます ( ``@`` の代わりに ``+`` "
+"も利用可能です)"
+msgstr "@``<filename>``: reads the kick table specified in ``kicks/<filename>.properties`` (you can also prepend ``+`` instead of ``@``)"
 
-#: ../../contents/cover/main.rst:183 ../../contents/path/main.rst:205
-#: ../../contents/percent/main.rst:100 ../../contents/ren/main.rst:87
-#: ../../contents/setup/main.rst:406
-msgid "t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ"
-msgstr ""
-"t-softdrop: T tetromino is allowed softdrop, while others can only use "
-"harddrop"
+#: ../../contents/cover/main.rst:184 ../../contents/path/main.rst:206
+#: ../../contents/percent/main.rst:101 ../../contents/ren/main.rst:88
+#: ../../contents/setup/main.rst:407 ../../contents/verify/kicks.rst:56
+msgid "なお、kicksファイルのフォーマットは :doc:`../inputs` を参照してください。"
+msgstr "Please refer to :doc:`../inputs` for the file format of kick tables."
 
-#: ../../contents/cover/main.rst:185 ../../contents/path/main.rst:207
+#: ../../contents/cover/main.rst:188 ../../contents/percent/main.rst:105
+#: ../../contents/ren/main.rst:92 ../../contents/setup/main.rst:411
+msgid "``-d``, ``--drop`` [default: softdrop]"
+msgstr ""
+
+#: ../../contents/cover/main.rst:190 ../../contents/path/main.rst:212
+#: ../../contents/percent/main.rst:107 ../../contents/ren/main.rst:94
+#: ../../contents/setup/main.rst:413
+msgid "ミノの操作に制限を加える。"
+msgstr "Adds restrictions to placements of tetrominos."
+
+#: ../../contents/cover/main.rst:194 ../../contents/path/main.rst:216
+#: ../../contents/percent/main.rst:111 ../../contents/ren/main.rst:98
+#: ../../contents/setup/main.rst:417
+msgid "softdrop: ソフトドロップ＋回転入れ（制限なし）"
+msgstr "softdrop: softdrop + rotations (unlimited)"
+
+#: ../../contents/cover/main.rst:195 ../../contents/path/main.rst:217
+#: ../../contents/percent/main.rst:112 ../../contents/ren/main.rst:99
+#: ../../contents/setup/main.rst:418
+msgid "harddrop: ハードドロップのみ"
+msgstr "harddrop: only using harddropp"
+
+#: ../../contents/cover/main.rst:196
+msgid ""
+"180 (softdrop180): ソフトドロップ＋180度回転入れ（使用するには、180度回転に対応したkicksを選択する必要があります） "
+"* t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ"
+msgstr "180 (softdrop180): the same as softdrop, but with 180 rotations (you must select a kick table that supports 180 rotations when using this option)"
+"* t-softdrop: Only T tetrominos can use softdrop, while all other tetrominos only use harddrop"
+
+#: ../../contents/cover/main.rst:199 ../../contents/path/main.rst:221
 msgid "tsz (tspin0): Tミノは必ずT-Spinをする（ライン消去をしなくてもOK）。その他のミノはハードドロップ"
 msgstr ""
-"tsz (tspin0): T tetrominos must perform a T-Spin (even if no lines are cleared). Other tetrominos can only use harddrop."
+"tsz (tspin0): T tetrominos must perform a T-Spin (even if no lines are "
+"cleared). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:186 ../../contents/path/main.rst:208
+#: ../../contents/cover/main.rst:200 ../../contents/path/main.rst:222
 msgid "tsm (tspinm): Tミノは必ずT-Spin Single,Double,Tripe(Miniを含む)をする。その他のミノはハードドロップ"
 msgstr ""
 "tsm (tspinm): T tetrominos must perform a T-Spin Single, Double, or "
-"Triple (while also being T-Spin Minis). Other tetrominos can only use harddrop."
+"Triple (while also being T-Spin Minis). Other tetrominos can only use "
+"harddrop."
 
-#: ../../contents/cover/main.rst:187 ../../contents/path/main.rst:209
+#: ../../contents/cover/main.rst:201 ../../contents/path/main.rst:223
 msgid ""
 "tss (tspin1): Tミノは必ずT-Spin "
 "Single,Double,Tripe(Miniは含まない)をする。その他のミノはハードドロップ"
@@ -948,92 +1014,92 @@ msgstr ""
 "tss (tspin1): T tetrominos must perform a T-Spin Single, Double, or "
 "Triple (excluding Minis). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:188 ../../contents/path/main.rst:210
+#: ../../contents/cover/main.rst:202 ../../contents/path/main.rst:224
 msgid "tsd (tspin2): Tミノは必ずT-Spin Double,Tripe(Miniは含まない)をする。その他のミノはハードドロップ"
 msgstr ""
 "tsd (tspin2): T tetrominos must perform a T-Spin Double, or Triple "
 "(excluding Minis). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:189 ../../contents/path/main.rst:211
+#: ../../contents/cover/main.rst:203 ../../contents/path/main.rst:225
 msgid "tst (tspin3): Tミノは必ずT-Spin Tripe(Miniは含まない)をする。その他のミノはハードドロップ"
 msgstr ""
 "tst (tspin3): T tetrominos must perform a T-Spin Triple (excluding "
 "Minis). Other tetrominos can only use harddrop."
 
-#: ../../contents/cover/main.rst:191
+#: ../../contents/cover/main.rst:205
 msgid ""
 "※ tspin0を除いたT-Spin系のdropでは、「T-Spinできないケース」や「ライン消去が発生しないT-"
 "Spinになるケース」ではミノを置きません。 また、Tミノを使わないケースでは ``harddrop`` と同じになる点にご注意ください "
 "(solutionが省略されるわけではありません)。"
 msgstr ""
-"※ For the drop options requiring T-spins (aside from tspin0), a tetromino will not be placed "
-"if a T-Spin can't be done or it would be a T-spin only if lines were not "
-"cleared. Moreover, please note that they will be equivalent to "
-"``harddrop`` if T tetrominos are not used. (Solutions will not be "
-"omitted.(?)) (??)"
+"※ For the drop options requiring T-spins (aside from tspin0), a tetromino"
+" will not be placed if a T-Spin can't be done, or it would be a T-spin "
+"only if lines were not cleared. Moreover, please note that they will be "
+"equivalent to ``harddrop`` if T tetrominos are not used. (Solutions will "
+"not be omitted.(?)) (??)"
 
-#: ../../contents/cover/main.rst:196
+#: ../../contents/cover/main.rst:210
 msgid "``-m``, ``--mirror`` [default: no]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:198
+#: ../../contents/cover/main.rst:212
 msgid "``yes`` の場合、入力した組み方を左右に反転させた組み方も対象に加える。"
 msgstr "If set to ``yes``, the mirror of each setup will also be included."
 
-#: ../../contents/cover/main.rst:200
+#: ../../contents/cover/main.rst:214
 msgid "複数のテト譜を同時に指定した場合、すべての組み方が左右反転されます。"
 msgstr "When multiple fumen are assigned, all mirrored setups will be included."
 
-#: ../../contents/cover/main.rst:204
+#: ../../contents/cover/main.rst:218
 msgid "``-M``, ``--mode`` [default: normal]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:206
+#: ../../contents/cover/main.rst:220
 msgid "探索モードを変更します。モードを変更すると「成功とする条件」が変化します。 その結果、Outputに表示される数値が各条件に沿った値となります。"
 msgstr ""
 "Changes the mode of searching. The condition for success[ful cover] "
 "changes when the mode changes. The resulting data displayed in the output"
 " will follow all conditions.(??)"
 
-#: ../../contents/cover/main.rst:209
+#: ../../contents/cover/main.rst:223
 msgid "モードは以下からひとつ選択する。"
 msgstr "Pick one of the modes below."
 
-#: ../../contents/cover/main.rst:211
+#: ../../contents/cover/main.rst:225
 msgid "<Normal系>"
 msgstr "<Normal Modes>"
 
-#: ../../contents/cover/main.rst:214
+#: ../../contents/cover/main.rst:228
 msgid "指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider being able to place all tetrominos in their respective "
 "places successful"
 
-#: ../../contents/cover/main.rst:215
+#: ../../contents/cover/main.rst:229
 msgid "``Mode: 1L`` と同等のモードです"
 msgstr "equivalent to ``Mode: 1L``"
 
-#: ../../contents/cover/main.rst:220
+#: ../../contents/cover/main.rst:234
 msgid "1L (1line, 1lines) ~ 4L (4line, 4lines)"
 msgstr ""
 
-#: ../../contents/cover/main.rst:218
+#: ../../contents/cover/main.rst:232
 msgid "指定されたライン数以上での消去を許可された状況下で、指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider line clears above the selected line number, while also "
 "being able to place all tetrominos in their respective places successful"
 
-#: ../../contents/cover/main.rst:219
+#: ../../contents/cover/main.rst:233
 msgid "たとえば ``3L``　を指定した場合、3ライン or 4ライン が可能です"
 msgstr ""
 "For example, both 3 line and 4 line line clears are permitted under the "
 "``3L`` mode"
 
-#: ../../contents/cover/main.rst:220 ../../contents/cover/main.rst:225
+#: ../../contents/cover/main.rst:234 ../../contents/cover/main.rst:239
 msgid "ライン数は ``1~4`` の間で指定できます"
 msgstr "It is possible to specify line clear numbers ``1~4``"
 
-#: ../../contents/cover/main.rst:225
+#: ../../contents/cover/main.rst:239
 msgid ""
 "1L-OR-PC (1line-OR-PC, 1lines-OR-PC) ~ 4L-OR-PC (4line-OR-PC, 4lines-OR-"
 "PC)"
@@ -1041,199 +1107,201 @@ msgstr ""
 "1L-OR-PC (1line-OR-PC, 1lines-OR-PC) ~ 4L-OR-PC (4line-OR-PC, 4lines-OR-"
 "PC)"
 
-#: ../../contents/cover/main.rst:223
+#: ../../contents/cover/main.rst:237
 msgid "通常のライン消去 (``1L ~ 4L``) に加えて、Perfect Clearも許可します"
 msgstr ""
 "In addition to the line clear condition (``1L ~ 4L``), it also allows "
 "Perfect Clears"
 
-#: ../../contents/cover/main.rst:224
+#: ../../contents/cover/main.rst:238
 msgid "たとえば ``3L-OR-PC``　を指定した場合、3ライン or 4ライン or 任意のライン数のPC が可能です"
 msgstr ""
 "For example, when ``3L-OR-PC`` is selected, it is possible to do 3 line "
 "or 4 line line clears, or any number of lines with a PC"
 
-#: ../../contents/cover/main.rst:227
+#: ../../contents/cover/main.rst:241
 msgid "※ 上の3つのモードでは ``--max-softdrop`` ``--max-clearline`` をさらに指定できます"
 msgstr ""
 "※ The above 3 modes can be furthur restricted with ``--max-softdrop`` and"
 " ``--max-clearline``"
 
-#: ../../contents/cover/main.rst:230
+#: ../../contents/cover/main.rst:244
 msgid "<Tetris系>"
 msgstr "<Tetris Modes>"
 
-#: ../../contents/cover/main.rst:233
+#: ../../contents/cover/main.rst:247
 msgid "tetris"
 msgstr ""
 
-#: ../../contents/cover/main.rst:233
+#: ../../contents/cover/main.rst:247
 msgid "テトリス(4ライン消去)を1回以上しながら、指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider having at least one tetris (clearing 4 lines), while also "
 "being able to place all tetrominos in their respective places successful"
 
-#: ../../contents/cover/main.rst:234
+#: ../../contents/cover/main.rst:248
 msgid "途中でTetrisが含まれていれば、それ以外のミノでライン消去が発生しても成功となる"
 msgstr ""
 "If there is a tetris anywhere during placements, it will be successful "
 "even if other types of line clear are used"
 
-#: ../../contents/cover/main.rst:238
+#: ../../contents/cover/main.rst:252
 msgid "tetris-end"
 msgstr ""
 
-#: ../../contents/cover/main.rst:236
+#: ../../contents/cover/main.rst:250
 msgid "指定されたミノの置き場所通りにすべて置きながら、かつ最後の操作がテトリス(4ライン消去)にできれば成功とする"
 msgstr ""
 "Will consider being able to place all tetrominos in their respective "
 "places, while also having the last placement being a tetris (clearing 4 "
 "lines) successful"
 
-#: ../../contents/cover/main.rst:237
+#: ../../contents/cover/main.rst:251
 msgid "最後がTetrisであれば、それ以外のミノでライン消去が発生しても成功となる"
 msgstr ""
 "If there is a tetris at the end, it will be successful even if other "
 "types of line clear are used"
 
-#: ../../contents/cover/main.rst:240
+#: ../../contents/cover/main.rst:254
 msgid "<T-Spin系>"
 msgstr "<T-Spin Mode>"
 
-#: ../../contents/cover/main.rst:242
+#: ../../contents/cover/main.rst:256
 msgid ""
 "Tスピンを1回以上しながら、指定されたミノの置き場所通りにすべて置くことができれば成功とする。 "
 "途中で条件を満たしたTスピンを実現できれば、それ以外のミノでライン消去が発生しても成功となる。"
 msgstr ""
-"If there are multiple T-Spins, it will return successful if all tetrominos are able to be placed in their positions."
-"As long as the T-Spin requirement is met, it will still return successful even if there are line clears by other tetrominos."
+"If there are multiple T-Spins, it will return successful if all "
+"tetrominos are able to be placed in their positions.As long as the T-Spin"
+" requirement is met, it will still return successful even if there are "
+"line clears by other tetrominos."
 
-#: ../../contents/cover/main.rst:245
+#: ../../contents/cover/main.rst:259
 msgid "ライン消去を伴わないTスピンはカウントされませんので、ご注意ください。"
 msgstr ""
 
-#: ../../contents/cover/main.rst:247
+#: ../../contents/cover/main.rst:261
 msgid "tsm (tspinm, any-tspin, any)"
 msgstr ""
 
-#: ../../contents/cover/main.rst:248
+#: ../../contents/cover/main.rst:262
 msgid "Tスピンは TSS,TSD,TST,Mini が対象となる"
 msgstr ""
 
-#: ../../contents/cover/main.rst:250
+#: ../../contents/cover/main.rst:264
 msgid "tss (tspin1)"
 msgstr ""
 
-#: ../../contents/cover/main.rst:250 ../../contents/cover/main.rst:253
-#: ../../contents/cover/main.rst:256
+#: ../../contents/cover/main.rst:264 ../../contents/cover/main.rst:267
+#: ../../contents/cover/main.rst:270
 msgid "挙動は ``tsm`` と同様"
 msgstr "Equivalent to ``any-tspin``"
 
-#: ../../contents/cover/main.rst:251
+#: ../../contents/cover/main.rst:265
 msgid "ただし、対象は TSS,TSD,TST となる (Miniは含まれない)"
 msgstr "However, only TSS, TSD, and TST are considered (not including Minis[?])"
 
-#: ../../contents/cover/main.rst:253
+#: ../../contents/cover/main.rst:267
 msgid "tsd (tspin2)"
 msgstr ""
 
-#: ../../contents/cover/main.rst:254
+#: ../../contents/cover/main.rst:268
 msgid "ただし、対象は TSD,TST となる (Miniは含まれない)"
 msgstr "However, only TSD and TST are considered (not including Minis)"
 
-#: ../../contents/cover/main.rst:258
+#: ../../contents/cover/main.rst:272
 msgid "tst (tspin3)"
 msgstr ""
 
-#: ../../contents/cover/main.rst:257
+#: ../../contents/cover/main.rst:271
 msgid "ただし、対象は TST となる (Miniは含まれない)"
 msgstr "However, only TST is considered (not including Minis)"
 
-#: ../../contents/cover/main.rst:260
+#: ../../contents/cover/main.rst:274
 msgid "<B2B系>"
 msgstr "<B2B Modes>"
 
-#: ../../contents/cover/main.rst:265
+#: ../../contents/cover/main.rst:279
 msgid "b2b"
 msgstr ""
 
-#: ../../contents/cover/main.rst:263
+#: ../../contents/cover/main.rst:277
 msgid "B2Bを継続したまま、指定されたミノの置き場所通りにすべて置くことができれば成功とする"
 msgstr ""
 "Will consider preserving B2B, while also being able to place all "
 "tetrominos in their respective places successful"
 
-#: ../../contents/cover/main.rst:264
+#: ../../contents/cover/main.rst:278
 msgid "つまり、途中でテトリス or Tスピン以外でライン消去が発生する場合は失敗となる"
 msgstr ""
 "In other words, having any line clears other than tetris or T-Spins will "
 "result in failure"
 
-#: ../../contents/cover/main.rst:268
+#: ../../contents/cover/main.rst:282
 msgid "``-sb``, ``--starting-b2b`` [default: 0]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:270
+#: ../../contents/cover/main.rst:284
 msgid "``mode`` が ``tsm`` ``tss`` ``tsd`` ``tst`` の場合に、使用されるオプションです。"
 msgstr ""
 "Option used when ``mode`` is set to ``any-tspin``, ``tss``, ``tsd``, or "
 "``tst``."
 
-#: ../../contents/cover/main.rst:272
+#: ../../contents/cover/main.rst:286
 msgid "このオプションで指定した回数以上、開始直後からTスピン・テトリスを連続して成功させる必要があります。"
 msgstr ""
 "Makes it necessary to have at least the specified amount of consecutive "
 "T-Spin ot Tetris line clears in the option."
 
-#: ../../contents/cover/main.rst:274
+#: ../../contents/cover/main.rst:288
 msgid "以下に ``-M tsm -sb 2`` で、ライン消去が起きた場合の例を記載します。"
 msgstr ""
 "The following cases are examples of line clears under ``-M any-tspin -sb "
 "2``."
 
-#: ../../contents/cover/main.rst:276
+#: ../../contents/cover/main.rst:290
 msgid "START -> 3ライン : 失敗"
 msgstr "START -> 3 line : Failure"
 
-#: ../../contents/cover/main.rst:277
+#: ../../contents/cover/main.rst:291
 msgid "START -> TSS -> 3ライン : 失敗"
 msgstr "START -> TSS -> 3 line : Failure"
 
-#: ../../contents/cover/main.rst:278
+#: ../../contents/cover/main.rst:292
 msgid "START -> TSS -> TSS -> 3ライン : 成功"
 msgstr "START -> TSS -> TSS -> 3 line : Success"
 
-#: ../../contents/cover/main.rst:279
+#: ../../contents/cover/main.rst:293
 msgid "START -> 4ライン -> TSS : 成功"
 msgstr "START -> 4 line -> TSS : Success"
 
-#: ../../contents/cover/main.rst:280
+#: ../../contents/cover/main.rst:294
 msgid "START -> 4ライン -> 4ライン -> END : 失敗 (T-Spinが必須なモードを指定しているため)"
 msgstr ""
 "START -> 4 line -> 4 line -> END : Failure (since the current mode "
 "requires a T-Spin)"
 
-#: ../../contents/cover/main.rst:281
+#: ../../contents/cover/main.rst:295
 msgid "START -> 4ライン -> 4ライン -> TSS : 成功"
 msgstr "START -> 4 line -> 4 line -> TSS : Success"
 
-#: ../../contents/cover/main.rst:283
+#: ../../contents/cover/main.rst:297
 msgid "``0`` の場合は、開始直後にライン消去しても成功となります。"
 msgstr ""
 "When set to ``0``, it will be successful even if B2B is immediately "
 "broken at the start by line clear."
 
-#: ../../contents/cover/main.rst:286
+#: ../../contents/cover/main.rst:300
 msgid "``-P``, ``--priority`` [default: no]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:288
+#: ../../contents/cover/main.rst:302
 msgid "入力されるテト譜に優先度を設定し、1つのツモ順につき1つの組み方だけを成功にします。"
 msgstr ""
 "Setting to prioritize fumens, with 1 sequence only being successful for "
 "at most 1 setup."
 
-#: ../../contents/cover/main.rst:290
+#: ../../contents/cover/main.rst:304
 msgid ""
 "なお、優先度はテト譜の入力順によって決まり、先頭にあるテト譜の優先度が最も高く、末尾にあるテト譜の優先度が最も低くなります。 ``-P yes``"
 " の場合、優先度の高い組み方から成功/失敗が判定され、一番はじめに条件を満たしたテト譜のみを成功となります。"
@@ -1244,13 +1312,13 @@ msgstr ""
 "evaluated first, with the sequence being marked successful for its first "
 "buildable setup."
 
-#: ../../contents/cover/main.rst:294
+#: ../../contents/cover/main.rst:308
 msgid "たとえば ``-t テト譜A テト譜B テト譜C`` を入力し、``TIOSZLJ`` はすべてのテト譜で組めるとします。"
 msgstr ""
 "For example, when inputting ``-t fumenA fumenB fumenC``, where all setups"
 " are buildable by ``TIOSZLJ``,"
 
-#: ../../contents/cover/main.rst:296
+#: ../../contents/cover/main.rst:310
 msgid ""
 "このとき、``-P no`` ではすべて成功 (``TIOSZLJ,O,O,O``) となりますが、 ``-P yes`` ではテト譜Aのみ成功 "
 "(``TIOSZLJ,O,X,X``) となります。"
@@ -1259,11 +1327,11 @@ msgstr ""
 "(``TIOSZLJ,O,O,O``), while ``-P yes`` will only show fumenA being "
 "successful (``TIOSZLJ,O,X,X``)."
 
-#: ../../contents/cover/main.rst:301
+#: ../../contents/cover/main.rst:315
 msgid "``-l``, ``--last-sd`` [default: 0]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:303
+#: ../../contents/cover/main.rst:317
 msgid ""
 "``--drop`` の設定によらず、ソフトドロップを有効にするタイミングを指定します。 "
 "数値には、残り何ミノでソフトドロップを有効にするかを入力します。"
@@ -1272,7 +1340,7 @@ msgstr ""
 "corresponds to how many tetrominos at the end are allowed to use softdrop"
 " for its placement."
 
-#: ../../contents/cover/main.rst:306
+#: ../../contents/cover/main.rst:320
 msgid ""
 "たとえば、`このテト譜 <http://fumen.zui.jp/?v115@ThE8BeA8BeF8LeTJJvhAUtB>`_ で "
 "``--drop harddrop --last-sd 1`` と指定したとします。 本来 ``--drop harddrop`` "
@@ -1287,113 +1355,113 @@ msgstr ""
 "softdrop. In short, in this example, the Z tetromino can be placed after "
 "O is placed."
 
-#: ../../contents/cover/main.rst:312
+#: ../../contents/cover/main.rst:326
 msgid "なお、テト譜ごとで必要なミノ数が異なる場合では、それぞれのテト譜で適用されるタイミングが変わります。"
 msgstr ""
 "Furthermore, if the number of tetrominos needed to build each fumen is "
 "different, when softdrop becomes allowed will change."
 
-#: ../../contents/cover/main.rst:314
+#: ../../contents/cover/main.rst:328
 msgid "たとえば、4ミノと3ミノの組み方を指定したケースでは、それぞれの組み方で3ミノ・2ミノ置いた後から適用されることになります。"
 msgstr ""
 "For example, for using 4 and 3 tetrominos, softdrop will be allowed after"
 " 3 and 2 tetrominos are placed respectively."
 
-#: ../../contents/cover/main.rst:318
+#: ../../contents/cover/main.rst:332
 msgid "``-ms``, ``--max-softdrop`` [default: -1]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:320
+#: ../../contents/cover/main.rst:334
 msgid "途中でSoftdropを使用できる最大の回数を指定できます。指定された回数もOKとなります。"
 msgstr ""
 "Sets the maximum number of times softdrop can be used. It is still "
 "successful when number of times softdrop is used is equal to the "
 "specified amount."
 
-#: ../../contents/cover/main.rst:322
+#: ../../contents/cover/main.rst:336
 msgid "指定された回数より多くのSoftdropを使用しないといけない置き方は失敗となります。"
 msgstr ""
 "If the number of times softdrop must be used is strictly larger than "
 "specified, it results in failure."
 
-#: ../../contents/cover/main.rst:324 ../../contents/cover/main.rst:336
+#: ../../contents/cover/main.rst:338 ../../contents/cover/main.rst:350
 msgid "このオプションは ``normal`` ``1L ~ 4L`` ``1L-OR-PC ~ 4L-OR-PC`` モードで有効となります。"
 msgstr ""
 "This option is valid for the modes ``normal``, ``1L ~ 4L``, and ``1L-OR-"
 "PC ~ 4L-OR-PC``."
 
-#: ../../contents/cover/main.rst:326
+#: ../../contents/cover/main.rst:340
 msgid "もし ``-1`` を指定した場合、Softdropの回数は制限されません。"
 msgstr ""
 "If set to ``-1``, there will not be a limit to the number of times "
 "softdrop is used."
 
-#: ../../contents/cover/main.rst:330
+#: ../../contents/cover/main.rst:344
 msgid "``-mc``, ``--max-clearline`` [default: -1]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:332
+#: ../../contents/cover/main.rst:346
 msgid "途中でライン消去しても良い最大の回数を指定できます。指定された回数もOKとなります。"
 msgstr ""
 "Sets the maximum number of line clears that can be done. It is still "
 "successful if the number of line clears equals to the specified "
 "value(inclusive)."
 
-#: ../../contents/cover/main.rst:334
+#: ../../contents/cover/main.rst:348
 msgid "指定された回数より多くのライン消去が発生する置き方は失敗となります。"
 msgstr ""
 "If number of line clears is strictly larger than specified, it results in"
 " failure."
 
-#: ../../contents/cover/main.rst:338
+#: ../../contents/cover/main.rst:352
 msgid "もし ``-1`` を指定した場合、ライン消去の回数は制限されません。"
 msgstr "If set to ``-1``, there will not be a limit to the number of line clears."
 
-#: ../../contents/cover/main.rst:342 ../../contents/util/fumen.rst:76
+#: ../../contents/cover/main.rst:356 ../../contents/util/fumen.rst:76
 msgid "``-o``, ``--output-base`` [default: output/cover.csv]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:344 ../../contents/ren/main.rst:93
-#: ../../contents/setup/main.rst:495 ../../contents/spin/main.rst:255
+#: ../../contents/cover/main.rst:358 ../../contents/ren/main.rst:107
+#: ../../contents/setup/main.rst:509 ../../contents/spin/main.rst:257
 #: ../../contents/util/fumen.rst:78
 msgid "出力結果を保存するファイルのパスを指定する。"
 msgstr "Specifies the file path the resulting data is saved in."
 
-#: ../../contents/cover/main.rst:348 ../../contents/path/main.rst:260
-#: ../../contents/percent/main.rst:131 ../../contents/ren/main.rst:97
-#: ../../contents/setup/main.rst:501 ../../contents/spin/main.rst:271
-#: ../../contents/util/fig.rst:221 ../../contents/util/fumen.rst:82
+#: ../../contents/cover/main.rst:362 ../../contents/path/main.rst:274
+#: ../../contents/percent/main.rst:145 ../../contents/ren/main.rst:111
+#: ../../contents/setup/main.rst:515 ../../contents/spin/main.rst:273
+#: ../../contents/util/fig.rst:202 ../../contents/util/fumen.rst:82
 msgid "``-lp``, ``--log-path`` [default: output/last_output.txt]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:350 ../../contents/path/main.rst:262
-#: ../../contents/percent/main.rst:133 ../../contents/ren/main.rst:99
-#: ../../contents/setup/main.rst:503 ../../contents/spin/main.rst:273
-#: ../../contents/util/fig.rst:223 ../../contents/util/fumen.rst:84
+#: ../../contents/cover/main.rst:364 ../../contents/path/main.rst:276
+#: ../../contents/percent/main.rst:147 ../../contents/ren/main.rst:113
+#: ../../contents/setup/main.rst:517 ../../contents/spin/main.rst:275
+#: ../../contents/util/fig.rst:204 ../../contents/util/fumen.rst:84
 msgid "実行時のログを保存するファイルのパスを指定する。"
 msgstr "Specifies the file path the log during execution is saved in."
 
-#: ../../contents/cover/main.rst:354 ../../contents/path/main.rst:266
-#: ../../contents/percent/main.rst:137 ../../contents/ren/main.rst:103
-#: ../../contents/setup/main.rst:507 ../../contents/spin/main.rst:259
-#: ../../contents/util/fig.rst:227 ../../contents/util/fumen.rst:88
+#: ../../contents/cover/main.rst:368 ../../contents/path/main.rst:280
+#: ../../contents/percent/main.rst:151 ../../contents/ren/main.rst:117
+#: ../../contents/setup/main.rst:521 ../../contents/spin/main.rst:261
+#: ../../contents/util/fig.rst:208 ../../contents/util/fumen.rst:88
 msgid "``-fp``, ``--field-path`` [default: input/field.txt]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:356 ../../contents/path/main.rst:268
-#: ../../contents/percent/main.rst:139 ../../contents/ren/main.rst:105
-#: ../../contents/setup/main.rst:509 ../../contents/spin/main.rst:261
-#: ../../contents/util/fig.rst:229 ../../contents/util/fumen.rst:90
+#: ../../contents/cover/main.rst:370 ../../contents/path/main.rst:282
+#: ../../contents/percent/main.rst:153 ../../contents/ren/main.rst:119
+#: ../../contents/setup/main.rst:523 ../../contents/spin/main.rst:263
+#: ../../contents/util/fig.rst:210 ../../contents/util/fumen.rst:90
 msgid "フィールドを定義するファイルのパスを指定する。"
 msgstr "Specifies the file path that defines the field."
 
-#: ../../contents/cover/main.rst:360 ../../contents/path/main.rst:272
-#: ../../contents/percent/main.rst:143 ../../contents/ren/main.rst:109
-#: ../../contents/setup/main.rst:513 ../../contents/spin/main.rst:265
+#: ../../contents/cover/main.rst:374 ../../contents/path/main.rst:286
+#: ../../contents/percent/main.rst:157 ../../contents/ren/main.rst:123
+#: ../../contents/setup/main.rst:527 ../../contents/spin/main.rst:267
 msgid "``-pp``, ``--patterns-path`` [default: input/patterns.txt]"
 msgstr ""
 
-#: ../../contents/cover/main.rst:362
+#: ../../contents/cover/main.rst:376
 msgid "組み合わせパターンを定義するファイルのパスを指定する。"
 msgstr "Specifies the file path that defines the combination of patterns used."
 
@@ -1627,6 +1695,231 @@ msgstr ""
 "# Grace System (This setup will be ignored since it is commented out)\n"
 "# "
 "v115@9gQ4zhAtDeR4RpBtDeglQ4RpAtg0Deili0NeAgWYA0?no2AtTMeDUPNXEuN98AQe88AjPUGB"
+
+#: ../../contents/inputs.rst:3
+#, fuzzy
+msgid "プロパティファイル"
+msgstr "Property files"
+
+#: ../../contents/inputs.rst:5
+msgid "solution-finderには、プロパティファイルから入力する設定がいくつか存在します。 それらのファイルのフォーマットについて説明します。"
+msgstr "There are a few property files that are used to configure solution-finder. The format fo each will be described below."
+
+#: ../../contents/inputs.rst:9
+msgid "kicks"
+msgstr ""
+
+#: ../../contents/inputs.rst:11
+msgid ""
+"ローテーションシステムのKickテーブルをカスタムすることができます。 なおここで設定したKicksは、各コマンドで ``--kicks "
+"@ファイル名`` で参照可能です（``--kicks @srs`` を指定すると ``kicks/srs.properties`` "
+"がロードされます）。"
+msgstr "Used to create custom kick tables of different rotation systems. You can refer to the files from the commands by ``--kicks @<filename>`` (``kicks/srs.properties`` will be loaded for ``--kicks @srs``)."
+
+#: ../../contents/inputs.rst:14
+msgid "``verify kicks`` コマンドで、各ミノの動きを一覧化して確認できます。設定後は、一度目視で確認することをおすすめします。"
+msgstr "``verify kicks`` shows all kicks that used by each tetromino. Using this to double-check after setting the kicks file is recommended."
+
+#: ../../contents/inputs.rst:16
+msgid "デフォルトで用意されているプロパティファイルは以下の通りです。"
+msgstr "The following property files are used by default."
+
+#: ../../contents/inputs.rst:18
+msgid "**@srs** : SRSに準拠したKicks。90回転のみ。"
+msgstr "**@srs** : kick table following SRS. Only supports 90 degree rotations."
+
+#: ../../contents/inputs.rst:19
+#, fuzzy
+msgid ""
+"**@nullpomino180** : SRSに、180度回転として `Nullpomino "
+"<https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickを加えたKicks"
+msgstr ""
+"**@nullpomino180**: includes the 180 Standard Wallkicks from `Nullpomino<https://github.com/nullpomino/nullpomino>`_ on top of SRS."
+
+#: ../../contents/inputs.rst:23
+msgid ""
+"L.NE=(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)\n"
+"L.ES=(0,0)(+1,0)(+1,-1)(0,+2)(+1,+2)\n"
+"...\n"
+"J.NE=&L.NE\n"
+"J.ES=&L.ES\n"
+"...\n"
+"T.NE=(0,0)(-1,0)(-1,+1)(0,-2)(@-1,-2)\n"
+"..."
+msgstr ""
+
+#: ../../contents/inputs.rst:33
+msgid "Propertyのキー (e.g. ``L.NE``)"
+msgstr "Key of Property (e.g. ``L.NE``)"
+
+#: ../../contents/inputs.rst:35
+msgid "``(ミノ).(回転前の状態)(回転後の状態)`` を表します。"
+msgstr "It corresponds to ``<Tetromino>.<Before rotation><After rotation>``."
+
+#: ../../contents/inputs.rst:37
+msgid ""
+"たとえば ``L.NE`` は ``LミノをNorthから右回転してEastにする`` ときの挙動を定義します。 "
+"180度回転も同様で、``L.NS`` のように設定できます。"
+msgstr "For example, ``L.NE`` is used when the L tetromino is rotated clockwise from the North position to East."
+"Similarly, ``L.NS`` is used for 180 rotations."
+
+#: ../../contents/inputs.rst:40
+msgid ""
+"したがって定義すべきキーの数は、90度回転のみでは ``56`` 、180度回転も有効にする場合は ``84`` になります。 "
+"意図しない定義になるのを避けるため、これら以外のキーの数ではエラーとなるのでご注意ください。"
+msgstr "As a result, ``56`` keys will defined for purely 90 degree rotations, and ``84`` including 180 rotations. Note that to prevent unexpected behavior, any number of keys other than these two will result in an error."
+
+#: ../../contents/inputs.rst:44
+msgid "オフセット (e.g. ``(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)``)"
+msgstr "Offsets (e.g. ``(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)``)"
+
+#: ../../contents/inputs.rst:46
+msgid ""
+"``(xの移動量, yの移動量)`` "
+"を表し、回転時のテストパターンを定義します。回転時のテストは前から順番に適用され、移動可能なところに移動します。すべてのテストパターンに失敗した場合は回転されません。"
+msgstr "This defines the test pattern in terms of ``(<x offset>, <y offset>)``. The leftmost valid spin test pattern will be used. The tetromino will not perform the spin if all tests fail."
+
+#: ../../contents/inputs.rst:48
+msgid ""
+"たとえば ``T.NE=(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)`` は、 `こちらのテト譜 "
+"<https://fumen.zui.jp/?v115@yfA8HeC8wf1eXMAGsrGEAemsCwSVKEyfQpHeSpwft+?tZAy3WeD0ohbEPhQ5DHt2TAzxgbEl9+CARAAAAvhJN+tZAy?3WeD0ohbEPhQ5DHt2TAzxgbEl9+CASAAAAN5tZAy3WeD0oh?bEPhQ5DHt2TAzxgbEl9+CATAAAAtIuZAy3WeD0ohbEPhQ5D?Ht2TAzxgbEl9+CAUAAAANIubAy3WeD0ohbEPhQ5DHt2TAzx?gbEl9+CAVAIBA9+tYAy3WeD0ohbEPBjrDGPVABhA1rDT/Z5?Ad/tYAy3WeD0ohbEPBjrDGPVABhA1rDT/x8Ad6tYAy3WeD0?ohbEPBjrDGPVABhA1rDT/JAB9IuYAy3WeD0ohbEPBjrDGPV?ABhA1rDT/hDBdJuaAy3WeD0ohbEPBjrDGPVABhA1rDT/5GB?AwAAAAAPUARkkAAp9RHEP/JYEV5dNESP9nD>`_"
+" のような動きになります。"
+msgstr "For example, ``T.NE=(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)`` will check the tests `like so<https://fumen.zui.jp/?v115@yfA8HeC8wf1eXMAGsrGEAemsCwSVKEyfQpHeSpwft+?tZAy3WeD0ohbEPhQ5DHt2TAzxgbEl9+CARAAAAvhJN+tZAy?3WeD0ohbEPhQ5DHt2TAzxgbEl9+CASAAAAN5tZAy3WeD0oh?bEPhQ5DHt2TAzxgbEl9+CATAAAAtIuZAy3WeD0ohbEPhQ5D?Ht2TAzxgbEl9+CAUAAAANIubAy3WeD0ohbEPhQ5DHt2TAzx?gbEl9+CAVAIBA9+tYAy3WeD0ohbEPBjrDGPVABhA1rDT/Z5?Ad/tYAy3WeD0ohbEPBjrDGPVABhA1rDT/x8Ad6tYAy3WeD0?ohbEPBjrDGPVABhA1rDT/JAB9IuYAy3WeD0ohbEPBjrDGPV?ABhA1rDT/hDBdJuaAy3WeD0ohbEPBjrDGPVABhA1rDT/5GB?AwAAAAAPUARkkAAp9RHEP/JYEV5dNESP9nD>`_."
+
+#: ../../contents/inputs.rst:50
+msgid ""
+"オフセットを設定するときの注意として、「移動量には、回転軸を中心に回転したミノの移動量を記述すること」を意識する必要があります。 "
+"solution-finderの回転軸はSRSに準拠しています。 そのため、たとえばOミノに対して ``(0,0)`` "
+"を設定しても動いてしまいます。 SRSやその回転軸については `Harddrop "
+"SRS#How_Guideline_SRS_Really_Works "
+"<https://harddrop.com/wiki/SRS#How_Guideline_SRS_Really_Works>`_ "
+"がとても参考になるので、こちらを参照していただくことをおすすめします。"
+msgstr "Please be aware that for rotated tetrominos, the offsets are done to the tetrominos rotated by their rotation axis. For solution-finder, the SRS rotation axis is used. As a result, if the kick table of O is set to ``(0,0)``, it will move when rotating. Please refer to `Harddrop SRS#How_Guideline_SRS_Really_Works <https://harddrop.com/wiki/SRS#How_Guideline_SRS_Really_Works>`_ "
+
+#: ../../contents/inputs.rst:57
+msgid "@ : T-Spin時にMiniからRegularに昇格するテストパターン (e.g. ``(@-1,-2)``)"
+msgstr "@ : Patterns that upgrade a T-Spin Mini to Regular (e.g. ``(@-1,-2)``)"
+
+#: ../../contents/inputs.rst:59
+msgid "solution-finderでは次のような擬似アルゴリズムでTスピンを判定しています。"
+msgstr "solution-finder uses the following algorithm to determine the type of T-Spin."
+
+#: ../../contents/inputs.rst:63
+msgid ""
+"if (Tの隅のブロックが2つ以下)\n"
+"    return NO_TSPIN\n"
+"\n"
+"if (Tの凸側の2つの隅が埋まっている)\n"
+"    return TSPIN_REGULAR\n"
+"\n"
+"if (TSTのような特別にREGULARとなる動きである)  // ★\n"
+"    return TSPIN_REGULAR\n"
+"\n"
+"return TSPIN_MINI"
+msgstr ""
+"if (less than 2 blocks surrounding T)\n"
+"    return NO_TSPIN\n"
+"\n"
+"if (2 blocks surrounding the bumpy side(?) of T)\n"
+"    return TSPIN_REGULAR\n"
+"\n"
+"if (special spins like TST that force TSPIN_REGULAR)  // ★\n"
+"    return TSPIN_REGULAR\n"
+"\n"
+"return TSPIN_MINI"
+
+#: ../../contents/inputs.rst:74
+msgid ""
+"この設定の ``@`` がついているテストパターンでは、★の判定で `true` となります。 したがって、SRSにあわせた設定では "
+"``T.NE`` ``T.SW`` ``T.NW`` ``T.SE`` の第5テストパターンに ``@`` が付与されています。 これによって"
+"、一般的なTSTの動きがT-Spin Miniではなく、T-Spin Regularで判定されるようになります。"
+msgstr "Test patterns with ``@`` added will make the line at ★ become true. Thus the 5th test pattern in ``T.NE``, ``T.SW``, ``T.NW``, and ``T.SE`` contains ``@``, so that the spin is determined to be a T-Spin Regular instead of Mini."
+
+#: ../../contents/inputs.rst:80
+msgid "& : 他のオフセットと同じ設定にする (e.g. ``&L.NE``)"
+msgstr "& : Reference the offset of another key (e.g. ``&L.NE``)"
+
+#: ../../contents/inputs.rst:82
+msgid "オフセットの設定は、いくつかのミノの種類で同じになることも多くあります。"
+msgstr "There are many test patterns that are the same across different tetrominos."
+
+#: ../../contents/inputs.rst:84
+msgid "その場合は ``&(参照したいパターン)`` で、同じオフセット値を引き継ぐことができます。"
+msgstr "You can use ``&<key of test pattern to use>`` to use the same offsets as that pattern."
+
+#: ../../contents/inputs.rst:89
+msgid "theme"
+msgstr ""
+
+#: ../../contents/inputs.rst:91
+msgid "``util fig`` コマンドで出力する画像の色のテーマをカスタムすることができます。"
+msgstr "Customize the colors of the output of the ``util fig`` command."
+
+#: ../../contents/inputs.rst:95
+msgid ""
+"T.normal=#b300b3\n"
+"O.normal=#b3b300\n"
+"...\n"
+"T.clear=#d900d9\n"
+"O.clear=#d9d900\n"
+"...\n"
+"T.piece=#ff00ff\n"
+"O.piece=#ffff00\n"
+"...\n"
+"Empty=#151500\n"
+"Border=#000000\n"
+"SideFrame=#333333"
+msgstr ""
+
+#: ../../contents/inputs.rst:108
+msgid "カラーテーマのプロパティは、以下のルールを基に色を設定します。"
+msgstr ""
+"The property files for the color schemes can be set by the following "
+"rules."
+
+#: ../../contents/inputs.rst:110
+msgid "*ブロック・ライン*"
+msgstr "*Blocks/Lines*"
+
+#: ../../contents/inputs.rst:112
+msgid "``T,I,O,S,Z,L,J,Gray``: 各ブロックの色"
+msgstr "``T,I,O,S,Z,L,J,Gray``: Color of each block"
+
+#: ../../contents/inputs.rst:113
+msgid "``Gray``: せり上がりブロックの色"
+msgstr "``Gray``: Color of garbage minos"
+
+#: ../../contents/inputs.rst:114
+msgid "``Empty``: 空白の色"
+msgstr "``Empty``: Color of empty space"
+
+#: ../../contents/inputs.rst:115
+msgid "``Border``: ブロックまわりの線の色"
+msgstr "``Border``: Color of the borders around the minos"
+
+#: ../../contents/inputs.rst:116
+msgid "``SideFrame``: フィールド左右のフレームの色"
+msgstr "``SideFrame``: Color of the frames at the sides"
+
+#: ../../contents/inputs.rst:117
+msgid "``BoxFrame``: ホールド・ネクストボックスの枠の色"
+msgstr "``BoxFrame``: Color of the background of the next/hold boxes"
+
+#: ../../contents/inputs.rst:119
+msgid "*適用されるタイミング*"
+msgstr "*When to use the color*"
+
+#: ../../contents/inputs.rst:121
+msgid "``.normal``: 通常時のブロックの色"
+msgstr "``.normal``: Color used normally"
+
+#: ../../contents/inputs.rst:122
+msgid "``.clear``: ラインが揃ったときに強調するための色"
+msgstr "``.clear``: Color to highlight minos in the line clear"
+
+#: ../../contents/inputs.rst:123
+msgid "``.piece``: 操作しているミノを強調するための色"
+msgstr "``.piece``: Color used to highlight minos of the current piece"
 
 #: ../../contents/licenses.rst:3
 msgid "利用しているライセンス"
@@ -2084,6 +2377,12 @@ msgstr ""
 msgid "コマンド: path"
 msgstr "Command: path"
 
+#: ../../contents/path/main.rst:8
+msgid "ある地形からパーフェクトまでの操作手順をすべて列挙する"
+msgstr ""
+"Lists all possible orders of getting a Perfect Clear from a specified "
+"field."
+
 #: ../../contents/path/main.rst:10
 msgid "指定したミノの組み合わせから、パーフェクトまでの全パターンを列挙してファイルに出力"
 msgstr ""
@@ -2129,8 +2428,8 @@ msgstr ""
 "These are the formats that the output can be. You are able to change the "
 "format though the option ``-f``."
 
-#: ../../contents/path/main.rst:29 ../../contents/path/main.rst:131
-#: ../../contents/setup/main.rst:199 ../../contents/spin/main.rst:246
+#: ../../contents/path/main.rst:29 ../../contents/path/main.rst:132
+#: ../../contents/setup/main.rst:199 ../../contents/spin/main.rst:248
 msgid "html: シンプルなHTML形式のテト譜リンク"
 msgstr "html: Simple links to fumens using an HTML format."
 
@@ -2139,7 +2438,7 @@ msgid "csv: csv形式（詳細は後述）"
 msgstr "csv: CSV format (explained in detail later)"
 
 #: ../../contents/path/main.rst:33 ../../contents/setup/main.rst:203
-#: ../../contents/spin/main.rst:42
+#: ../../contents/spin/main.rst:44
 msgid "HTML形式"
 msgstr "HTML format"
 
@@ -2173,19 +2472,19 @@ msgstr "Number of sequences inputted that can follow this solve order"
 
 #: ../../contents/path/main.rst:65 ../../contents/percent/main.rst:37
 #: ../../contents/ren/main.rst:29 ../../contents/setup/main.rst:273
-#: ../../contents/spin/main.rst:22
+#: ../../contents/spin/main.rst:24
 msgid "``--page``"
 msgstr ""
 
 #: ../../contents/path/main.rst:65 ../../contents/percent/main.rst:37
 #: ../../contents/ren/main.rst:29 ../../contents/setup/main.rst:273
-#: ../../contents/spin/main.rst:22 ../../contents/util/fig.rst:93
+#: ../../contents/spin/main.rst:24 ../../contents/util/fig.rst:74
 msgid "1"
 msgstr ""
 
 #: ../../contents/path/main.rst:67 ../../contents/percent/main.rst:39
-#: ../../contents/setup/main.rst:275 ../../contents/spin/main.rst:27
-#: ../../contents/util/fig.rst:97
+#: ../../contents/setup/main.rst:275 ../../contents/spin/main.rst:29
+#: ../../contents/util/fig.rst:78
 msgid "``-c``"
 msgstr ""
 
@@ -2198,18 +2497,18 @@ msgid "4"
 msgstr ""
 
 #: ../../contents/path/main.rst:68 ../../contents/setup/main.rst:276
-#: ../../contents/spin/main.rst:31 ../../contents/util/fig.rst:96
+#: ../../contents/spin/main.rst:33 ../../contents/util/fig.rst:77
 #: ../../contents/util/fumen.rst:31
 msgid "``-f``"
 msgstr ""
 
-#: ../../contents/path/main.rst:68 ../../contents/setup/main.rst:285
-#: ../../contents/spin/main.rst:32 ../../contents/util/fig.rst:88
+#: ../../contents/path/main.rst:68 ../../contents/setup/main.rst:286
+#: ../../contents/spin/main.rst:34 ../../contents/util/fig.rst:69
 msgid "``--format``"
 msgstr ""
 
-#: ../../contents/path/main.rst:68 ../../contents/setup/main.rst:285
-#: ../../contents/setup/main.rst:477 ../../contents/spin/main.rst:32
+#: ../../contents/path/main.rst:68 ../../contents/setup/main.rst:286
+#: ../../contents/setup/main.rst:491 ../../contents/spin/main.rst:34
 msgid "html"
 msgstr ""
 
@@ -2221,21 +2520,21 @@ msgstr ""
 msgid "``--key``"
 msgstr ""
 
-#: ../../contents/path/main.rst:69 ../../contents/setup/main.rst:282
+#: ../../contents/path/main.rst:69 ../../contents/setup/main.rst:283
 msgid "none"
 msgstr ""
 
-#: ../../contents/path/main.rst:70 ../../contents/setup/main.rst:286
-#: ../../contents/spin/main.rst:30 ../../contents/util/fig.rst:93
+#: ../../contents/path/main.rst:70 ../../contents/setup/main.rst:287
+#: ../../contents/spin/main.rst:32 ../../contents/util/fig.rst:74
 msgid "``-s``"
 msgstr ""
 
-#: ../../contents/path/main.rst:70 ../../contents/setup/main.rst:286
-#: ../../contents/spin/main.rst:30
+#: ../../contents/path/main.rst:70 ../../contents/setup/main.rst:287
+#: ../../contents/spin/main.rst:32
 msgid "``--split``"
 msgstr ""
 
-#: ../../contents/path/main.rst:71 ../../contents/util/fig.rst:91
+#: ../../contents/path/main.rst:71 ../../contents/util/fig.rst:72
 msgid "``-L``"
 msgstr ""
 
@@ -2243,7 +2542,7 @@ msgstr ""
 msgid "``--max-layer``"
 msgstr ""
 
-#: ../../contents/path/main.rst:71 ../../contents/spin/main.rst:27
+#: ../../contents/path/main.rst:71 ../../contents/spin/main.rst:29
 msgid "2"
 msgstr ""
 
@@ -2255,12 +2554,12 @@ msgstr ""
 msgid "``--specified-only``"
 msgstr ""
 
-#: ../../contents/path/main.rst:72 ../../contents/spin/main.rst:28
+#: ../../contents/path/main.rst:72 ../../contents/spin/main.rst:30
 #: ../../contents/util/seq.rst:100 ../../contents/util/seq.rst:104
 msgid "yes"
 msgstr ""
 
-#: ../../contents/path/main.rst:73 ../../contents/spin/main.rst:28
+#: ../../contents/path/main.rst:73 ../../contents/spin/main.rst:30
 msgid "``-r``"
 msgstr ""
 
@@ -2272,188 +2571,192 @@ msgstr ""
 msgid "false"
 msgstr ""
 
-#: ../../contents/path/main.rst:75 ../../contents/percent/main.rst:41
+#: ../../contents/path/main.rst:75
+msgid "soft"
+msgstr ""
+
+#: ../../contents/path/main.rst:76 ../../contents/percent/main.rst:42
 msgid "``-th``"
 msgstr ""
 
-#: ../../contents/path/main.rst:75 ../../contents/percent/main.rst:41
+#: ../../contents/path/main.rst:76 ../../contents/percent/main.rst:42
 msgid "``--threads``"
 msgstr ""
 
-#: ../../contents/path/main.rst:76
+#: ../../contents/path/main.rst:77
 msgid "``-cb``"
 msgstr ""
 
-#: ../../contents/path/main.rst:76
+#: ../../contents/path/main.rst:77
 msgid "``--cached-bit``"
 msgstr ""
 
-#: ../../contents/path/main.rst:77
+#: ../../contents/path/main.rst:78
 msgid "output/path.txt"
 msgstr ""
 
-#: ../../contents/path/main.rst:97 ../../contents/percent/main.rst:63
-#: ../../contents/ren/main.rst:52 ../../contents/setup/main.rst:299
-#: ../../contents/spin/main.rst:132
+#: ../../contents/path/main.rst:98 ../../contents/percent/main.rst:64
+#: ../../contents/ren/main.rst:53 ../../contents/setup/main.rst:300
+#: ../../contents/spin/main.rst:134
 msgid "テト譜で探索条件を指定する場合は ``--tetfu v115@vhAAgH`` のように指定する。"
 msgstr "The fumen can be specified in the form of ``--tetfu v115@vhAAgH``."
 
-#: ../../contents/path/main.rst:103 ../../contents/percent/main.rst:69
-#: ../../contents/ren/main.rst:58 ../../contents/setup/main.rst:305
-#: ../../contents/spin/main.rst:138
+#: ../../contents/path/main.rst:104 ../../contents/percent/main.rst:70
+#: ../../contents/ren/main.rst:59 ../../contents/setup/main.rst:306
+#: ../../contents/spin/main.rst:140
 msgid "``-P``, ``--page`` [default: 1]"
 msgstr ""
 
-#: ../../contents/path/main.rst:105 ../../contents/percent/main.rst:71
-#: ../../contents/ren/main.rst:60 ../../contents/setup/main.rst:307
-#: ../../contents/spin/main.rst:140
+#: ../../contents/path/main.rst:106 ../../contents/percent/main.rst:72
+#: ../../contents/ren/main.rst:61 ../../contents/setup/main.rst:308
+#: ../../contents/spin/main.rst:142
 msgid "テト譜でロードするページを指定する。"
 msgstr "Selects the page number of the fumen to use."
 
-#: ../../contents/path/main.rst:107 ../../contents/percent/main.rst:73
-#: ../../contents/ren/main.rst:62 ../../contents/setup/main.rst:309
-#: ../../contents/spin/main.rst:142
+#: ../../contents/path/main.rst:108 ../../contents/percent/main.rst:74
+#: ../../contents/ren/main.rst:63 ../../contents/setup/main.rst:310
+#: ../../contents/spin/main.rst:144
 msgid "ページを変更したい場合は ``--page 31`` のように指定する。"
 msgstr "The page used can be changed in the form of ``--page 31``."
 
-#: ../../contents/path/main.rst:113 ../../contents/percent/main.rst:79
-#: ../../contents/spin/main.rst:148 ../../contents/util/seq.rst:111
+#: ../../contents/path/main.rst:114 ../../contents/percent/main.rst:80
+#: ../../contents/spin/main.rst:150 ../../contents/util/seq.rst:111
 msgid "探索ミノの組み合わせパターンを指定する。"
 msgstr "Specifies the input pattern that generates the sequences."
 
-#: ../../contents/path/main.rst:115 ../../contents/percent/main.rst:81
-#: ../../contents/setup/main.rst:317 ../../contents/spin/main.rst:150
+#: ../../contents/path/main.rst:116 ../../contents/percent/main.rst:82
+#: ../../contents/setup/main.rst:318 ../../contents/spin/main.rst:152
 #: ../../contents/util/seq.rst:113
 msgid "パターンを変更したい場合は ``--pattern *p7`` のように指定する。"
 msgstr "The pattern can be changed in the form of ``--pattern *p7``."
 
-#: ../../contents/path/main.rst:117
+#: ../../contents/path/main.rst:118
 msgid "複数パターンを指定したい場合は ``;`` で連結する (``--pattern T,*;I,*``)"
 msgstr ""
 "Multiple patterns can be used in combination using ``;`` as the "
 "delimiter. (``--pattern T,*;I,*``)"
 
-#: ../../contents/path/main.rst:121 ../../contents/percent/main.rst:85
+#: ../../contents/path/main.rst:122 ../../contents/percent/main.rst:86
 msgid "``-c``, ``--clear-line`` [default: 4]"
 msgstr ""
 
-#: ../../contents/path/main.rst:123 ../../contents/percent/main.rst:87
+#: ../../contents/path/main.rst:124 ../../contents/percent/main.rst:88
 msgid "パフェまでに消去するライン数を指定する。"
 msgstr "Specifies the number of lines cleared until Perfect Clear."
 
-#: ../../contents/path/main.rst:127
+#: ../../contents/path/main.rst:128
 msgid "``-f``, ``--format`` [default: html]"
 msgstr ""
 
-#: ../../contents/path/main.rst:129 ../../contents/setup/main.rst:475
-#: ../../contents/spin/main.rst:244
+#: ../../contents/path/main.rst:130 ../../contents/setup/main.rst:489
+#: ../../contents/spin/main.rst:246
 msgid "以下の出力フォーマットのうち、ひとつを指定する。"
 msgstr "You can select one of the following output formats."
 
-#: ../../contents/path/main.rst:132
+#: ../../contents/path/main.rst:133
 msgid "互換性のため `link` は `html` と同じように動作します"
 msgstr ""
 "For [backwards] compatibility, both `link` abd `html` can be used "
 "interchangably."
 
-#: ../../contents/path/main.rst:135 ../../contents/spin/main.rst:247
+#: ../../contents/path/main.rst:136 ../../contents/spin/main.rst:249
 msgid "csv: csv形式"
 msgstr "csv: CSV format"
 
-#: ../../contents/path/main.rst:134
+#: ../../contents/path/main.rst:135
 msgid "keyオプションで出力する項目をさらに選択します"
 msgstr "The key option [``-k``] needs to also be selected"
 
-#: ../../contents/path/main.rst:138
+#: ../../contents/path/main.rst:139
 msgid "``-k``, ``--key`` [default: none]"
 msgstr ""
 
-#: ../../contents/path/main.rst:140
+#: ../../contents/path/main.rst:141
 msgid "formatオプションに csv を選択したとき、さらに出力する項目を指定する。"
 msgstr "The format option selects the output when the csv format is selected."
 
-#: ../../contents/path/main.rst:142
+#: ../../contents/path/main.rst:143
 msgid "以下の出力項目のうち、ひとつを指定する。"
 msgstr "You can select one of the following output formats."
 
-#: ../../contents/path/main.rst:144
+#: ../../contents/path/main.rst:145
 msgid "solution: パフェ手順をキーとして、対応ツモをまとめた形式"
 msgstr ""
 "solution: Using the solve order as the key, sequences are grouped "
 "together."
 
-#: ../../contents/path/main.rst:145
+#: ../../contents/path/main.rst:146
 msgid "pattern: 入力パターンをキーとして、対応地形をまとめた形式"
 msgstr ""
 "pattern: Using sequences as the key, it groups solutions that can the "
 "sequence can use."
 
-#: ../../contents/path/main.rst:146
+#: ../../contents/path/main.rst:147
 msgid "use: 使用ミノをキーとして、対応ツモ・地形をまとめた形式"
 msgstr ""
 "use: Using the subsequence of used minos as the key, it groups the "
 "buildable fields and sequences for that combination of used minos."
 
-#: ../../contents/path/main.rst:147
+#: ../../contents/path/main.rst:148
 msgid "none: 1行につき、1つのパフェでの操作手順を記述した形式（旧csvフォーマット形式）"
 msgstr "none: 1 solve order per row(?) (old CSV format)"
 
-#: ../../contents/path/main.rst:149 ../../contents/spin/main.rst:249
+#: ../../contents/path/main.rst:150 ../../contents/spin/main.rst:251
 msgid "CSVの詳細なフォーマットは :doc:`CSV形式<csv>` を参照してください。"
 msgstr "Please see :doc:`CSV format document<csv>` for the details of each format."
 
-#: ../../contents/path/main.rst:151
+#: ../../contents/path/main.rst:152
 msgid "なお、オプションは先頭の1文字だけでも指定することができます。 (solution → s)"
 msgstr ""
 "Furthermore, you can specify the options by only using the first letter "
 "(solution → s)."
 
-#: ../../contents/path/main.rst:155 ../../contents/setup/main.rst:482
-#: ../../contents/spin/main.rst:219
+#: ../../contents/path/main.rst:156 ../../contents/setup/main.rst:496
+#: ../../contents/spin/main.rst:221
 msgid "``-s``, ``--split`` [default: no]"
 msgstr ""
 
-#: ../../contents/path/main.rst:157 ../../contents/setup/main.rst:484
-#: ../../contents/spin/main.rst:221
+#: ../../contents/path/main.rst:158 ../../contents/setup/main.rst:498
+#: ../../contents/spin/main.rst:223
 msgid "出力フォーマットがlinkのときに出力されるテト譜で、手順を1ミノずつ分割するか指定する。"
 msgstr ""
 "Specifies whether the tetrominos are split up into pages for the fumens "
 "in the output when the output format is link[/html]."
 
-#: ../../contents/path/main.rst:159 ../../contents/setup/main.rst:488
-#: ../../contents/spin/main.rst:225
+#: ../../contents/path/main.rst:160 ../../contents/setup/main.rst:502
+#: ../../contents/spin/main.rst:227
 msgid "yes: 1ページにつき1ミノずつ表示される形で出力"
 msgstr "yes: one tetromino is placed in each page [(glued fumen)]"
 
-#: ../../contents/path/main.rst:160 ../../contents/setup/main.rst:489
-#: ../../contents/spin/main.rst:226
+#: ../../contents/path/main.rst:161 ../../contents/setup/main.rst:503
+#: ../../contents/spin/main.rst:228
 msgid "no: すべてのミノが1ページに納まった形で出力"
 msgstr "no: all tetrominos are combined into a single page [(unglued fumen)]"
 
-#: ../../contents/path/main.rst:164
+#: ../../contents/path/main.rst:165
 msgid "``-L``, ``--max-layer`` [default: 2]"
 msgstr ""
 
-#: ../../contents/path/main.rst:166
+#: ../../contents/path/main.rst:167
 msgid "手順の絞り込みをどこまで行うかを指定する。 次の数字を指定すると、対応するところまで絞り込みを行う。"
 msgstr ""
 "Specifies the [amount of refinement done to the result, where higher "
 "means more refined.] (?? phrasing, should I just say that 2 creates both,"
 " 1 creates the unique only?)"
 
-#: ../../contents/path/main.rst:169
+#: ../../contents/path/main.rst:170
 msgid "1: unique"
 msgstr ""
 
-#: ../../contents/path/main.rst:170
+#: ../../contents/path/main.rst:171
 msgid "2: unique, minimal の両方"
 msgstr "2: both unique and minimal"
 
-#: ../../contents/path/main.rst:174
+#: ../../contents/path/main.rst:175
 msgid "``-so``, ``--specified-only`` [default: yes]"
 msgstr ""
 
-#: ../../contents/path/main.rst:176
+#: ../../contents/path/main.rst:177
 msgid ""
 "minimalの絞り込みにおいて、パターンの重複をチェックするとき、そのパターンを入力パターン内に限定するならyesを指定。 "
 "noの場合、解自体から抽出したパターンをもとに、重複をチェックします。"
@@ -2463,15 +2766,15 @@ msgstr ""
 "``no``, only repetition of the solutions created will be checked. (?? I "
 "don't really understand this one)"
 
-#: ../../contents/path/main.rst:181
+#: ../../contents/path/main.rst:182
 msgid "``-r``, ``--reserved`` [default: false]"
 msgstr ""
 
-#: ../../contents/path/main.rst:183
+#: ../../contents/path/main.rst:184
 msgid "ミノの接着場所を予約します。"
 msgstr "Reserving the placement of tetrominos."
 
-#: ../../contents/path/main.rst:185
+#: ../../contents/path/main.rst:186
 msgid ""
 "たとえば `テンプレ+縦I "
 "<http://fumen.zui.jp/?v115@9gwhDeE8whCeF8whBeG8whCeF8JeAgH>`_ を入力したとします。"
@@ -2479,7 +2782,7 @@ msgstr ""
 "An example of a field is `PCO + vertical I "
 "<http://fumen.zui.jp/?v115@9gwhDeE8whCeF8whBeG8whCeF8JeAgH>`_."
 
-#: ../../contents/path/main.rst:187
+#: ../../contents/path/main.rst:188
 msgid ""
 "このとき探索開始には `クレーの地形 "
 "<http://fumen.zui.jp/?v115@9gh0R4F8g0R4G8BtH8g0BtG8JeAgWDA6vzBA>`_ が適用され、"
@@ -2490,17 +2793,32 @@ msgstr ""
 "<http://fumen.zui.jp/?v115@9gh0R4F8g0R4G8BtH8g0BtG8JeAgWDA6vzBA>`_  as "
 "the field"
 
-#: ../../contents/path/main.rst:190
+#: ../../contents/path/main.rst:191
 msgid "なおこのとき、色のついたブロックは4個単位である必要はありません（1ブロックでも可）。"
 msgstr ""
 "Moreover, the color blocks need not be in unit of 4 minos (fields with 1 "
 "colored mino are also accepted)."
 
-#: ../../contents/path/main.rst:192
+#: ../../contents/path/main.rst:193
 msgid "この機能を有効にする場合は ``true`` を指定してください。"
 msgstr "Change the setting to ``true`` to enable this functionality."
 
-#: ../../contents/path/main.rst:213
+#: ../../contents/path/main.rst:210
+msgid "``-d``, ``--drop`` [default: soft]"
+msgstr ""
+
+#: ../../contents/path/main.rst:218 ../../contents/percent/main.rst:113
+#: ../../contents/ren/main.rst:100 ../../contents/setup/main.rst:419
+msgid "180 (softdrop180): ソフトドロップ＋180度回転入れ（使用するには、180度回転に対応したkicksを選択する必要があります）"
+msgstr "180 (softdrop180): the same as softdrop, but with 180 rotations (you must select a kick table that supports 180 rotations when using this option)"
+
+#: ../../contents/path/main.rst:219 ../../contents/percent/main.rst:114
+#: ../../contents/ren/main.rst:101 ../../contents/setup/main.rst:420
+msgid "t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ"
+msgstr ""
+"t-softdrop: Only T tetrominos can use softdrop, while all other tetrominos only use harddrop"
+
+#: ../../contents/path/main.rst:227
 msgid ""
 "※ tspin0を除いたT-Spin系のdropでは、「T-Spinできないケース」や「ライン消去が発生しないT-"
 "Spinになるケース」ではミノを置きません。 また、Tミノを使わないケースでは `harddrop` と同じになる点にご注意ください "
@@ -2512,61 +2830,61 @@ msgstr ""
 "``harddrop`` if T tetrominos are not used. (Solutions will not be "
 "omitted.(?)) (??)"
 
-#: ../../contents/path/main.rst:218 ../../contents/percent/main.rst:103
+#: ../../contents/path/main.rst:232 ../../contents/percent/main.rst:117
 msgid "``-th``, ``--threads`` [default: -1]"
 msgstr ""
 
-#: ../../contents/path/main.rst:220 ../../contents/percent/main.rst:105
+#: ../../contents/path/main.rst:234 ../../contents/percent/main.rst:119
 msgid "探索時に使用するスレッド数を指定します。"
 msgstr "Sets number of threads used when searching."
 
-#: ../../contents/path/main.rst:222 ../../contents/percent/main.rst:107
+#: ../../contents/path/main.rst:236 ../../contents/percent/main.rst:121
 msgid "``1`` を指定したとき、シングルスレッドでの探索となります。"
 msgstr "When set to ``1``, a single thread will be used."
 
-#: ../../contents/path/main.rst:224 ../../contents/percent/main.rst:109
+#: ../../contents/path/main.rst:238 ../../contents/percent/main.rst:123
 msgid "もし、0以下を指定した場合は、自動的に「実行環境のコア数」を設定します。"
 msgstr ""
 "If set below 0, it will automatically be set to the number of cores "
 "available."
 
-#: ../../contents/path/main.rst:228
+#: ../../contents/path/main.rst:242
 msgid "``-cb``, ``--cached-bit`` [default: 0]"
 msgstr ""
 
-#: ../../contents/path/main.rst:230
+#: ../../contents/path/main.rst:244
 msgid "内部のアルゴリズムで使用するキャッシュの最小ビットを指定します。"
 msgstr "Sets the minimum internal cache used by the algorithm."
 
-#: ../../contents/path/main.rst:232
+#: ../../contents/path/main.rst:246
 msgid "基本的にこの値を変更する必要はありません。"
 msgstr "Normally there's no need to change this value."
 
-#: ../../contents/path/main.rst:234
+#: ../../contents/path/main.rst:248
 msgid "実行環境で使用できるメモリが小さく、OutOfMemoryErrorが頻発して計算が続行できなくなる場合のみ、この値を変更してください。"
 msgstr ""
 "Please only change this value when there is frequently insufficient "
 "memory, and [SFinder is] unable to continue computing due to "
 "OutOfMemoryError."
 
-#: ../../contents/path/main.rst:236
+#: ../../contents/path/main.rst:250
 msgid "この数値を大きくすることで計算結果を保存せずにその都度計算するようになるため、実行時間が非常に長くなります。"
 msgstr ""
 "When a large value is set, since [SFinder] will have to calculate case-"
 "by-case without access to cached data(?), the computation time will "
 "increase significantly."
 
-#: ../../contents/path/main.rst:238
+#: ../../contents/path/main.rst:252
 msgid "そのため、値を調節するときは1ずつ大きくしていき、再実行して確認しながら調整してください。"
 msgstr ""
 "Therefore, please only increment the value by 1 and re-run [SFinder] each"
 " time [when an OutOfMemoryError occurs]."
 
-#: ../../contents/path/main.rst:242
+#: ../../contents/path/main.rst:256
 msgid "``-o``, ``--output-base`` [default: output/path.txt]"
 msgstr ""
 
-#: ../../contents/path/main.rst:244
+#: ../../contents/path/main.rst:258
 msgid "実行後に結果を出力するファイルのパスを指定する。 ただし、拡張子は出力形式によって変更される可能性があります。"
 msgstr ""
 "Sets the file path of the results after execution. However, the file "
@@ -2574,30 +2892,30 @@ msgstr ""
 "this mean that the file path overwrites the output format? I'm pretty "
 "sure this happens, wouldn't hurt to double-check)"
 
-#: ../../contents/path/main.rst:247
+#: ../../contents/path/main.rst:261
 msgid "実際は、このオプションで指定したファイル名 + suffix にあたるファイルとして出力されます。"
 msgstr ""
 "In fact, the output filename will be the set filename appended with a "
 "suffix."
 
-#: ../../contents/path/main.rst:249
+#: ../../contents/path/main.rst:263
 msgid "出力されるファイルは以下の通りです。"
 msgstr "The following are the files that will be output."
 
-#: ../../contents/path/main.rst:251
+#: ../../contents/path/main.rst:265
 msgid "指定したファイル名 + _unique に unique (重複をのぞいた手順) の結果が出力される。"
 msgstr ""
 "For results of unique (removes duplicated solutions), the file name will "
 "be ``<set filename> + _unique``."
 
-#: ../../contents/path/main.rst:252
+#: ../../contents/path/main.rst:266
 msgid "指定したファイル名 + _minimal に minimal (同じミノ順をカバーするパターンをのぞいた手順) の結果が出力される。"
 msgstr ""
 "For results of minimal (removes solutions with covered sequences that "
 "have all been covered by other sequences(?? long)), the file name will be"
 " ``<set filename> + _minimal``."
 
-#: ../../contents/path/main.rst:255
+#: ../../contents/path/main.rst:269
 msgid ""
 "``--format csv`` の場合に限り、 ``-`` を指定することで、CSVファイルと同じ結果を標準出力します。 特に ``--key "
 "none`` の場合は ``--max-layer`` によって出力されるCSVファイルが選択されます。"
@@ -2607,9 +2925,9 @@ msgstr ""
 "file through ``--max-layer`` while ``--key none`` is set. (?? I don't "
 "trust myself, check this functionality later)"
 
-#: ../../contents/path/main.rst:274 ../../contents/percent/main.rst:145
-#: ../../contents/ren/main.rst:111 ../../contents/setup/main.rst:515
-#: ../../contents/spin/main.rst:267
+#: ../../contents/path/main.rst:288 ../../contents/percent/main.rst:159
+#: ../../contents/ren/main.rst:125 ../../contents/setup/main.rst:529
+#: ../../contents/spin/main.rst:269
 msgid "探索の組み合わせパターンを定義するファイルのパスを指定する。"
 msgstr ""
 "Sets the file path for the pattern used to generate sequences for "
@@ -2991,71 +3309,71 @@ msgstr ""
 msgid "その場合、画面上に Warning が表示されますのでご注意下さい。"
 msgstr "When this happens, a warning will be output [to the tetrminal]."
 
-#: ../../contents/percent/main.rst:42
+#: ../../contents/percent/main.rst:43
 msgid "``-td``"
 msgstr ""
 
-#: ../../contents/percent/main.rst:42
+#: ../../contents/percent/main.rst:43
 msgid "``--tree-depth``"
 msgstr ""
 
-#: ../../contents/percent/main.rst:42
+#: ../../contents/percent/main.rst:43
 msgid "3"
 msgstr ""
 
-#: ../../contents/percent/main.rst:43
+#: ../../contents/percent/main.rst:44
 msgid "``-fc``"
 msgstr ""
 
-#: ../../contents/percent/main.rst:43
+#: ../../contents/percent/main.rst:44
 msgid "``--failed-count``"
 msgstr ""
 
-#: ../../contents/percent/main.rst:43
+#: ../../contents/percent/main.rst:44
 msgid "100"
 msgstr ""
 
-#: ../../contents/percent/main.rst:113
+#: ../../contents/percent/main.rst:127
 msgid "``-td``, ``--tree-depth`` [default: 3]"
 msgstr ""
 
-#: ../../contents/percent/main.rst:115
+#: ../../contents/percent/main.rst:129
 msgid "先頭のミノごとのパフェ成功確率を表示するツリーの深さを指定する。"
 msgstr "Sets the depth of the tree of success percentages by starting tetrominos."
 
-#: ../../contents/percent/main.rst:117
+#: ../../contents/percent/main.rst:131
 msgid "デフォルトの場合、先頭3ミノごとのパフェ成功確率を表示する。"
 msgstr ""
 "The success percentages are displayed up to the first 3 tetrominos by "
 "default."
 
-#: ../../contents/percent/main.rst:121
+#: ../../contents/percent/main.rst:135
 msgid "``-fc``, ``--failed-count`` [default: 100]"
 msgstr ""
 
-#: ../../contents/percent/main.rst:123
+#: ../../contents/percent/main.rst:137
 msgid "パフェに失敗したツモ順を表示する最大個数を指定する。"
 msgstr "Sets the maximum number of sequences displayed that fails to PC."
 
-#: ../../contents/percent/main.rst:125
+#: ../../contents/percent/main.rst:139
 msgid "デフォルトの場合、パフェできないツモ順が存在するとき100コまで表示する。"
 msgstr "Up to 100 fail sequnces will be displayed by default."
 
-#: ../../contents/percent/main.rst:127
+#: ../../contents/percent/main.rst:141
 msgid "-1 を指定した場合は、すべてのツモ順を表示するように個数が自動的に設定される。"
 msgstr "When set to -1, all fail sequences will be displayed (automatically)."
 
-#: ../../contents/percent/main.rst:150
+#: ../../contents/percent/main.rst:164
 msgid "出力画面のサンプル"
 msgstr "Example of output"
 
-#: ../../contents/percent/main.rst:152
+#: ../../contents/percent/main.rst:166
 msgid "出力画面について、一部コメントを追加してあります （バージョンによっては一部異なる部分がありますが御了承下さい） ::"
 msgstr ""
 "Some notes are added to the output below. (Please note that there might "
 "be some differences with different versions.)"
 
-#: ../../contents/percent/main.rst:154
+#: ../../contents/percent/main.rst:168
 msgid ""
 "# Setup Field\n"
 "XXXXXX____\n"
@@ -3440,17 +3758,17 @@ msgstr ""
 "``java -jar sfinder.jar ren --tetfu "
 "v115@VgF8DeF8DeF8DeF8DeF8DeF8DeF8DeI8KeAgH --patterns TOLJISZ``"
 
-#: ../../contents/ren/main.rst:32
+#: ../../contents/ren/main.rst:33
 msgid "output/ren.html"
 msgstr ""
 
-#: ../../contents/ren/main.rst:72
+#: ../../contents/ren/main.rst:73
 msgid "なお、renコマンドでは複数のミノを指定する記号（`*`, `[]`）は使用できません。"
 msgstr ""
 "Furthermore, the ren command cannot use the shorthands to specify "
 "multiple sequences (``*``, ``[]``)."
 
-#: ../../contents/ren/main.rst:91
+#: ../../contents/ren/main.rst:105
 msgid "``-o``, ``--output-base`` [default: output/ren.html]"
 msgstr ""
 
@@ -3989,7 +4307,7 @@ msgstr ""
 msgid "``--margin``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:278 ../../contents/util/fig.rst:88
+#: ../../contents/setup/main.rst:278 ../../contents/util/fig.rst:69
 msgid "``-F``"
 msgstr ""
 
@@ -3997,296 +4315,296 @@ msgstr ""
 msgid "``--free``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:279 ../../contents/spin/main.rst:27
-#: ../../contents/util/fig.rst:95
+#: ../../contents/setup/main.rst:279 ../../contents/spin/main.rst:29
+#: ../../contents/util/fig.rst:76
 msgid "``--line``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:282 ../../contents/util/fig.rst:94
+#: ../../contents/setup/main.rst:283 ../../contents/util/fig.rst:75
 #: ../../contents/util/seq.rst:101
 msgid "``-e``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:282
+#: ../../contents/setup/main.rst:283
 msgid "``--exclude``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:283
+#: ../../contents/setup/main.rst:284
 msgid "``-op``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:283
+#: ../../contents/setup/main.rst:284
 msgid "``--operate``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:284
+#: ../../contents/setup/main.rst:285
 msgid "``-np``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:284
+#: ../../contents/setup/main.rst:285
 msgid "``--n-pieces``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:285 ../../contents/spin/main.rst:32
+#: ../../contents/setup/main.rst:286 ../../contents/spin/main.rst:34
 msgid "``-fo``"
 msgstr ""
 
-#: ../../contents/setup/main.rst:287
+#: ../../contents/setup/main.rst:288
 msgid "output/setup.html"
 msgstr ""
 
-#: ../../contents/setup/main.rst:315
+#: ../../contents/setup/main.rst:316
 msgid "探索したいミノのパターンを指定する。"
 msgstr "Sets the pattern generating the tetrminos used."
 
-#: ../../contents/setup/main.rst:319
+#: ../../contents/setup/main.rst:320
 msgid "もし ``--combination`` が設定されていない場合は「ミノ順」として、設定されているときは「ミノの組み合わせ」として解釈されます。"
 msgstr ""
 "Will be used as a combination of tetrominos if ``--combination`` is "
 "enabled, and used to generate sequences if not."
 
-#: ../../contents/setup/main.rst:323
+#: ../../contents/setup/main.rst:324
 msgid "``-c``, ``--combination`` [default: no]"
 msgstr ""
 
-#: ../../contents/setup/main.rst:325
+#: ../../contents/setup/main.rst:326
 msgid "``yes`` を指定した場合、入力されたパターンを「ミノ順」ではなく「ミノの組み合わせ」として解釈します。"
 msgstr ""
 "When set to ``yes``, the input pattern will be used as a 'the combination"
 " of tetrominos' instead of a 'sequence'. (?? similar "
 "'「ミノの組み合わせ」として解釈したい場合は...')"
 
-#: ../../contents/setup/main.rst:327
+#: ../../contents/setup/main.rst:328
 msgid "たとえば パターンに ``IOOI`` を指定したとき、"
 msgstr "For example, when the pattern is set to ``IOOI``,"
 
-#: ../../contents/setup/main.rst:329
+#: ../../contents/setup/main.rst:330
 msgid "``no`` では、2つめのI は O より後に置く必要がありますが、"
 msgstr ""
 "if ``--combination`` is set to ``no``, the second I can only be placed "
 "after at least 1 O piece is placed."
 
-#: ../../contents/setup/main.rst:331
+#: ../../contents/setup/main.rst:332
 msgid "``yes`` では、置く順番に関わらず I2個・O2個 を使用した解が表示されます。"
 msgstr ""
 "if ``--combination`` is set to ``yes``, the combination of 2 I and 2 O "
 "tetrominos will be used, ignoring the order of the sequence."
 
-#: ../../contents/setup/main.rst:335
+#: ../../contents/setup/main.rst:336
 msgid "``-f``, ``--fill`` [default: なし]"
 msgstr "``-f``, ``--fill`` [default: none]"
 
-#: ../../contents/setup/main.rst:337
+#: ../../contents/setup/main.rst:338
 msgid "フィールドをテト譜から入力するとき、必ず埋めるエリアとするブロックの色を指定する。"
 msgstr ""
 "Sets the color of the area of minos that must be filled in the field of "
 "the input fumen."
 
-#: ../../contents/setup/main.rst:339
+#: ../../contents/setup/main.rst:340
 msgid "このオプションで指定した色が、探索時に必ず任意のミノを置く場所と解釈されます。 なお、色は ``TOI`` のように複数個同時に指定できます。"
 msgstr ""
 "The color(s) set must be filled in the search. You can specify multiple "
 "colors in the form of ``--fill TOI``."
 
-#: ../../contents/setup/main.rst:342
+#: ../../contents/setup/main.rst:343
 msgid "色の指定値は、以下のようになります（大文字・小文字はどちらでも良い）。"
 msgstr ""
 "You can set the color using the following values (any of the long or "
 "short forms can be used)."
 
-#: ../../contents/setup/main.rst:344
+#: ../../contents/setup/main.rst:345
 msgid "``I`` or ``cyan`` or ``cy`` → Iブロック"
 msgstr "``I`` or ``cyan`` or ``cy`` → I mino"
 
-#: ../../contents/setup/main.rst:345
+#: ../../contents/setup/main.rst:346
 msgid "``J`` or ``blue`` or ``bl`` → Jブロック"
 msgstr "``J`` or ``blue`` or ``bl`` → J mino"
 
-#: ../../contents/setup/main.rst:346
+#: ../../contents/setup/main.rst:347
 msgid "``L`` or ``orange`` or ``or`` → Lブロック"
 msgstr "``L`` or ``orange`` or ``or`` → L mino"
 
-#: ../../contents/setup/main.rst:347
+#: ../../contents/setup/main.rst:348
 msgid "``O`` or ``yellow`` or ``ye`` → Oブロック"
 msgstr "``O`` or ``yellow`` or ``ye`` → O mino"
 
-#: ../../contents/setup/main.rst:348
+#: ../../contents/setup/main.rst:349
 msgid "``S`` or ``green`` or ``gr`` → Sブロック"
 msgstr "``S`` or ``green`` or ``gr`` → S mino"
 
-#: ../../contents/setup/main.rst:349
+#: ../../contents/setup/main.rst:350
 msgid "``Z`` or ``red`` or ``re`` → Zブロック"
 msgstr "``Z`` or ``red`` or ``re`` → Z mino"
 
-#: ../../contents/setup/main.rst:350
+#: ../../contents/setup/main.rst:351
 msgid "``T`` or ``purple`` or ``pu`` → Tブロック"
 msgstr "``T`` or ``purple`` or ``pu`` → T mino"
 
-#: ../../contents/setup/main.rst:351
+#: ../../contents/setup/main.rst:352
 msgid "``none`` → 指定なし（マージンエリアなし）"
 msgstr ""
 "``none`` → No set margin area [You must specify filled area, and there "
 "must be at least one mino with the filled color, otherwise ``Should "
 "specify filled block`` will be raised.]"
 
-#: ../../contents/setup/main.rst:355
+#: ../../contents/setup/main.rst:356
 msgid "``-m``, ``--margin`` [default: なし]"
 msgstr "``-m``, ``--margin`` [default: none"
 
-#: ../../contents/setup/main.rst:357 ../../contents/setup/main.rst:369
+#: ../../contents/setup/main.rst:358 ../../contents/setup/main.rst:370
 msgid "フィールドをテト譜から入力するとき、マージンエリアとするブロックの色を指定する。"
 msgstr "Sets the color of the margin area in the field of the fumen."
 
-#: ../../contents/setup/main.rst:359 ../../contents/setup/main.rst:371
+#: ../../contents/setup/main.rst:360 ../../contents/setup/main.rst:372
 msgid "このオプションで指定した色が、探索時に置いても置かなくても良い場所と解釈されます。"
 msgstr "The color set will be the area which can be filled optionally."
 
-#: ../../contents/setup/main.rst:361
+#: ../../contents/setup/main.rst:362
 msgid "もし ``--exclude`` オプションが指定されているとき、このエリア内の穴は除外対象となります。"
 msgstr ""
 "If ``--exclude`` is enabled, fields with holes in this area will be "
 "removed."
 
-#: ../../contents/setup/main.rst:363 ../../contents/setup/main.rst:375
+#: ../../contents/setup/main.rst:364 ../../contents/setup/main.rst:376
 msgid "色の指定値は ``--fill`` オプションを参照してください。"
 msgstr "Please see the color values specified in the ``--fill`` option."
 
-#: ../../contents/setup/main.rst:367
+#: ../../contents/setup/main.rst:368
 msgid "``-F``, ``--free`` [default: なし]"
 msgstr "``-F``, ``--free`` [default: none]"
 
-#: ../../contents/setup/main.rst:373
+#: ../../contents/setup/main.rst:374
 msgid "もし ``--exclude`` オプションが指定されている場合でも、このエリア内の穴は除外対象となりません。"
 msgstr ""
 "If ``--exclude`` is enabled, fields with holes in this area will not be "
 "removed."
 
-#: ../../contents/setup/main.rst:379 ../../contents/util/fig.rst:181
+#: ../../contents/setup/main.rst:380 ../../contents/util/fig.rst:162
 msgid "``-l``, ``--line`` [default: -1]"
 msgstr ""
 
-#: ../../contents/setup/main.rst:381
+#: ../../contents/setup/main.rst:382
 msgid "入力するフィールドの最大ライン数（高さ）を指定する。"
 msgstr "Sets the maximum height of the field used."
 
-#: ../../contents/setup/main.rst:383
+#: ../../contents/setup/main.rst:384
 msgid "指定したライン数よりも上にあるブロックは無視されます。"
 msgstr "Any minos above the selected height will be ignored."
 
-#: ../../contents/setup/main.rst:385
+#: ../../contents/setup/main.rst:386
 msgid "なお ``-1`` を指定した場合は ``最も高いフィールドの高さ`` が自動的に設定される。"
 msgstr ""
 "Furthermore, when set to ``-1``, the height will be automatically set to "
 "the highest possible height."
 
-#: ../../contents/setup/main.rst:409
+#: ../../contents/setup/main.rst:423
 msgid "``-e``, ``--exclude`` [default: none]"
 msgstr ""
 
-#: ../../contents/setup/main.rst:411
+#: ../../contents/setup/main.rst:425
 msgid "地形に「穴」が含まれる解を除外します。"
 msgstr "Removes the fields containing holes."
 
-#: ../../contents/setup/main.rst:413
+#: ../../contents/setup/main.rst:427
 msgid "除外する対象をひとつ選択してください。"
 msgstr "Please choose one of the following ways of removing fields."
 
-#: ../../contents/setup/main.rst:415
+#: ../../contents/setup/main.rst:429
 msgid "holes: ある空白ブロックに対して、その上にブロックがあれば「穴」として除外する（横に隙間がある場合でも除外されます）"
 msgstr ""
 "holes: Removes fields that have empty minos with filled minos above them "
 "(regardless of whether there are empty minos to the left/right of "
 "itself)."
 
-#: ../../contents/setup/main.rst:416
+#: ../../contents/setup/main.rst:430
 msgid "strict-holes: ある空白ブロックに対して、どうやっても到達できない場合は「穴」として除外する（四方がブロックで囲まれているとき）"
 msgstr ""
 "strict-holes: Removes fields that have empty minos that cannot be reached"
 " (enclosed in all four directions with filled minos)"
 
-#: ../../contents/setup/main.rst:417
+#: ../../contents/setup/main.rst:431
 msgid "none: 除外なし"
 msgstr "none: No fields are removed"
 
-#: ../../contents/setup/main.rst:421
+#: ../../contents/setup/main.rst:435
 msgid "``-op``, ``--operate`` [default: なし]"
 msgstr "``-op``, ``--operate`` [default: none]"
 
-#: ../../contents/setup/main.rst:423
+#: ../../contents/setup/main.rst:437
 msgid "除外対象を決定する前に、解の地形に対して操作を行う。"
 msgstr "Operations done to a field before determining if it should be removed."
 
-#: ../../contents/setup/main.rst:425
+#: ../../contents/setup/main.rst:439
 msgid "ここでの操作は、あくまで ``--exclude`` の判定 に利用するためであり、解の表示には影響は与えません。"
 msgstr ""
 "The operations done will only affect the decision of ``--exclude``, but "
 "will not affect the outputted fields."
 
-#: ../../contents/setup/main.rst:427
+#: ../../contents/setup/main.rst:441
 msgid "以下の操作を指定することができます。"
 msgstr "You are able to perform the following operations."
 
-#: ../../contents/setup/main.rst:429
+#: ../../contents/setup/main.rst:443
 msgid "1ブロックを置く"
 msgstr "Placing one mino"
 
-#: ../../contents/setup/main.rst:431
+#: ../../contents/setup/main.rst:445
 msgid "block(1,2)：(x=1,y=2)にブロックを置く"
 msgstr "``block(1,2)``：A mino will be placed in (x=1,y=2)"
 
-#: ../../contents/setup/main.rst:433
+#: ../../contents/setup/main.rst:447
 msgid "ミノを置く"
 msgstr "Placing a tetromino"
 
-#: ../../contents/setup/main.rst:435
+#: ../../contents/setup/main.rst:449
 msgid "I-Spawn(1,0)：出現時の回転のIミノを、回転軸(x=1,y=0)に置く"
 msgstr ""
 "``I-Spawn(1,0)``: Places an I tetromino at the spawn orientation with its"
 " rotation axis on (x=1,y=0)"
 
-#: ../../contents/setup/main.rst:436
+#: ../../contents/setup/main.rst:450
 msgid "T-Reverse(4,2)：裏返したTミノを回転軸(x=4,y=2)に置く"
 msgstr ""
 "``T-Reverse(4,2)``: Places a T tetromino upside down(reverse orientation)"
 " with its rotation axis on (x=4,y=2)"
 
-#: ../../contents/setup/main.rst:437
+#: ../../contents/setup/main.rst:451
 msgid "L-Right(0,1)：右回転Lミノを回転軸(x=0,y=1)に置く"
 msgstr ""
 "``L-Right(0,1)``: Places an L tetromino at the right orientation with its"
 " rotation axis on (x=0,y=1)"
 
-#: ../../contents/setup/main.rst:438
+#: ../../contents/setup/main.rst:452
 msgid "J-Left(9,1)：左回転Jミノを回転軸(x=9,y=1)に置く"
 msgstr ""
 "``J-Left(9,1)``: Places a J tetromino at the left orientation with its "
 "rotation axis on (x=9,y=1)"
 
-#: ../../contents/setup/main.rst:440
+#: ../../contents/setup/main.rst:454
 msgid "1ラインすべてを埋める"
 msgstr "Filling one row completely"
 
-#: ../../contents/setup/main.rst:442
+#: ../../contents/setup/main.rst:456
 msgid "row(1)：2段目をすべてブロックで埋める。この時点でライン消去はされません"
 msgstr ""
 "``row(1)``: Completely fills the second row with minos. This will not "
 "clear the row of minos."
 
-#: ../../contents/setup/main.rst:444
+#: ../../contents/setup/main.rst:458
 msgid "ライン消去を行う"
 msgstr "Clearing lines"
 
-#: ../../contents/setup/main.rst:446
+#: ../../contents/setup/main.rst:460
 msgid "clear()：ブロックで埋まっているラインを消去する"
 msgstr "``clear()``: Clears rows that are filled with minos"
 
-#: ../../contents/setup/main.rst:449
+#: ../../contents/setup/main.rst:463
 msgid "座標は左下のブロックが (0,0) となります。"
 msgstr ""
 "The coordinates start from the bottom left block as (0,0) [using "
 "Cartesian coordinates]."
 
-#: ../../contents/setup/main.rst:451
+#: ../../contents/setup/main.rst:465
 msgid ""
 "ミノの回転軸は `SRS / How Guideline SRS Really Works "
 "<https://harddrop.com/wiki/SRS#How_Guideline_SRS_Really_Works>`_ "
@@ -4295,23 +4613,23 @@ msgstr ""
 "The rotation axis is defined as in `SRS / How Guideline SRS Really Works "
 "<https://harddrop.com/wiki/SRS#How_Guideline_SRS_Really_Works>`_"
 
-#: ../../contents/setup/main.rst:453
+#: ../../contents/setup/main.rst:467
 msgid "すべての操作が終わった後、自動的にライン消去（clear()）が行われます"
 msgstr ""
 "After all operations are done, any filled rows will be automatically "
 "cleared (``clear()``)."
 
-#: ../../contents/setup/main.rst:457
+#: ../../contents/setup/main.rst:471
 msgid "複数個の操作を指定した場合は、先頭の操作から順に行われます。"
 msgstr "If there are multiple operations, they will be performed in order."
 
-#: ../../contents/setup/main.rst:459
+#: ../../contents/setup/main.rst:473
 msgid "例）--operate \"L-Right(0,1)\" \"row(1)\" \"clear()\" \"block(1,1)\""
 msgstr ""
 "Example: \\-\\-operate \"L-Right(0,1)\" \"row(1)\" \"clear()\" "
 "\"block(1,1)\""
 
-#: ../../contents/setup/main.rst:461
+#: ../../contents/setup/main.rst:475
 msgid ""
 "`結果 "
 "<http://fumen.zui.jp/?v115@vhAKJYYAF7IVCNbNyDIP98AYo78ADq78A5nY9ARhg0?I8TeAAPQAF7YVEvT98A4p78A5nY9AvhAAAPRAF7wiDs4DXE?FbuRAy178ASAAAAShA8beAAPWAF7YfDsng/DFbO6AFLn6AF?rwRASbAAARhg0Ieh0ReAAPGASY0hEM/BAA>`_：右回転Lを置く→2段目をすべて埋める→ライン消去を行う→(1,1)にブロックを置く"
@@ -4321,15 +4639,15 @@ msgstr ""
 " Place right-oriented L tetromino → completely fill the second row → "
 "clear all filled rows → place a mino at (1,1)"
 
-#: ../../contents/setup/main.rst:465
+#: ../../contents/setup/main.rst:479
 msgid "``-np``, ``--n-pieces`` [default: -1]"
 msgstr ""
 
-#: ../../contents/setup/main.rst:467
+#: ../../contents/setup/main.rst:481
 msgid "解で使用されるミノの個数を指定する。"
 msgstr "Sets the number of tetrominos used to build the setup."
 
-#: ../../contents/setup/main.rst:469
+#: ../../contents/setup/main.rst:483
 msgid ""
 "もし ``-1`` を指定した場合は自動で設定されます。（``--combination`` "
 "がオンのとき固定なし、オフのときはpatterns・地形に従う）"
@@ -4338,15 +4656,15 @@ msgstr ""
 "``-combination`` is enabled, following number of tetrominos in patterns "
 "and setup(?) when disabled)"
 
-#: ../../contents/setup/main.rst:473 ../../contents/spin/main.rst:242
+#: ../../contents/setup/main.rst:487 ../../contents/spin/main.rst:244
 msgid "``-fo``, ``--format`` [default: html]"
 msgstr ""
 
-#: ../../contents/setup/main.rst:478
+#: ../../contents/setup/main.rst:492
 msgid "csv"
 msgstr ""
 
-#: ../../contents/setup/main.rst:486 ../../contents/spin/main.rst:223
+#: ../../contents/setup/main.rst:500 ../../contents/spin/main.rst:225
 msgid ""
 "ただし ``yes`` "
 "で生成されるテト譜はあくまで置き場所を示すものであり、ページ順通りに置くとミノが空中に浮いたり、移動できない場所に置かれることもあります。"
@@ -4355,11 +4673,11 @@ msgstr ""
 "cannot be placed normally when set to ``yes``, so the fumen is only for "
 "reference."
 
-#: ../../contents/setup/main.rst:493
+#: ../../contents/setup/main.rst:507
 msgid "``-o``, ``--output-base`` [default: output/setup.html]"
 msgstr ""
 
-#: ../../contents/setup/main.rst:497
+#: ../../contents/setup/main.rst:511
 msgid "``--format csv`` の場合に限り、 ``-`` を指定することで、CSVファイルと同じ結果を標準出力します。"
 msgstr ""
 "When ``--format csv`` is used, and ``-`` is specified [for ``-o``], the "
@@ -4595,125 +4913,130 @@ msgid "コマンド: spin"
 msgstr "Command: spin"
 
 #: ../../contents/spin/main.rst:8
-msgid "ある地形からTスピンできる置き方を探す"
+#, fuzzy
+msgid "ある地形からTスピンできる置き方を探す。"
 msgstr "Searching for fields that can perform T-Spins."
 
-#: ../../contents/spin/main.rst:13
+#: ../../contents/spin/main.rst:10
+msgid "対応している回転法則はSRSのみで、カスタマイズできない点にご注意ください。"
+msgstr "Please note that the kick table cannot be customized, ans will always use SRS."
+
+#: ../../contents/spin/main.rst:15
 msgid ""
 "``java -jar sfinder.jar spin --tetfu v115@zgD8FeE8EeF8DeG8CeH8LeAgH "
 "--patterns *p7 -ft 4``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:24
+#: ../../contents/spin/main.rst:26
 msgid "``-fb``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:24
+#: ../../contents/spin/main.rst:26
 msgid "``--fill-bottom``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:25
+#: ../../contents/spin/main.rst:27
 msgid "``-ft``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:25
+#: ../../contents/spin/main.rst:27
 msgid "``--fill-top``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:26
+#: ../../contents/spin/main.rst:28
 msgid "``--margin-height``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:28
+#: ../../contents/spin/main.rst:30
 msgid "``--roof``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:29
+#: ../../contents/spin/main.rst:31
 msgid "``-mr``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:29
+#: ../../contents/spin/main.rst:31
 msgid "``--max-roof``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:31 ../../contents/util/fumen.rst:31
+#: ../../contents/spin/main.rst:33 ../../contents/util/fumen.rst:31
 msgid "``--filter``"
 msgstr ""
 
-#: ../../contents/spin/main.rst:31
+#: ../../contents/spin/main.rst:33
 msgid "strict"
 msgstr ""
 
-#: ../../contents/spin/main.rst:33
+#: ../../contents/spin/main.rst:35
 msgid "output/spin.html"
 msgstr ""
 
-#: ../../contents/spin/main.rst:44
+#: ../../contents/spin/main.rst:46
 msgid "[X] Z-Right L-Right I-Left T-Right [clear=4, hole=1, piece=4]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:49
+#: ../../contents/spin/main.rst:51
 msgid "先頭のマーク"
 msgstr "Starting mark"
 
-#: ../../contents/spin/main.rst:47
+#: ../../contents/spin/main.rst:49
 msgid "``O`` = 実際にTスピンできる"
 msgstr "``O`` = Possible to perform a T-Spin"
 
-#: ../../contents/spin/main.rst:48
+#: ../../contents/spin/main.rst:50
 msgid "``X`` = Tミノ以外は組むことができるが、Tミノが到達できない位置にある"
 msgstr ""
 "``X`` = All tetrominos other than T can be placed, but the T piece cannot"
 " be placed(?? I can't find an example that generates these cases from "
 "some testing, so I'm not sure what they are)"
 
-#: ../../contents/spin/main.rst:49
+#: ../../contents/spin/main.rst:51
 msgid "``-`` = そのままでは置けないミノを含む手順である (Tミノも含む)"
 msgstr ""
 "``-`` = Contains sequences that cannot build the setup (includes T "
 "tetrominos)"
 
-#: ../../contents/spin/main.rst:51
+#: ../../contents/spin/main.rst:53
 msgid "※ ``--filter`` オプションで、このマークにごとに解を制限できます"
 msgstr "※ You can restrict the types of solutions by its mark with ``--filter``."
 
-#: ../../contents/spin/main.rst:53
+#: ../../contents/spin/main.rst:55
 msgid "ミノの方向"
 msgstr "Orientation of tetromino"
 
-#: ../../contents/spin/main.rst:55
+#: ../../contents/spin/main.rst:57
 msgid "clear = Tスピン以外も含めて消去されたライン数"
 msgstr "clear = Number of lines cleared that, not counting the ones from T-Spins."
 
-#: ../../contents/spin/main.rst:56
+#: ../../contents/spin/main.rst:58
 msgid "hole = Tスピン後の地形の穴の数（横穴も含む）"
 msgstr ""
 "hole = The number of holes that remain after the T-Spin (including "
 "caves[, holes are defined as empty minos with a filled mino above it])"
 
-#: ../../contents/spin/main.rst:57
+#: ../../contents/spin/main.rst:59
 msgid "piece = その解で使われたミノ数"
 msgstr "piece = Number of pieces used by the setup"
 
-#: ../../contents/spin/main.rst:59
+#: ../../contents/spin/main.rst:61
 msgid "Tスピンの種類"
 msgstr "Type of T-Spin"
 
-#: ../../contents/spin/main.rst:72
+#: ../../contents/spin/main.rst:74
 msgid "設定値について"
 msgstr "About the Parameters"
 
-#: ../../contents/spin/main.rst:74
+#: ../../contents/spin/main.rst:76
 msgid "このコマンドは、設定値によって探索にかかる時間が大きく変わります。 ここでは、探索時間を調整するための基本的な方針を紹介します。"
 msgstr ""
 "The search time varies greatly with the set values of the parameters. "
 "Thus, there are some ways to ways to reduce the search time."
 
-#: ../../contents/spin/main.rst:77
+#: ../../contents/spin/main.rst:79
 msgid "**1. Tスピンをつくる範囲をなるべく狭くする**"
 msgstr "**1. Restricting where the T-Spin can be made**"
 
-#: ../../contents/spin/main.rst:79
+#: ../../contents/spin/main.rst:81
 msgid ""
 "Spinコマンドでは、``--fill-bottom`` と ``--fill-top`` の間の段でTスピンをつくります。 この  "
 "``--fill-bottom`` と ``--fill-top`` の差が大きかったり、ブロックがないラインを選ぶほど、 "
@@ -4724,47 +5047,47 @@ msgstr ""
 "setups will increase if ``--fill-bottom`` and ``--fill-top`` are furthur "
 "apart, or rows with more empty minos are chosen."
 
-#: ../../contents/spin/main.rst:83
+#: ../../contents/spin/main.rst:85
 msgid "それにあわせて実行する時間も増えていくため、 ある程度つくりたいTスピンを予測して、なるべく空間が狭くなるように指定するのをおすすめします。"
 msgstr ""
 "It is recommended to restrict the rows where the T-Spin can occur to both"
 " reduce the search time and get [more predictable] T-Spins."
 
-#: ../../contents/spin/main.rst:87
+#: ../../contents/spin/main.rst:89
 msgid "**2. 「マージン」の範囲をなるべく狭くする**"
 msgstr "**2. Restricting the margin area**"
 
-#: ../../contents/spin/main.rst:89
+#: ../../contents/spin/main.rst:91
 msgid "Spinコマンドでの「マージン」とは、Tスピンの屋根や回転入れのためのミノを置いても良い範囲のことです。"
 msgstr ""
 "The 'margin' for this command is the area allowed for the overhang of the"
 " T-Spin to be placed."
 
-#: ../../contents/spin/main.rst:91
+#: ../../contents/spin/main.rst:93
 msgid "「Tスピンの屋根や回転入れのための追加するミノ」をみつけるのは難しく、Tスピン自体をみつけるよりも時間がかかります。"
 msgstr ""
 "Searching for possible placements of extra tetrominos to make the "
 "placement of the overhang possible increases search time on top of "
 "finding the T-Spin itself."
 
-#: ../../contents/spin/main.rst:93
+#: ../../contents/spin/main.rst:95
 msgid "そのため、マージンの高さ（``--margin-height`` の値）を小さくしたり、マージンの空間が広くならないようにしたりしてください。"
 msgstr ""
 "Therefore, you can decrease the height of the margin (with ``--margin-"
 "height``) to restrict the area allowed."
 
-#: ../../contents/spin/main.rst:96
+#: ../../contents/spin/main.rst:98
 msgid "**3. 屋根に利用できるミノ数を少なくする**"
 msgstr "**3. Reducing the number of tetrominos used for overhang**"
 
-#: ../../contents/spin/main.rst:98
+#: ../../contents/spin/main.rst:100
 msgid "2ではマージンの範囲を狭くしましたが、マージン内に置くミノの最大数（``--max-roof`` の値）を小さくしても実行時間は短くなります。"
 msgstr ""
 "Although 2. can reduce the area of the margin, you can reduce the search "
 "time furthur by setting the maximum number of tetrominos placed in the "
 "margin (with ``--max-roof``)."
 
-#: ../../contents/spin/main.rst:100
+#: ../../contents/spin/main.rst:102
 msgid ""
 "たとえば ``--max-roof 1`` と指定すると、最低限のTスピンの形からさらに1ミノだけ置かれます。 "
 "そのため、2ミノ以上のケースを探さないため、その分実行がはやくなります。"
@@ -4773,59 +5096,59 @@ msgstr ""
 " with only 1 tetromino. Since the cases where at least 2 tetrominos are "
 "needed to create the overhang are skipped, the search time is reduced."
 
-#: ../../contents/spin/main.rst:104
+#: ../../contents/spin/main.rst:106
 msgid "※ 同じような効果をもつオプションで、``--roof no`` があります。``--max-roof 0`` との違いは以下の通りです。"
 msgstr ""
 "※ The same effect can be created with ``--roof no``. The difference "
 "between ``--roof no`` and ``--max-roof 0`` are the following:"
 
-#: ../../contents/spin/main.rst:106
+#: ../../contents/spin/main.rst:108
 msgid "``--max-roof 0`` : 回転入れするための余計のミノを追加する必要のない解だけが表示される"
 msgstr ""
 "``--max-roof 0`` : Finds all setups that do not require extra tetrominos "
 "to place the overhang"
 
-#: ../../contents/spin/main.rst:107
+#: ../../contents/spin/main.rst:109
 msgid "``--roof no`` : 探索自体をスキップするので、そのままではミノを入れられない形も表示される"
 msgstr ""
 "``--roof no`` : Finds all setups that [cannot be placed](??), skipping "
 "searching for [overhangs](??)"
 
-#: ../../contents/spin/main.rst:110
+#: ../../contents/spin/main.rst:112
 msgid "**各オプションの関係を表した図**"
 msgstr "**Figure showing the [function] of each option**"
 
-#: ../../contents/spin/main.rst:112
+#: ../../contents/spin/main.rst:114
 msgid "option_001"
 msgstr ""
 
-#: ../../contents/spin/main.rst:115
+#: ../../contents/spin/main.rst:117
 msgid "|option_001|"
 msgstr ""
 
-#: ../../contents/spin/main.rst:119
+#: ../../contents/spin/main.rst:121
 msgid "現バージョンでは未対応の機能"
 msgstr "Functions that are not implemented in the current version"
 
-#: ../../contents/spin/main.rst:121
+#: ../../contents/spin/main.rst:123
 msgid "地形を削らないとTスピンできないケース `サンプル <http://tinyurl.com/y2anl6g3>`_"
 msgstr ""
 "Fields where a line clear is necessary for the T-Spin `Example "
 "<http://fumen.zui.jp/?v115@5gD8AeC8CeC8AeI8AeI8AeD8AeD8JeAgWQAOLUABBo?o2AwieeEFcJ8AvhBJkBlrBsgRpHeRpEeC8ilzhC8glywi0E?8wwC8g0E8OeAAPQAOLUABBoo2AwieeEFch/AsgRpHeRpEeC?8ilzhC8Qaglxwi0C8ywC8g0TeAAPlBMOprDFbsiDs4DXEzo?o2A3u+1DFbcEEJm7aEFbkOEsSQrDkoo2ABUDlEloo2AU9UT?ASYtSASY1rDUsrGEJmrTASosaEFb0HEPP98AwMBREwXaeEF?388AwnoRBOL88AZAAAAsgRpHeRpEeC8ilzhC8Qaglxwi0C8?ywC8g0TeAAPnBUouXEvE2JEvN98AQ+7dD0oo2ABMVTASoHb?EF388AwWRDE5oo2A0H98AQINXEmXyGEFbEBEJGVTASI3CEl?CCbEFb8bDy488AQlTeEFbsYEV5dNESP9nDFbcRASEQFCFr4?AAsgRpHeRpEeC8ilzhC8Qaglxwi0C8ywC8g0TeAAPmB08UT?ASoUSASY1rDUsrGEJmrTASosaEFbMLEu488AwMJlDooo2AF?VMGEQDVTASo78A4t2TASosaEFb0HEPP98AwNBlEPT7rDkoo?2A3u+1DFbEcEo488AQemsCwOpTAylAAA>`_"
 
-#: ../../contents/spin/main.rst:125
+#: ../../contents/spin/main.rst:127
 msgid "ミノを順列で指定できるようにする"
 msgstr ""
 "Being able to specify the tetrminos as the sequence inputted [instead of "
 "as a combination of tetrominos]"
 
-#: ../../contents/spin/main.rst:123
+#: ../../contents/spin/main.rst:125
 msgid "今後、指定されたミノ順で、実際に組むことができる解のみ表示させたいです。"
 msgstr ""
 "[In the future], only setups that are buildable by the sequence(s) "
 "specified will be included."
 
-#: ../../contents/spin/main.rst:124
+#: ../../contents/spin/main.rst:126
 msgid ""
 "Tミノ以外のミノに屋根が必要なケースは、順列指定でのみ対応させる予定です。 `その理由 "
 "<http://fumen.zui.jp/?v115@EhD8AeC8CeC8AeD8AeD8BeG8JeAglIhglCeywCeglD?ewwDehlQeAg0lAUYHDBQDxRA1dE6B0XHDBQpjRA1d0KB3XH?DBQeJSA1dkRBiAAAAqgAtHeBtHeAtweAg0DBMYHDBwFhRA1?w2KB1XHDBQUHSA1dkRBCYHDBQBFSA1d0KBGY3JBj+ESAVi+?AB5XHDBQOHSA1Ae3B1X/TBZ0mAAqgAPHeBPHeAPFeDAgWCA?SLCAgWDAQLDAhWGAJeAg0GAtjVRAz3AAAEhD8CeA8CeC8Ce?B8AeD8BeG8JeAg0qAlP52BxpDfEToXOBlP62A1vDfETY9KB?lvs2ACqDfET4d3Blvs2ACmAAAIhglRpAeywCeglRpBewwDe?hlQeAg0lAUYHDBQDxRA1dE6B0XHDBQpjRA1d0KB3XHDBQeJ?SA1dkRBiAAAA5fRpHeRpDfxSAeSLDexSBeQLWeAg0aBlvs2?AkJEfETIH+Blvs2A00btAls7fClvs2A2HEfET4xRBlvs2AU?GEfETY85AlP52BUDEfEWUDVBlvs2AWJEfEVpHIBl/PVB4pD?fET4JwBlvs2A1iAAAkfglIeglIeglQawSHexSCfgWRpGegW?RpGehWQeAg0OBlvs2AkJEfETIH+Blvs2A0kitAlszVClvs2?A2HEfET4xRBlvs2AUGEfETY85AlP52BUDEfEWUDVBlvs2A0?EEfEVpHIBl/PVB4ZAAAqgAtHeBtHeAtweAglvhBAg0mBlPB?BC5sDfET45ABlvs2AWxDfETY85AlP52BUDEfEWUDVBlvs2A?WJEfETYhBClvs2ADIEfEZk0KBlvs2A2HEfEVpM6AlPiOBmJ?EfETY12BlPJVByyDfETYN6Blvs2AUeAAAAg0mBlvs2AVGEf?ET4p9Blvs2AVJEfETYO6Alvs2AwpDfEX2NEBlPREBQ0DfET?ofzBlvs2A2yDfET4BBClPhzBGIEfEV5Z3Blvs2A1yDfET4J?wBlvs2AUuDfE032RBlPhzB5xAAA>`_"
@@ -4835,89 +5158,89 @@ msgstr ""
 "future. `Explanation "
 "<http://fumen.zui.jp/?v115@EhD8AeC8CeC8AeD8AeD8BeG8JeAglIhglCeywCeglD?ewwDehlQeAAttAGXyTASY91Dloo2AUEzPEJG98AQurTAS4M?rDFbkOEvtU5DCDVTAyE88AQAAAAqgAtHeBtHeAtweAAtrA0?8MXEloo2AtwceEFbUfDloo2ABG98AwW7rDS9jJEnoo2AmXy?TASYjBAqgAPHeBPHeAPFeDAgWCASLCAgWDAQLDAhWGAJeAA?tGAtjVRAz3AAAEhD8CeA8CeC8CeB8AeD8BeG8JeAAtsAIIy?rDFb82Dzoo2Ahoo2ATDOyDI/EvEFbEmDJKXrDyIReEFb0sD?poMoDIhglRpAeywCeglRpBewwDehlQeAAtcAUH98AQzUTAS?oChDs488AQurTASYttAzI2JE5fRpHeRpDfxSAeSLDexSBeQ?LWeAAtUB38sJEFbEVCFb82Dzoo2AQDckDF388AwB/dEFM98?AwW88ADoo2AU9MXEloo2ApN98AQlrTAS4nrDF388AQZjXEF?b8bDuoo2APSNXEoCZyDkfglIeglIeglQawSHexSCfgWRpGe?gWRpGehWQeAAtDB38sJEFbMfCFb82Dzoo2AQDckDF388AwB?/dEFM98AQS88ADoo2ABG98AwW7rDS9jJEnoo2ApN98AQFVr?DkoaCAqgAtHeBtHeAtweAAevhBAAtHB08MXEFajXElow2BF?bEcEo488AwW7rDS9jJEnoo2AkotrDOX0TASIQXElieDE5oo?2APG98AQ+brDFbsYElK5rDu1cCAAAt7A08MXEFajXElow2B?FbEcEoY0rDFbsYEFPBREzoo2A3uMDEFb0HEPP98AQzUTASI?zhEQpjXE0oaCA>`_"
 
-#: ../../contents/spin/main.rst:154
+#: ../../contents/spin/main.rst:156
 msgid "``-fb``, ``--fill-bottom`` [default: 0]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:156
+#: ../../contents/spin/main.rst:158
 msgid "揃えるラインの範囲のうち、一番下のラインを指定する。 y座標は、一番下の段を `0` とする。"
 msgstr ""
 "Sets the lowest row [that the T-Spin can be in]. The y-coordinate starts "
 "from ``0`` at the bottommost row."
 
-#: ../../contents/spin/main.rst:159
+#: ../../contents/spin/main.rst:161
 msgid "もし `2` を指定すると、y=2より上のラインを揃える組み合わせを探索する。 （3段目/y=2 は対象になる）"
 msgstr ""
 "If set to ``2``, the area above y=2 will be searched. (y=2 / the third "
 "row is also included)"
 
-#: ../../contents/spin/main.rst:162 ../../contents/spin/main.rst:174
+#: ../../contents/spin/main.rst:164 ../../contents/spin/main.rst:176
 msgid "ここで指定する範囲には、Tスピンにならないライン消去（Tミノを含まないライン消去）も含まれる。"
 msgstr ""
 "The set area also contains line clears that do not contain T-Spins (line "
 "clears that do not contain T tetrominos)."
 
-#: ../../contents/spin/main.rst:166
+#: ../../contents/spin/main.rst:168
 msgid "``-ft``, ``--fill-top`` [default: -1]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:168
+#: ../../contents/spin/main.rst:170
 msgid "揃えるラインの範囲の高さを指定する。 y座標は、一番下の段を `0` とする。"
 msgstr ""
 "Sets the highest row [that the T-Spin can be in]. The y-coordinate starts"
 " from ``0`` at the bottommost row."
 
-#: ../../contents/spin/main.rst:171
+#: ../../contents/spin/main.rst:173
 msgid "もし `4` を指定すると、y=4より下のラインを揃える組み合わせを探索する。 （5段目/y=4 は対象にならない）"
 msgstr ""
 "If set to ``4``, the area below y=4 will be searched. (y=4 / the fifth "
 "row is excluded)"
 
-#: ../../contents/spin/main.rst:176
+#: ../../contents/spin/main.rst:178
 msgid "`-1` が指定されたときは、自動的に 最も高い位置にあるブロックの高さ+1 に設定される。"
 msgstr ""
 "When set to ``-1``, this will be set to the highest row containing filled"
 " blocks + 1."
 
-#: ../../contents/spin/main.rst:180
+#: ../../contents/spin/main.rst:182
 msgid "``-m``, ``--margin-height`` [default: -1]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:182
+#: ../../contents/spin/main.rst:184
 msgid "ミノを置ける範囲の高さを指定する。 `-1` が指定されたときは、自動的に `fill-top` + 2 が設定される。"
 msgstr ""
 "The maximum row height that tetrominos can be placed. When set to ``-1, "
 "it will be set automatically to ``fill-top + 2``."
 
-#: ../../contents/spin/main.rst:185
+#: ../../contents/spin/main.rst:187
 msgid "もし `4` を指定すると、y=4より下にミノを置く組み合わせを探索する。 （5段目/y=4 にブロックを置かない）"
 msgstr ""
 "If set to ``4``, the area below y=4 will be searched. (y=4 / the fifth "
 "row is excluded)"
 
-#: ../../contents/spin/main.rst:188
+#: ../../contents/spin/main.rst:190
 msgid "この高さは、Tスピンに必要なブロックや回転入れするための屋根の探索に利用される。"
 msgstr ""
 "This height is used to specify [the area] where the overhang for the "
 "T-Spin can be placed."
 
-#: ../../contents/spin/main.rst:192
+#: ../../contents/spin/main.rst:194
 msgid "``-c``, ``--line`` [default: 2]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:194
+#: ../../contents/spin/main.rst:196
 msgid "Tスピン時に消すべき最小のライン数を指定する。"
 msgstr "Sets the minimum amount of lines that should be cleared with T-Spins."
 
-#: ../../contents/spin/main.rst:196
+#: ../../contents/spin/main.rst:198
 msgid "`2` を指定したとき、T-Spin Double/Triple を探索する。"
 msgstr "When set to ``2``, T-Spin Double/Triple will be searched."
 
-#: ../../contents/spin/main.rst:200
+#: ../../contents/spin/main.rst:202
 msgid "``-r``, ``--roof`` [default: yes]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:202
+#: ../../contents/spin/main.rst:204
 msgid ""
 "このオプションが `yes` のとき、Tミノの回転入れに必要な屋根の探索を実行する。 `no` "
 "を指定した場合は、屋根の探索をスキップされ、そのままではTミノを入れられない地形も解として表示される。"
@@ -4925,15 +5248,15 @@ msgstr ""
 "When set to ``yes``, the overhang of the T-Spin will be searched. When "
 "set to ``no``, <> (?? I dont get it)"
 
-#: ../../contents/spin/main.rst:205
+#: ../../contents/spin/main.rst:207
 msgid "もし、屋根なしでTミノをそのまま入れられる解が必要であれば `-r yes -mr 0` を指定する。"
 msgstr "(?? I dont get it)"
 
-#: ../../contents/spin/main.rst:209
+#: ../../contents/spin/main.rst:211
 msgid "``-mr``, ``--max-roof`` [default: -1]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:211
+#: ../../contents/spin/main.rst:213
 msgid ""
 "Tミノの回転入れに必要な屋根の探索で置くことができる最大のミノ数を指定する。 `-1` "
 "が指定されたとき、指定パターンの中で制限なく屋根を置いて探索する。 そのため、この値が大きいほど実行時間が長くなる。"
@@ -4942,29 +5265,29 @@ msgstr ""
 "T-Spin. If set to ``-1``, there will be no limit to the number of pieces "
 "used for overhang. As a result the search time will increase."
 
-#: ../../contents/spin/main.rst:215
+#: ../../contents/spin/main.rst:217
 msgid "もし `0` を指定した場合は、屋根が必要ない解が選択される。"
 msgstr "If set to ``0``, setups that do not place overhangs will be searched."
 
-#: ../../contents/spin/main.rst:230
+#: ../../contents/spin/main.rst:232
 msgid "``-f``, ``--filter`` [default: strict]"
 msgstr ""
 
-#: ../../contents/spin/main.rst:232
+#: ../../contents/spin/main.rst:234
 msgid "解の先頭に表示されているマークに従って、表示する解を制限します。"
 msgstr "Filters setups based on the starting mark."
 
-#: ../../contents/spin/main.rst:234
+#: ../../contents/spin/main.rst:236
 msgid "指定できる値は以下の通りです。"
 msgstr "The following values can be set [for this option]."
 
-#: ../../contents/spin/main.rst:236
+#: ../../contents/spin/main.rst:238
 msgid "strict: Tスピンできる解のみを表示します（`[O]` のみに相当）`"
 msgstr ""
 "stict: Only setups that can perform the T-Spin will be shown (the same as"
 " only showing ``[O]``)"
 
-#: ../../contents/spin/main.rst:237
+#: ../../contents/spin/main.rst:239
 msgid ""
 "ignore-t: "
 "Tミノ以外は組むことができる解を表示します。Tミノが実際に到達できるかは問いません。ただし、地面に触れている必要はあります（`[O]` と "
@@ -4975,11 +5298,11 @@ msgstr ""
 "considered. However, [the placed pieces] will have to touch the ground "
 "(the same as only showing ``[O]`` and ``[X]``) (?? I don't get it)"
 
-#: ../../contents/spin/main.rst:238
+#: ../../contents/spin/main.rst:240
 msgid "none: 表示する解を制限しません"
 msgstr "none: No restrictions on setups"
 
-#: ../../contents/spin/main.rst:253
+#: ../../contents/spin/main.rst:255
 msgid "``-o``, ``--output-base`` [default: output/spin.html]"
 msgstr ""
 
@@ -5015,51 +5338,47 @@ msgstr ""
 
 #: ../../contents/tools.rst:23
 msgid ""
-"`Chrome Web Store <https://chrome.google.com/webstore/detail/fumen-"
-"preview/kkmandajpdmjfibomfokgdjcgmbkipef>`_ "
-"からインストールすることができます。あわせてご利用ください。"
-msgstr ""
-"You can install this extension at the `Chrome Web Store "
-"<https://chrome.google.com/webstore/detail/fumen-"
-"preview/kkmandajpdmjfibomfokgdjcgmbkipef>`_."
+"現在はChrome Web Storeから削除されていますが、 `こちら <https://github.com/knewjade/fumen-"
+"preview-extension/releases/tag/v1.2.6>`_ からダウンロードして、 ローカルで読み込むことが可能です。"
+msgstr "Since the extension has been removed from Chrome Web Store, you can download it from `here <https://github.com/knewjade/fumen-preview-extension/releases/tag/v1.2.6>`_ instead."
 
-#: ../../contents/tools.rst:25
+#: ../../contents/tools.rst:27
 msgid "なお、Chrome拡張機能のデフォルトの設定では、ローカルファイルには拡張機能が適用されません。"
 msgstr ""
 "Note that by default, the Chrome extension will not [work] for local "
 "files."
 
-#: ../../contents/tools.rst:27
+#: ../../contents/tools.rst:29
 msgid "Fumen Previewの設定画面から「ファイルのURLへのアクセスを許可する」にチェックする必要があります。ご注意ください。"
 msgstr ""
 "Please note that you have to check the 'Allow access to file URLs' "
 "checkbox from the [options] of Fumen Preview."
 
-#: ../../contents/tools.rst:29
+#: ../../contents/tools.rst:31
 msgid "|preview_setting_001|"
 msgstr ""
 
-#: ../../contents/tools.rst:34
+#: ../../contents/tools.rst:36
 msgid "Path Filter"
 msgstr ""
 
-#: ../../contents/tools.rst:36
+#: ../../contents/tools.rst:38
 msgid "solution-finderのpathの結果を基に、パーフェクトクリア成功率を維持したまま最も少ない組み合わせをみつけます。"
 msgstr ""
 "Outputs the least number of solutions from the path output from solution-"
 "finder while maintaining the same success percentage."
 
-#: ../../contents/tools.rst:38
+#: ../../contents/tools.rst:40
 msgid "このプログラムによって得られる組み合わせは、厳密に最小とは限らないことにご注意ください。"
 msgstr ""
 "Please note that this program does not always output the exact minimum "
 "set of solutions."
 
-#: ../../contents/tools.rst:40
+#: ../../contents/tools.rst:42
 msgid "`ダウンロードはこちらから <https://github.com/knewjade/path-filter/releases>`_"
 msgstr "`Download link here <https://github.com/knewjade/path-filter/releases>`_"
 
-#: ../../contents/tools.rst:42
+#: ../../contents/tools.rst:44
 msgid "詳しい使い方は、ダウンロードしたファイル内のテキストファイルをご参照ください。"
 msgstr ""
 "For details, please read the text file contained within the downloaded "
@@ -5108,37 +5427,42 @@ msgstr ""
 " need all of the default files for it to work), you can alter them as you"
 " like?\")"
 
-#: ../../contents/util/fig.rst:32
+#: ../../contents/util/fig.rst:30
+#, fuzzy
+msgid "なお、themeファイルのフォーマットは :doc:`../inputs` を参照してください。"
+msgstr "Please see :doc:`CSV format document<csv>` for the details of each format."
+
+#: ../../contents/util/fig.rst:34
 msgid "デフォルトカラーのサンプル"
 msgstr "Example of default color schemes"
 
-#: ../../contents/util/fig.rst:34
+#: ../../contents/util/fig.rst:36
 msgid "fig_sample_default"
 msgstr ""
 
-#: ../../contents/util/fig.rst:36
+#: ../../contents/util/fig.rst:38
 msgid "fig_sample_mipi"
 msgstr ""
 
-#: ../../contents/util/fig.rst:38
+#: ../../contents/util/fig.rst:40
 msgid "fig_sample_fumen"
 msgstr ""
 
-#: ../../contents/util/fig.rst:40
+#: ../../contents/util/fig.rst:42
 msgid "fig_sample_four"
 msgstr ""
 
-#: ../../contents/util/fig.rst:43
+#: ../../contents/util/fig.rst:45
 msgid "**default** : ``mipi`` をベースにライン消去・操作ミノが強調されるようなカラーリング"
 msgstr ""
 "**default** : Highlights the current tetromino and line clears with "
 "``mipi`` as a base"
 
-#: ../../contents/util/fig.rst:45
+#: ../../contents/util/fig.rst:47
 msgid "|fig_sample_default|"
 msgstr ""
 
-#: ../../contents/util/fig.rst:47
+#: ../../contents/util/fig.rst:49
 msgid ""
 "**mipi** : `@mipi_teto_puyo <https://twitter.com/mipi_teto_puyo>`_ "
 "さんの資料をベースとしたカラーリング"
@@ -5146,155 +5470,101 @@ msgstr ""
 "**mipi** : Color scheme based off of `@mipi_teto_puyo "
 "<https://twitter.com/mipi_teto_puyo>`_ "
 
-#: ../../contents/util/fig.rst:49
+#: ../../contents/util/fig.rst:51
 msgid "|fig_sample_mipi|"
 msgstr ""
 
-#: ../../contents/util/fig.rst:51
+#: ../../contents/util/fig.rst:53
 msgid "**fumen** : `連続テト譜エディタ <http://fumen.zui.jp/>`_ をベースとしたカラーリング"
 msgstr ""
 "**fumen** : Color scheme based off of the `Fumen Editor "
 "<https://harddrop.com/fumen/>`_"
 
-#: ../../contents/util/fig.rst:53
+#: ../../contents/util/fig.rst:55
 msgid "|fig_sample_fumen|"
 msgstr ""
 
-#: ../../contents/util/fig.rst:55
+#: ../../contents/util/fig.rst:57
 msgid "**four** : `FOUR <https://four.lol/>`_ をベースとしたカラーリング"
 msgstr "**four** : Color scheme based off of `FOUR <https://four.lol/>`_"
 
-#: ../../contents/util/fig.rst:57
+#: ../../contents/util/fig.rst:59
 msgid "|fig_sample_four|"
 msgstr ""
 
-#: ../../contents/util/fig.rst:61
-msgid "プロパティファイルの構成"
-msgstr "Configuration of the program file"
-
-#: ../../contents/util/fig.rst:63
-msgid "カラーテーマのプロパティは、以下のルールを基に色を設定します。"
-msgstr ""
-"The property files for the color schemes can be set by the following "
-"rules."
-
-#: ../../contents/util/fig.rst:65
-msgid "*ブロック・ライン*"
-msgstr "*Blocks/Lines*"
-
-#: ../../contents/util/fig.rst:67
-msgid "``T,I,O,S,Z,L,J,Gray``: 各ブロックの色"
-msgstr "``T,I,O,S,Z,L,J,Gray``: Color of each block"
-
 #: ../../contents/util/fig.rst:68
-msgid "``Gray``: せり上がりブロックの色"
-msgstr "``Gray``: Color of garbage minos"
-
-#: ../../contents/util/fig.rst:69
-msgid "``Empty``: 空白の色"
-msgstr "``Empty``: Color of empty space"
-
-#: ../../contents/util/fig.rst:70
-msgid "``Border``: ブロックまわりの線の色"
-msgstr "``Border``: Color of the borders around the minos"
-
-#: ../../contents/util/fig.rst:71
-msgid "``SideFrame``: フィールド左右のフレームの色"
-msgstr "``SideFrame``: Color of the frames at the sides"
-
-#: ../../contents/util/fig.rst:72
-msgid "``BoxFrame``: ホールド・ネクストボックスの枠の色"
-msgstr "``BoxFrame``: Color of the background of the next/hold boxes"
-
-#: ../../contents/util/fig.rst:74
-msgid "*適用されるタイミング*"
-msgstr "*When to use the color*"
-
-#: ../../contents/util/fig.rst:76
-msgid "``.normal``: 通常時のブロックの色"
-msgstr "``.normal``: Color used normally"
-
-#: ../../contents/util/fig.rst:77
-msgid "``.clear``: ラインが揃ったときに強調するための色"
-msgstr "``.clear``: Color to highlight minos in the line clear"
-
-#: ../../contents/util/fig.rst:78
-msgid "``.piece``: 操作しているミノを強調するための色"
-msgstr "``.piece``: Color used to highlight minos of the current piece"
-
-#: ../../contents/util/fig.rst:87
 msgid "``--output``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:87
+#: ../../contents/util/fig.rst:68
 msgid "output/fig.gif"
 msgstr ""
 
-#: ../../contents/util/fig.rst:88
+#: ../../contents/util/fig.rst:69
 msgid "gif"
 msgstr ""
 
-#: ../../contents/util/fig.rst:89 ../../contents/util/seq.rst:103
+#: ../../contents/util/fig.rst:70 ../../contents/util/seq.rst:103
 msgid "``-n``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:89
+#: ../../contents/util/fig.rst:70
 msgid "``--next``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:89
+#: ../../contents/util/fig.rst:70
 msgid "5"
 msgstr ""
 
-#: ../../contents/util/fig.rst:90
+#: ../../contents/util/fig.rst:71
 msgid "``--delay``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:90
+#: ../../contents/util/fig.rst:71
 msgid "30"
 msgstr ""
 
-#: ../../contents/util/fig.rst:91
+#: ../../contents/util/fig.rst:72
 msgid "``--loop``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:91
+#: ../../contents/util/fig.rst:72
 msgid "true"
 msgstr ""
 
-#: ../../contents/util/fig.rst:93
+#: ../../contents/util/fig.rst:74
 msgid "``--start``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:94
+#: ../../contents/util/fig.rst:75
 msgid "``--end``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:96
+#: ../../contents/util/fig.rst:77
 msgid "``--frame``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:96
+#: ../../contents/util/fig.rst:77
 msgid "basic"
 msgstr ""
 
-#: ../../contents/util/fig.rst:97
+#: ../../contents/util/fig.rst:78
 msgid "``--color``"
 msgstr ""
 
-#: ../../contents/util/fig.rst:98
+#: ../../contents/util/fig.rst:79
 msgid "visible"
 msgstr ""
 
-#: ../../contents/util/fig.rst:106
+#: ../../contents/util/fig.rst:87
 msgid "``-o``, ``--output`` [default: output/fig.gif]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:108
+#: ../../contents/util/fig.rst:89
 msgid "出力される画像ファイルのパスを指定する。"
 msgstr "Sets the file path of the output file."
 
-#: ../../contents/util/fig.rst:110
+#: ../../contents/util/fig.rst:91
 msgid ""
 "なお、フォーマットにpngを指定した場合は ``output/{実行日時}/fig.png`` "
 "のように、ディレクトリ構成と拡張子が一部変更されます。"
@@ -5302,185 +5572,185 @@ msgstr ""
 "Furthermore, to set the format in a png format, you set this argument "
 "like ``output/{current date}/fig.png``."
 
-#: ../../contents/util/fig.rst:114
+#: ../../contents/util/fig.rst:95
 msgid "``-F``, ``--format`` [default: gif]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:116
+#: ../../contents/util/fig.rst:97
 msgid "出力される画像ファイルのフォーマットを指定します。"
 msgstr "Sets the output format of the output file."
 
-#: ../../contents/util/fig.rst:118
+#: ../../contents/util/fig.rst:99
 msgid "対応フォーマットは次の2つです。"
 msgstr "There are 2 types of formats."
 
-#: ../../contents/util/fig.rst:120
+#: ../../contents/util/fig.rst:101
 msgid "gif: GIF形式のアニメーション画像を1枚生成する"
 msgstr "gif: Creates one GIF animation of the fumen"
 
-#: ../../contents/util/fig.rst:121
+#: ../../contents/util/fig.rst:102
 msgid "png: PNG形式の画像を各ページを個別に複数枚生成する"
 msgstr "png: Creates a PNG file for each page of the fumen"
 
-#: ../../contents/util/fig.rst:125
+#: ../../contents/util/fig.rst:106
 msgid "``-n``, ``--next`` [default: 5]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:127
+#: ../../contents/util/fig.rst:108
 msgid "表示するネクストの数を指定する。"
 msgstr "Sets the amount of next tetrominos shown."
 
-#: ../../contents/util/fig.rst:131
+#: ../../contents/util/fig.rst:112
 msgid "``-d``, ``--delay`` [default: 30]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:133
+#: ../../contents/util/fig.rst:114
 msgid "アニメーションのフレーム間の時間を指定する。なお、単位は10ms。"
 msgstr ""
 "Sets the delay between display each frame. Furthermore, the unit is in "
 "10ms."
 
-#: ../../contents/util/fig.rst:135
+#: ../../contents/util/fig.rst:116
 msgid "従って ``-d 20`` を指定すると、1枚につき200ms表示する画像が生成される。"
 msgstr "So if ``-d 20`` is set, each frame will be shown for 200ms in the file."
 
-#: ../../contents/util/fig.rst:137 ../../contents/util/fig.rst:147
+#: ../../contents/util/fig.rst:118 ../../contents/util/fig.rst:128
 msgid "※ フォーマットがgifのときのみ有効となります"
 msgstr "※ This is only usable when gif is selected as the format."
 
-#: ../../contents/util/fig.rst:141
+#: ../../contents/util/fig.rst:122
 msgid "``-L``, ``--loop`` [default: true]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:143
+#: ../../contents/util/fig.rst:124
 msgid "出力するgif画像に無限ループするメタデータを付与するかを指定する。"
 msgstr "Set whether if the output gif will loop indefinitely."
 
-#: ../../contents/util/fig.rst:145
+#: ../../contents/util/fig.rst:126
 msgid "画像を無限ループさせたい場合は ``true`` 、無限ループさせない場合は ``false`` を指定する。"
 msgstr ""
 "For it to loop indefinitely, set the value to ``true``, set the value to "
 "``false`` if not."
 
-#: ../../contents/util/fig.rst:153
+#: ../../contents/util/fig.rst:134
 msgid "画像化したいテト譜データを指定する。"
 msgstr "Sets the fumen used to generate the output file."
 
-#: ../../contents/util/fig.rst:155
+#: ../../contents/util/fig.rst:136
 msgid "オプションからテト譜データを指定する場合は ``--tetfu v115@vhAAgH`` のように指定する。"
 msgstr "You can set the fumen from the options like ``--tetfu v115@vhAAgH``."
 
-#: ../../contents/util/fig.rst:161
+#: ../../contents/util/fig.rst:142
 msgid "``-s``, ``--start`` [default: 1]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:163
+#: ../../contents/util/fig.rst:144
 msgid "画像化を開始するテト譜データのページ番号を指定する。"
 msgstr "Sets the starting page number of the fumen to process."
 
-#: ../../contents/util/fig.rst:165
+#: ../../contents/util/fig.rst:146
 msgid "``10`` を指定した場合、最初に出力される画像は10ページ目のものとなる。"
 msgstr "When set to ``10``, the pages starting from page 10 will be used."
 
-#: ../../contents/util/fig.rst:169
+#: ../../contents/util/fig.rst:150
 msgid "``-e``, ``--end`` [default: -1]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:171
+#: ../../contents/util/fig.rst:152
 msgid "画像化を終了するテト譜データのページ番号を指定する。"
 msgstr "Sets the ending page number of the fumen to process."
 
-#: ../../contents/util/fig.rst:173
+#: ../../contents/util/fig.rst:154
 msgid "このオプションで指定したページが画像の最後のページとなる。"
 msgstr "The page number selected will be the last frame of the file."
 
-#: ../../contents/util/fig.rst:175
+#: ../../contents/util/fig.rst:156
 msgid "``-s 10 -e 20`` を指定した場合、10ページから20ページの計11画像となる。"
 msgstr ""
 "When ``-s 10 -e 20`` is set, a total of 11 pages from page 10 to 20 will "
 "be used."
 
-#: ../../contents/util/fig.rst:177
+#: ../../contents/util/fig.rst:158
 msgid "なお ``-1`` を指定した場合は、テト譜の最終ページが自動的に設定される。"
 msgstr ""
 "Furthermore, if set to ``-1``, the last page of the fumen will be "
 "automatically selected as the end."
 
-#: ../../contents/util/fig.rst:183
+#: ../../contents/util/fig.rst:164
 msgid "画像のフィールドのライン数（高さ）を指定する。"
 msgstr "Sets the number of lines(height) to display."
 
-#: ../../contents/util/fig.rst:185
+#: ../../contents/util/fig.rst:166
 msgid "なお ``-1`` を指定した場合は ``画像化対象ページで最も高いフィールドの高さ + 1`` が自動的に設定される。"
 msgstr ""
 "If set to ``-1``, it will be automatically set to ``the height of the "
 "highest field in all pages + 1``."
 
-#: ../../contents/util/fig.rst:187
+#: ../../contents/util/fig.rst:168
 msgid "ただしネクストを表示する際に、フィールドよりも画像の高さを必要とする場合は、自動的にこの値が拡張されます。"
 msgstr ""
 "However, the field height will be automatically adjusted when the field "
 "is not high enough to show all next pieces."
 
-#: ../../contents/util/fig.rst:191
+#: ../../contents/util/fig.rst:172
 msgid "``-f``, ``--frame`` [default: basic]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:193
+#: ../../contents/util/fig.rst:174
 msgid "フレームの種類を選択する。"
 msgstr "Sets the type of frame used."
 
-#: ../../contents/util/fig.rst:195
+#: ../../contents/util/fig.rst:176
 msgid "現在、選択できるのは以下の3種類。"
 msgstr "Currently, there are the following 3 types of frames."
 
-#: ../../contents/util/fig.rst:197
+#: ../../contents/util/fig.rst:178
 msgid "basic: フィールド左側にHold、右側にNextがある最も基本的なフレーム"
 msgstr ""
 "basic: The most basic frame, with Hold to the left of the field, and Next"
 " to the right of the field"
 
-#: ../../contents/util/fig.rst:198
+#: ../../contents/util/fig.rst:179
 msgid "right: フィールドの右側にHold・Nextをともに配置するコンパクトなフレーム"
 msgstr "right: Both Hold and Next are placed to the right of the field"
 
-#: ../../contents/util/fig.rst:199
+#: ../../contents/util/fig.rst:180
 msgid "no: Hold・Nextを表示せず、フィールドのみを表示するフレーム"
 msgstr "no: Only field is shown, without showing Hold or Next"
 
-#: ../../contents/util/fig.rst:203
+#: ../../contents/util/fig.rst:184
 msgid "``-c``, ``--color`` [default: default]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:205
+#: ../../contents/util/fig.rst:186
 msgid "使用するカラーテーマを指定します。指定された名前でthemeディレクトリ内からカラーテーマのファイル名を検索します。"
 msgstr ""
 "Sets the color scheme used. A color scheme properties file with a match "
 "name will be searched under the theme directory."
 
-#: ../../contents/util/fig.rst:209
+#: ../../contents/util/fig.rst:190
 msgid "``-H``, ``--hold`` [default: visible]"
 msgstr ""
 
-#: ../../contents/util/fig.rst:211
+#: ../../contents/util/fig.rst:192
 msgid "ホールドを表示させるかを指定する。"
 msgstr "Sets whether Hold will be displayed."
 
-#: ../../contents/util/fig.rst:213
+#: ../../contents/util/fig.rst:194
 msgid "ホールドを表示させたい場合は ``visible`` 、表示させない場合は ``hidden`` を指定する。"
 msgstr "Set value to ``visible`` to display hold, and ``hidden`` if not."
 
-#: ../../contents/util/fig.rst:215
+#: ../../contents/util/fig.rst:196
 msgid "ただしホールドを指定する場合は、テト譜にQuizが設定されている必要があります。"
 msgstr "However, to use hold, you have to set the Quiz function of the fumen."
 
-#: ../../contents/util/fig.rst:217
+#: ../../contents/util/fig.rst:198
 msgid "もし、Quizが設定されているが、Nextにその情報を使用したくない場合は ``hidden`` を指定してください。"
 msgstr ""
 "Please set this to ``hidden`` if Quiz is [used for Next, without using "
 "Hold]."
 
-#: ../../contents/util/fig.rst:231 ../../contents/util/fumen.rst:92
+#: ../../contents/util/fig.rst:212 ../../contents/util/fumen.rst:92
 msgid "util figではテト譜のみ対応しています（____XXXXXX の形式で書かれたフィールドは入力できません）。"
 msgstr ""
 "util fig is only compatible with the fumen format (You cannot type out "
@@ -5572,7 +5842,7 @@ msgstr ""
 msgid "たとえば ``--filter t`` を指定すると、Tミノを置くページを削除します。"
 msgstr ""
 
-#: ../../contents/util/main.rst:18
+#: ../../contents/util/main.rst:18 ../../contents/verify/main.rst:18
 msgid "目次"
 msgstr "Table of contents"
 
@@ -5590,9 +5860,9 @@ msgstr "There are furthur subcommands within util."
 
 #: ../../contents/util/main.rst:12
 msgid "サブコマンドを実行する場合は ``util サブコマンド`` と指定してください。"
-msgstr "Please select the subcommands like ``util サブコマンド``."
+msgstr "Please select the subcommands like ``util <subcommand>``."
 
-#: ../../contents/util/main.rst:16
+#: ../../contents/util/main.rst:16 ../../contents/verify/main.rst:16
 msgid "サブコマンド一覧"
 msgstr "List of subcommands"
 
@@ -5945,6 +6215,70 @@ msgstr ""
 msgid "となります。"
 msgstr "(?? I don't need this sentence fragment in english, how do I ignore this)"
 
+#: ../../contents/verify/kicks.rst:3
+msgid "サブコマンド: verify kicks"
+msgstr "Subcommand: verify kicks"
+
+#: ../../contents/verify/kicks.rst:8
+msgid "Kickテーブルの検証を行うためのコマンドです。 定義されたオフセットに沿った各ミノの動きを一覧化して確認できます。"
+msgstr "Command used for checking the kick table. Shows all tests and their offsets for each tetromino in a fumen."
+
+#: ../../contents/verify/kicks.rst:11
+msgid ""
+"コマンドを実行すると、ミノごとに一覧化されたテト譜のリンクが出力されます。 "
+"定義ファイルを変更した際は、そのテト譜を一度目視で確認することをおすすめします。"
+msgstr "When the command is used, a linked fumen summary of the kicks of each tetromino will be output. Please re-generate the fumen file after changing the Kicks property file."
+
+#: ../../contents/verify/kicks.rst:14
+msgid "なお、kicksファイルのフォーマットは :doc:`../inputs` を参照してください。"
+msgstr "Please refer to :doc:`../inputs` for the file format of kick tables."
+
+#: ../../contents/verify/kicks.rst:20
+msgid "``java -jar sfinder.jar verify kicks --kicks @srs``"
+msgstr ""
+
+#: ../../contents/verify/kicks.rst:22
+msgid "出力サンプル ::"
+msgstr "Example ::"
+
+#: ../../contents/verify/kicks.rst:24
+msgid ""
+"T (from Spawn):\n"
+"https://fumen.zui.jp/?D115@yfA8HeC8wf1eXMAGsrGEAemsCwSVKEyfQpHeSpwft+?tSA03xUEprDeElsKBA0YceEgZAAAvhJN+tSA03xUEprDeEl?sKBA0YceEAbAAAN5tSA03xUEprDeElsKBA0YceEgcAAAtIu?SA03xUEprDeElsKBA0YceEAeAAANIuUA03xUEprDeElsKBA?0YceEgfAsB9+tRA03hAEFq2TAzxgbEl9+CARAAAAd/tRA03?hAEFq2TAzxgbEl9+CASAAAAd6tRA03hAEFq2TAzxgbEl9+C?ATAAAA9IuRA03hAEFq2TAzxgbEl9+CAUAAAAdJuTA03hAEF?q2TAzxgbEl9+CAVAIBAAAPUARkkAAp9RHEP/JYEV5dNESP9?nD"
+"\n"
+"T (from Right):\n"
+"https://fumen.zui.jp/?D115@xfA8IeB8HeA8ofNeXMAGsrGEAeOpCprDeExfQpIeRp?HeQpofF+tSA03xUEprDeElsKBA0YceEgZAAAvhJl+tSA03x?UEprDeElsKBA0YceEAbAAAlDuSA03xUEprDeElsKBA0YceE?gcAAAF0tSA03xUEprDeElsKBA0YceEAeAAAl0tSA03xUEpr?DeElsKBA0YceEgfAAAV+tRA03hAEFq2TAzxgbEl9+CARAAA?A1+tRA03hAEFq2TAzxgbEl9+CASAAAA1DuRA03hAEFq2TAz?xgbEl9+CATAAAAV0tRA03hAEFq2TAzxgbEl9+CAUAAAA10t?RA03hAEFq2TAzxgbEl9+CAVAAAAAAPUARkkAAp9RHEP/JYE?V5dNESP9nD"
+"\n"
+"T (from Reverse):\n"
+"https://fumen.zui.jp/?D115@7fC8HeA8nfleXOAGsrGEAeOpCFSNXEzoBAA7fSpHeQ?pnf9+tSA03xUEprDeElsKBA0YceEgZAAAvhJd/tSA03xUEp?rDeElsKBA0YceEAbAAAd6tSA03xUEprDeElsKBA0YceEgcA?AA9IuSA03xUEprDeElsKBA0YceEAeAAAdJuUA03xUEprDeE?lsKBA0YceEgfAsBt+tRA03hAEFq2TAzxgbEl9+CARAAAAN+?tRA03hAEFq2TAzxgbEl9+CASAAAAN5tRA03hAEFq2TAzxgb?El9+CATAAAAtIuRA03hAEFq2TAzxgbEl9+CAUAAAANIuTA0?3hAEFq2TAzxgbEl9+CAVAIBAAAPUARkkAAp9RHEP/JYEV5d?NESP9nD"
+"\n"
+"T (from Left):\n"
+"https://fumen.zui.jp/?D115@yfA8HeB8IeA8nf9eXLAGsrGEAe+UCFq+CAyfQpHeRp?IeQpnf1+tSA03xUEprDeElsKBA0YceEgZAAAvhJV+tSA03x?UEprDeElsKBA0YceEAbAAAVDuSA03xUEprDeElsKBA0YceE?gcAAA10tSA03xUEprDeElsKBA0YceEAeAAAV0tSA03xUEpr?DeElsKBA0YceEgfAAAl+tRA03hAEFq2TAzxgbEl9+CARAAA?AF+tRA03hAEFq2TAzxgbEl9+CASAAAAFDuRA03hAEFq2TAz?xgbEl9+CATAAAAl0tRA03hAEFq2TAzxgbEl9+CAUAAAAF0t?RA03hAEFq2TAzxgbEl9+CAVAAAAAAPUARkkAAp9RHEP/JYE?V5dNESP9nD"
+"\n"
+"I (from Spawn):\n"
+"https://fumen.zui.jp/?D115@6fD8wfReXMAGsrGEgNmsCwSVKE6fT4wfp+tSA03xUE?prDeElsKBA0YceEgZAAAvhJp9tSA03xUEprDeElsKBA0Yce?EAbAAAJ/tSA03xUEprDeElsKBA0YceEgcAAApCuSA03xUEp?rDeElsKBA0YceEAeAAAJ1tSA03xUEprDeElsKBA0YceEgfA?AAZ+tRA03hAEFq2TAzxgbEl9+CARAAAA59tRA03hAEFq2TA?zxgbEl9+CASAAAAZ/tRA03hAEFq2TAzxgbEl9+CATAAAA5z?tRA03hAEFq2TAzxgbEl9+CAUAAAAZEuRA03hAEFq2TAzxgb?El9+CAVAAAAAAPUARkkAAp9RHEP/JYEV5dNESP9nD"
+"\n"
+"..."
+msgstr ""
+
+#: ../../contents/verify/kicks.rst:49
+msgid "検証したい回転法則を指定する。"
+msgstr "Selects the kick table to verify."
+
+#: ../../contents/verify/main.rst:3
+msgid "コマンド: verify"
+msgstr "Command: verify"
+
+#: ../../contents/verify/main.rst:10
+#, fuzzy
+msgid "verifyの中には、さらにサブコマンドが含まれます。"
+msgstr "There are furthur subcommands within verify."
+
+#: ../../contents/verify/main.rst:12
+#, fuzzy
+msgid "サブコマンドを実行する場合は ``verify サブコマンド`` と指定してください。"
+msgstr "Please select the subcommands like ``verify <subcommand>``."
+
 #: ../../contents/workflow.rst:3
 msgid "ワークフロー"
 msgstr "Workflow"
@@ -6183,4 +6517,3 @@ msgid "``percent`` の ``-fc 0 -td 1`` は、結果の表示を少なくする�
 msgstr ""
 "You can reduce the amount of output displayed for ``percent`` with ``-fc "
 "0 -td 1``."
-
