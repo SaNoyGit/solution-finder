@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solution-finder \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 00:32+0900\n"
+"POT-Creation-Date: 2022-12-12 09:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,12 +166,12 @@ msgstr "Description"
 #: ../../contents/command.rst:19
 msgid "ある地形からパーフェクトクリアできる確率を計算します。"
 msgstr ""
-"Calculate the probability of getting a perfect clear from a specified field."
+"Calculate the probability of getting a perfect clear from a specified "
+"field."
 
 #: ../../contents/command.rst:20
 msgid "ある地形からパーフェクトクリアする手順をすべて出力します。"
-msgstr ""
-"Outputs all possible solutions for a specified field."
+msgstr "Outputs all possible solutions for a specified field."
 
 #: ../../contents/command.rst:21
 msgid "ある地形から指定したブロックを埋める操作手順をすべて出力します。"
@@ -179,14 +179,15 @@ msgstr "Outputs all the setups that fill a field in a specified way."
 
 #: ../../contents/command.rst:22
 msgid "ある地形からRENを続ける手順をすべて出力します。"
-msgstr "Outputs all the build orders that continue REN(COMBO) from a specified field."
+msgstr ""
+"Outputs all the build orders that continue REN(COMBO) from a specified "
+"field."
 
 #: ../../contents/command.rst:23
 msgid "spin"
 msgstr ""
 
 #: ../../contents/command.rst:23
-#, fuzzy
 msgid "ある地形からTスピンできる手順をすべて出力します。"
 msgstr "Output all the setups for fields that can be T-Spin."
 
@@ -196,7 +197,9 @@ msgstr "cover"
 
 #: ../../contents/command.rst:24
 msgid "指定された場所・条件通りにミノを置くことができる確率を計算します。"
-msgstr "Calculate the percentage of sequences that can build a field (and other optional constraints)."
+msgstr ""
+"Calculate the percentage of sequences that can build a field (and other "
+"optional constraints)."
 
 #: ../../contents/command.rst:25
 msgid "util"
@@ -947,7 +950,9 @@ msgstr "Pick one of the handling(?) options below."
 #: ../../contents/percent/main.rst:98 ../../contents/ren/main.rst:85
 #: ../../contents/setup/main.rst:404 ../../contents/verify/kicks.rst:53
 msgid "srs (default): SRSに準拠した回転法則。90度回転のみ"
-msgstr "srs (default): Kick table following SRS. Only 90 degree rotations are supported"
+msgstr ""
+"srs (default): Kick table following SRS. Only 90 degree rotations are "
+"supported"
 
 #: ../../contents/cover/main.rst:182 ../../contents/path/main.rst:204
 #: ../../contents/percent/main.rst:99 ../../contents/ren/main.rst:86
@@ -955,11 +960,15 @@ msgstr "srs (default): Kick table following SRS. Only 90 degree rotations are su
 msgid ""
 "@ファイル名: ``kicks/ファイル名.properties`` からKickテーブルを読み込みます ( ``@`` の代わりに ``+`` "
 "も利用可能です)"
-msgstr "@``<filename>``: reads the kick table specified in ``kicks/<filename>.properties`` (you can also prepend ``+`` instead of ``@``)"
+msgstr ""
+"@``<filename>``: reads the kick table specified in "
+"``kicks/<filename>.properties`` (you can also prepend ``+`` instead of "
+"``@``)"
 
 #: ../../contents/cover/main.rst:184 ../../contents/path/main.rst:206
 #: ../../contents/percent/main.rst:101 ../../contents/ren/main.rst:88
-#: ../../contents/setup/main.rst:407 ../../contents/verify/kicks.rst:56
+#: ../../contents/setup/main.rst:407 ../../contents/verify/kicks.rst:14
+#: ../../contents/verify/kicks.rst:56
 msgid "なお、kicksファイルのフォーマットは :doc:`../inputs` を参照してください。"
 msgstr "Please refer to :doc:`../inputs` for the file format of kick tables."
 
@@ -986,12 +995,21 @@ msgstr "softdrop: softdrop + rotations (unlimited)"
 msgid "harddrop: ハードドロップのみ"
 msgstr "harddrop: only using harddropp"
 
-#: ../../contents/cover/main.rst:196
-msgid ""
-"180 (softdrop180): ソフトドロップ＋180度回転入れ（使用するには、180度回転に対応したkicksを選択する必要があります） "
-"* t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ"
-msgstr "180 (softdrop180): the same as softdrop, but with 180 rotations (you must select a kick table that supports 180 rotations when using this option)"
-"* t-softdrop: Only T tetrominos can use softdrop, while all other tetrominos only use harddrop"
+#: ../../contents/cover/main.rst:196 ../../contents/path/main.rst:218
+#: ../../contents/percent/main.rst:113 ../../contents/ren/main.rst:100
+#: ../../contents/setup/main.rst:419
+msgid "180 (softdrop180): ソフトドロップ＋180度回転入れ（使用するには、180度回転に対応したkicksを選択する必要があります）"
+msgstr ""
+"180 (softdrop180): the same as softdrop, but with 180 rotations (you must"
+" select a kick table that supports 180 rotations when using this option)"
+
+#: ../../contents/cover/main.rst:197 ../../contents/path/main.rst:219
+#: ../../contents/percent/main.rst:114 ../../contents/ren/main.rst:101
+#: ../../contents/setup/main.rst:420
+msgid "t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ"
+msgstr ""
+"t-softdrop: Only T tetrominos can use softdrop, while all other "
+"tetrominos only use harddrop"
 
 #: ../../contents/cover/main.rst:199 ../../contents/path/main.rst:221
 msgid "tsz (tspin0): Tミノは必ずT-Spinをする（ライン消去をしなくてもOK）。その他のミノはハードドロップ"
@@ -1697,13 +1715,14 @@ msgstr ""
 "v115@9gQ4zhAtDeR4RpBtDeglQ4RpAtg0Deili0NeAgWYA0?no2AtTMeDUPNXEuN98AQe88AjPUGB"
 
 #: ../../contents/inputs.rst:3
-#, fuzzy
 msgid "プロパティファイル"
 msgstr "Property files"
 
 #: ../../contents/inputs.rst:5
 msgid "solution-finderには、プロパティファイルから入力する設定がいくつか存在します。 それらのファイルのフォーマットについて説明します。"
-msgstr "There are a few property files that are used to configure solution-finder. The format fo each will be described below."
+msgstr ""
+"There are a few property files that are used to configure solution-"
+"finder. The format fo each will be described below."
 
 #: ../../contents/inputs.rst:9
 msgid "kicks"
@@ -1714,11 +1733,16 @@ msgid ""
 "ローテーションシステムのKickテーブルをカスタムすることができます。 なおここで設定したKicksは、各コマンドで ``--kicks "
 "@ファイル名`` で参照可能です（``--kicks @srs`` を指定すると ``kicks/srs.properties`` "
 "がロードされます）。"
-msgstr "Used to create custom kick tables of different rotation systems. You can refer to the files from the commands by ``--kicks @<filename>`` (``kicks/srs.properties`` will be loaded for ``--kicks @srs``)."
+msgstr ""
+"Used to create custom kick tables of different rotation systems. You can "
+"refer to the files from the commands by ``--kicks @<filename>`` "
+"(``kicks/srs.properties`` will be loaded for ``--kicks @srs``)."
 
 #: ../../contents/inputs.rst:14
 msgid "``verify kicks`` コマンドで、各ミノの動きを一覧化して確認できます。設定後は、一度目視で確認することをおすすめします。"
-msgstr "``verify kicks`` shows all kicks that used by each tetromino. Using this to double-check after setting the kicks file is recommended."
+msgstr ""
+"``verify kicks`` shows all kicks that used by each tetromino. Using this "
+"to double-check after setting the kicks file is recommended."
 
 #: ../../contents/inputs.rst:16
 msgid "デフォルトで用意されているプロパティファイルは以下の通りです。"
@@ -1729,12 +1753,12 @@ msgid "**@srs** : SRSに準拠したKicks。90回転のみ。"
 msgstr "**@srs** : kick table following SRS. Only supports 90 degree rotations."
 
 #: ../../contents/inputs.rst:19
-#, fuzzy
 msgid ""
 "**@nullpomino180** : SRSに、180度回転として `Nullpomino "
 "<https://github.com/nullpomino/nullpomino>`_ のStandard Wallkickを加えたKicks"
 msgstr ""
-"**@nullpomino180**: includes the 180 Standard Wallkicks from `Nullpomino<https://github.com/nullpomino/nullpomino>`_ on top of SRS."
+"**@nullpomino180**: includes the 180 Standard Wallkicks from "
+"`Nullpomino <https://github.com/nullpomino/nullpomino>`_ on top of SRS."
 
 #: ../../contents/inputs.rst:23
 msgid ""
@@ -1760,14 +1784,20 @@ msgstr "It corresponds to ``<Tetromino>.<Before rotation><After rotation>``."
 msgid ""
 "たとえば ``L.NE`` は ``LミノをNorthから右回転してEastにする`` ときの挙動を定義します。 "
 "180度回転も同様で、``L.NS`` のように設定できます。"
-msgstr "For example, ``L.NE`` is used when the L tetromino is rotated clockwise from the North position to East."
-"Similarly, ``L.NS`` is used for 180 rotations."
+msgstr ""
+"For example, ``L.NE`` is used when the L tetromino is rotated clockwise "
+"from the North position to East.Similarly, ``L.NS`` is used for 180 "
+"rotations."
 
 #: ../../contents/inputs.rst:40
 msgid ""
 "したがって定義すべきキーの数は、90度回転のみでは ``56`` 、180度回転も有効にする場合は ``84`` になります。 "
 "意図しない定義になるのを避けるため、これら以外のキーの数ではエラーとなるのでご注意ください。"
-msgstr "As a result, ``56`` keys will defined for purely 90 degree rotations, and ``84`` including 180 rotations. Note that to prevent unexpected behavior, any number of keys other than these two will result in an error."
+msgstr ""
+"As a result, ``56`` keys will defined for purely 90 degree rotations, and"
+" ``84`` including 180 rotations. Note that to prevent unexpected "
+"behavior, any number of keys other than these two will result in an "
+"error."
 
 #: ../../contents/inputs.rst:44
 msgid "オフセット (e.g. ``(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)``)"
@@ -1777,14 +1807,20 @@ msgstr "Offsets (e.g. ``(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)``)"
 msgid ""
 "``(xの移動量, yの移動量)`` "
 "を表し、回転時のテストパターンを定義します。回転時のテストは前から順番に適用され、移動可能なところに移動します。すべてのテストパターンに失敗した場合は回転されません。"
-msgstr "This defines the test pattern in terms of ``(<x offset>, <y offset>)``. The leftmost valid spin test pattern will be used. The tetromino will not perform the spin if all tests fail."
+msgstr ""
+"This defines the test pattern in terms of ``(<x offset>, <y offset>)``. "
+"The leftmost valid spin test pattern will be used. The tetromino will not"
+" perform the spin if all tests fail."
 
 #: ../../contents/inputs.rst:48
 msgid ""
 "たとえば ``T.NE=(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)`` は、 `こちらのテト譜 "
 "<https://fumen.zui.jp/?v115@yfA8HeC8wf1eXMAGsrGEAemsCwSVKEyfQpHeSpwft+?tZAy3WeD0ohbEPhQ5DHt2TAzxgbEl9+CARAAAAvhJN+tZAy?3WeD0ohbEPhQ5DHt2TAzxgbEl9+CASAAAAN5tZAy3WeD0oh?bEPhQ5DHt2TAzxgbEl9+CATAAAAtIuZAy3WeD0ohbEPhQ5D?Ht2TAzxgbEl9+CAUAAAANIubAy3WeD0ohbEPhQ5DHt2TAzx?gbEl9+CAVAIBA9+tYAy3WeD0ohbEPBjrDGPVABhA1rDT/Z5?Ad/tYAy3WeD0ohbEPBjrDGPVABhA1rDT/x8Ad6tYAy3WeD0?ohbEPBjrDGPVABhA1rDT/JAB9IuYAy3WeD0ohbEPBjrDGPV?ABhA1rDT/hDBdJuaAy3WeD0ohbEPBjrDGPVABhA1rDT/5GB?AwAAAAAPUARkkAAp9RHEP/JYEV5dNESP9nD>`_"
 " のような動きになります。"
-msgstr "For example, ``T.NE=(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)`` will check the tests `like so<https://fumen.zui.jp/?v115@yfA8HeC8wf1eXMAGsrGEAemsCwSVKEyfQpHeSpwft+?tZAy3WeD0ohbEPhQ5DHt2TAzxgbEl9+CARAAAAvhJN+tZAy?3WeD0ohbEPhQ5DHt2TAzxgbEl9+CASAAAAN5tZAy3WeD0oh?bEPhQ5DHt2TAzxgbEl9+CATAAAAtIuZAy3WeD0ohbEPhQ5D?Ht2TAzxgbEl9+CAUAAAANIubAy3WeD0ohbEPhQ5DHt2TAzx?gbEl9+CAVAIBA9+tYAy3WeD0ohbEPBjrDGPVABhA1rDT/Z5?Ad/tYAy3WeD0ohbEPBjrDGPVABhA1rDT/x8Ad6tYAy3WeD0?ohbEPBjrDGPVABhA1rDT/JAB9IuYAy3WeD0ohbEPBjrDGPV?ABhA1rDT/hDBdJuaAy3WeD0ohbEPBjrDGPVABhA1rDT/5GB?AwAAAAAPUARkkAAp9RHEP/JYEV5dNESP9nD>`_."
+msgstr ""
+"For example, ``T.NE=(0,0)(-1,0)(-1,+1)(0,-2)(-1,-2)`` will check the "
+"tests `like so "
+"<https://fumen.zui.jp/?v115@yfA8HeC8wf1eXMAGsrGEAemsCwSVKEyfQpHeSpwft+?tZAy3WeD0ohbEPhQ5DHt2TAzxgbEl9+CARAAAAvhJN+tZAy?3WeD0ohbEPhQ5DHt2TAzxgbEl9+CASAAAAN5tZAy3WeD0oh?bEPhQ5DHt2TAzxgbEl9+CATAAAAtIuZAy3WeD0ohbEPhQ5D?Ht2TAzxgbEl9+CAUAAAANIubAy3WeD0ohbEPhQ5DHt2TAzx?gbEl9+CAVAIBA9+tYAy3WeD0ohbEPBjrDGPVABhA1rDT/Z5?Ad/tYAy3WeD0ohbEPBjrDGPVABhA1rDT/x8Ad6tYAy3WeD0?ohbEPBjrDGPVABhA1rDT/JAB9IuYAy3WeD0ohbEPBjrDGPV?ABhA1rDT/hDBdJuaAy3WeD0ohbEPBjrDGPVABhA1rDT/5GB?AwAAAAAPUARkkAAp9RHEP/JYEV5dNESP9nD>`_."
 
 #: ../../contents/inputs.rst:50
 msgid ""
@@ -1794,7 +1830,13 @@ msgid ""
 "SRS#How_Guideline_SRS_Really_Works "
 "<https://harddrop.com/wiki/SRS#How_Guideline_SRS_Really_Works>`_ "
 "がとても参考になるので、こちらを参照していただくことをおすすめします。"
-msgstr "Please be aware that for rotated tetrominos, the offsets are done to the tetrominos rotated by their rotation axis. For solution-finder, the SRS rotation axis is used. As a result, if the kick table of O is set to ``(0,0)``, it will move when rotating. Please refer to `Harddrop SRS#How_Guideline_SRS_Really_Works <https://harddrop.com/wiki/SRS#How_Guideline_SRS_Really_Works>`_ "
+msgstr ""
+"Please be aware that for rotated tetrominos, the offsets are done to the "
+"tetrominos rotated by their rotation axis. For solution-finder, the SRS "
+"rotation axis is used. As a result, if the kick table of O is set to "
+"``(0,0)``, it will move when rotating. Please refer to `Harddrop "
+"SRS#How_Guideline_SRS_Really_Works "
+"<https://harddrop.com/wiki/SRS#How_Guideline_SRS_Really_Works>`_ "
 
 #: ../../contents/inputs.rst:57
 msgid "@ : T-Spin時にMiniからRegularに昇格するテストパターン (e.g. ``(@-1,-2)``)"
@@ -1802,7 +1844,9 @@ msgstr "@ : Patterns that upgrade a T-Spin Mini to Regular (e.g. ``(@-1,-2)``)"
 
 #: ../../contents/inputs.rst:59
 msgid "solution-finderでは次のような擬似アルゴリズムでTスピンを判定しています。"
-msgstr "solution-finder uses the following algorithm to determine the type of T-Spin."
+msgstr ""
+"solution-finder uses the following algorithm to determine the type of "
+"T-Spin."
 
 #: ../../contents/inputs.rst:63
 msgid ""
@@ -1833,7 +1877,11 @@ msgid ""
 "この設定の ``@`` がついているテストパターンでは、★の判定で `true` となります。 したがって、SRSにあわせた設定では "
 "``T.NE`` ``T.SW`` ``T.NW`` ``T.SE`` の第5テストパターンに ``@`` が付与されています。 これによって"
 "、一般的なTSTの動きがT-Spin Miniではなく、T-Spin Regularで判定されるようになります。"
-msgstr "Test patterns with ``@`` added will make the line at ★ become true. Thus the 5th test pattern in ``T.NE``, ``T.SW``, ``T.NW``, and ``T.SE`` contains ``@``, so that the spin is determined to be a T-Spin Regular instead of Mini."
+msgstr ""
+"Test patterns with ``@`` added will make the line at ★ become true. Thus "
+"the 5th test pattern in ``T.NE``, ``T.SW``, ``T.NW``, and ``T.SE`` "
+"contains ``@``, so that the spin is determined to be a T-Spin Regular "
+"instead of Mini."
 
 #: ../../contents/inputs.rst:80
 msgid "& : 他のオフセットと同じ設定にする (e.g. ``&L.NE``)"
@@ -1841,11 +1889,15 @@ msgstr "& : Reference the offset of another key (e.g. ``&L.NE``)"
 
 #: ../../contents/inputs.rst:82
 msgid "オフセットの設定は、いくつかのミノの種類で同じになることも多くあります。"
-msgstr "There are many test patterns that are the same across different tetrominos."
+msgstr ""
+"There are many test patterns that are the same across different "
+"tetrominos."
 
 #: ../../contents/inputs.rst:84
 msgid "その場合は ``&(参照したいパターン)`` で、同じオフセット値を引き継ぐことができます。"
-msgstr "You can use ``&<key of test pattern to use>`` to use the same offsets as that pattern."
+msgstr ""
+"You can use ``&<key of test pattern to use>`` to use the same offsets as "
+"that pattern."
 
 #: ../../contents/inputs.rst:89
 msgid "theme"
@@ -2806,17 +2858,6 @@ msgstr "Change the setting to ``true`` to enable this functionality."
 #: ../../contents/path/main.rst:210
 msgid "``-d``, ``--drop`` [default: soft]"
 msgstr ""
-
-#: ../../contents/path/main.rst:218 ../../contents/percent/main.rst:113
-#: ../../contents/ren/main.rst:100 ../../contents/setup/main.rst:419
-msgid "180 (softdrop180): ソフトドロップ＋180度回転入れ（使用するには、180度回転に対応したkicksを選択する必要があります）"
-msgstr "180 (softdrop180): the same as softdrop, but with 180 rotations (you must select a kick table that supports 180 rotations when using this option)"
-
-#: ../../contents/path/main.rst:219 ../../contents/percent/main.rst:114
-#: ../../contents/ren/main.rst:101 ../../contents/setup/main.rst:420
-msgid "t-softdrop: Tミノはソフトドロップ、その他のミノはハードドロップ"
-msgstr ""
-"t-softdrop: Only T tetrominos can use softdrop, while all other tetrominos only use harddrop"
 
 #: ../../contents/path/main.rst:227
 msgid ""
@@ -4913,13 +4954,14 @@ msgid "コマンド: spin"
 msgstr "Command: spin"
 
 #: ../../contents/spin/main.rst:8
-#, fuzzy
 msgid "ある地形からTスピンできる置き方を探す。"
-msgstr "Searching for fields that can perform T-Spins."
+msgstr "Searches for placements that can create T-Spins."
 
 #: ../../contents/spin/main.rst:10
 msgid "対応している回転法則はSRSのみで、カスタマイズできない点にご注意ください。"
-msgstr "Please note that the kick table cannot be customized, ans will always use SRS."
+msgstr ""
+"Please note that the kick table cannot be customized, ans will always use"
+" SRS."
 
 #: ../../contents/spin/main.rst:15
 msgid ""
@@ -5340,7 +5382,10 @@ msgstr ""
 msgid ""
 "現在はChrome Web Storeから削除されていますが、 `こちら <https://github.com/knewjade/fumen-"
 "preview-extension/releases/tag/v1.2.6>`_ からダウンロードして、 ローカルで読み込むことが可能です。"
-msgstr "Since the extension has been removed from Chrome Web Store, you can download it from `here <https://github.com/knewjade/fumen-preview-extension/releases/tag/v1.2.6>`_ instead."
+msgstr ""
+"Since the extension has been removed from Chrome Web Store, you can "
+"download it from `here <https://github.com/knewjade/fumen-preview-"
+"extension/releases/tag/v1.2.6>`_ instead."
 
 #: ../../contents/tools.rst:27
 msgid "なお、Chrome拡張機能のデフォルトの設定では、ローカルファイルには拡張機能が適用されません。"
@@ -5428,9 +5473,8 @@ msgstr ""
 " like?\")"
 
 #: ../../contents/util/fig.rst:30
-#, fuzzy
 msgid "なお、themeファイルのフォーマットは :doc:`../inputs` を参照してください。"
-msgstr "Please see :doc:`CSV format document<csv>` for the details of each format."
+msgstr "Please see :doc:`../inputs` for the details of the theme file format."
 
 #: ../../contents/util/fig.rst:34
 msgid "デフォルトカラーのサンプル"
@@ -6221,17 +6265,18 @@ msgstr "Subcommand: verify kicks"
 
 #: ../../contents/verify/kicks.rst:8
 msgid "Kickテーブルの検証を行うためのコマンドです。 定義されたオフセットに沿った各ミノの動きを一覧化して確認できます。"
-msgstr "Command used for checking the kick table. Shows all tests and their offsets for each tetromino in a fumen."
+msgstr ""
+"Command used for checking the kick table. Shows all tests and their "
+"offsets for each tetromino in a fumen."
 
 #: ../../contents/verify/kicks.rst:11
 msgid ""
 "コマンドを実行すると、ミノごとに一覧化されたテト譜のリンクが出力されます。 "
 "定義ファイルを変更した際は、そのテト譜を一度目視で確認することをおすすめします。"
-msgstr "When the command is used, a linked fumen summary of the kicks of each tetromino will be output. Please re-generate the fumen file after changing the Kicks property file."
-
-#: ../../contents/verify/kicks.rst:14
-msgid "なお、kicksファイルのフォーマットは :doc:`../inputs` を参照してください。"
-msgstr "Please refer to :doc:`../inputs` for the file format of kick tables."
+msgstr ""
+"When the command is used, a linked fumen summary of the kicks of each "
+"tetromino will be output. Please re-generate the fumen file after "
+"changing the Kicks property file."
 
 #: ../../contents/verify/kicks.rst:20
 msgid "``java -jar sfinder.jar verify kicks --kicks @srs``"
@@ -6270,12 +6315,10 @@ msgid "コマンド: verify"
 msgstr "Command: verify"
 
 #: ../../contents/verify/main.rst:10
-#, fuzzy
 msgid "verifyの中には、さらにサブコマンドが含まれます。"
 msgstr "There are furthur subcommands within verify."
 
 #: ../../contents/verify/main.rst:12
-#, fuzzy
 msgid "サブコマンドを実行する場合は ``verify サブコマンド`` と指定してください。"
 msgstr "Please select the subcommands like ``verify <subcommand>``."
 
